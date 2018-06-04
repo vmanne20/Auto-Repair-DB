@@ -1,7 +1,7 @@
-# <Group Name> CS4604 Project
+# \<Group Name\> CS4604 Project
 
 ## Team Members
-* <pid1>
-* <pid2>
-* <pid3>
+* \<pid1\>
+* \<pid2\>
+* \<pid3\>
 ...
