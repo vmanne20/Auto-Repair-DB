@@ -29,3 +29,11 @@ The diagram below shows the entity-relationship diagram converted to a relationa
 
 The corresponding sql can be found [here](sql/install.sql).
 
+## Build/Install/Run
+
+Go to the [Docker Playground](http://play-with-docker.com) and confirm that you are not a robot.  
+In the left-hand menu, click on "ADD NEW INSTANCE"  
+This will start a Docker instance (node) and log you in as the root user. 
+
+`curl -o runme.sh https://code.vt.edu/rquintin/CS4604-project/raw/master/runme.sh && bash ./runme.sh`
+
