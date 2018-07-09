@@ -73,7 +73,7 @@ EOF
 
 if [ -f CS4604-project/sql/install.sql ]; then
   volume="$(pwd)/CS4604-project/sql:/sql"
-  docker run --it --rm -v $volume --link postgres:postgres postgres psql -a -h postgres -U postgres -f /sql/install.sql
+  docker run -it --rm -v $volume --link postgres:postgres postgres psql -a -h postgres -U postgres -f /sql/install.sql
 fi
 cat <<EOF
 
