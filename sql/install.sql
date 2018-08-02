@@ -1,3 +1,7 @@
+drop table if exists attends cascade;
+drop table if exists scouttrip cascade;
+drop table if exists scout cascade;
+
 CREATE TABLE ScoutTrip
 (
   Location VARCHAR(256) NOT NULL,
