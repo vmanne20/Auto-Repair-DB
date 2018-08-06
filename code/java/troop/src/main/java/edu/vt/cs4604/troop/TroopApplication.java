@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 
 @SpringBootApplication
 public class TroopApplication {
-	private static final Logger logger = LoggerFactory.getLogger(MyApplication.class);	
+	private static final Logger logger = LoggerFactory.getLogger(TroopApplication.class);	
 
 	public static void main(String[] args) {
 		SpringApplication.run(TroopApplication.class, args);
