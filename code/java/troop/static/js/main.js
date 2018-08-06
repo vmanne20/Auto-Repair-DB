@@ -18,8 +18,27 @@ $(document).ready(function () {
       rank: {
         title: 'Rank'
       },
+      dob: {
+	      title: 'Birth Date',
+        type: 'date'
+      }
     },
     actions: {
+      createAction: function (postData, jtParams) {
+        return $.Deferred(function ($dfd) {
+          $.ajax({
+              url: '/scouts',
+              type: 'POST',
+              success: function (data) {
+                  $dfd.resolve({ "Result": "OK", "Record": data });
+              },
+              error: function () {
+                  $dfd.reject();
+              }
+          });
+        });
+      }
+      ,
       listAction: function (postData, jtParams) {
         return $.Deferred(function ($dfd) {
           $.ajax({

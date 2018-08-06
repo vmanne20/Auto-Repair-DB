@@ -9,15 +9,20 @@ import java.util.stream.Collectors;
 
 @RestController
 class ScoutController {
-    private ScoutRepository repository;
+  private ScoutRepository repository;
 
-    public ScoutController(ScoutRepository repository) {
-        this.repository = repository;
-    }
+  public ScoutController(ScoutRepository repository) {
+    this.repository = repository;
+  }
 
-    @GetMapping("/scouts")
-    public Collection<Scout> scouts() {
-        return repository.findAll().stream()
-                .collect(Collectors.toList());
-    }
+  @GetMapping("/scouts")
+  public Collection<Scout> scouts() {
+    return repository.findAll().stream()
+      .collect(Collectors.toList());
+  }
+  @PostMapping("/scouts")
+  public Scout addScout(Scout scout) {
+    System.out.println(scout.toString());
+    return repository.save(scout);
+  }
 }
