@@ -25,4 +25,10 @@ class ScoutController {
     System.out.println(scout.toString());
     return repository.save(scout);
   }
+
+  @PostMapping("/deleteScout")
+  public Scout deleteScout(Long scoutId) {
+    Scout = repository.findById(scoutId);
+    repository.deleteScout(scoutId);
+  }
 }

@@ -1,22 +1,18 @@
-/*
-$(document).ready(function() {
-$.ajax({
-  url: "/scouts/Timmy"
-}).then(function(data) {
-   $('.greeting-id').append(data.rank);
-});
-});
-*/
-
 $(document).ready(function () {
   $('#ScoutTableContainer').jtable({
     title: 'Scouts',
     fields: {
+      id: {
+        title: 'Id',
+        key: true,
+        list: false
+      },
       name: {
         title: 'Name'
       },
       rank: {
-        title: 'Rank'
+        title: 'Rank',
+        options: ['Scout', 'Tenderfoot', 'Second Class', 'First Class', 'Star', 'Life', 'Eagle'],
       },
       dob: {
 	      title: 'Birth Date',
@@ -24,6 +20,23 @@ $(document).ready(function () {
       }
     },
     actions: {
+      deleteAction: function (postData) {
+        console.log("deleting scout...");
+        return $.Deferred(function ($dfd) {
+          $.ajax({
+              url: '/deleteScout',
+              type: 'POST',
+              dataType: 'json',
+              data: postData,
+              success: function (data) {
+                  $dfd.resolve({"Result": "OK"});
+              },
+              error: function () {
+                  $dfd.reject();
+              }
+          });
+        });
+      },
       createAction: function (postData, jtParams) {
         return $.Deferred(function ($dfd) {
           $.ajax({

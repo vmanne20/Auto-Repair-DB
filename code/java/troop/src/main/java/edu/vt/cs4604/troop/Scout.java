@@ -2,8 +2,7 @@ package edu.vt.cs4604.troop;
 
 import lombok.*;
 import java.time.LocalDate;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Getter @Setter
@@ -11,6 +10,11 @@ import javax.persistence.Id;
 @ToString @EqualsAndHashCode
 public class Scout {
   @Id
+  @SequenceGenerator(name="scout_id", sequenceName="scout_id")
+  @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="scout_id")
+  private Long id;
+
+  
   private String name;
   private LocalDate dob;
   private String rank;
