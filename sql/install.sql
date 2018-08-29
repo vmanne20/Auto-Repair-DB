@@ -4,27 +4,31 @@ drop table if exists scout cascade;
 
 CREATE TABLE ScoutTrip
 (
+  Id INT NOT NULL,
   Location VARCHAR(256) NOT NULL,
   TripDate DATE NOT NULL,
-  MinAge INT,
+  MinAge VARCHAR(16),
   MinRank VARCHAR(16),
-  PRIMARY KEY (TripDate)
+  PRIMARY KEY (Id),
+  UNIQUE (TripDate)
 );
 
 CREATE TABLE Scout
 (
-  Name VARCHAR(64) NOT NULL,
-  DOB DATE NOT NULL,
-  Rank VARCHAR(16) NOT NULL,
-  PRIMARY KEY (Name)
+  Id INT NOT NULL,
+  Name INT NOT NULL,
+  DOB INT NOT NULL,
+  Rank INT NOT NULL,
+  PRIMARY KEY (Id),
+  UNIQUE (Name)
 );
 
 CREATE TABLE Attends
 (
-  TripDate DATE NOT NULL,
-  Name VARCHAR(64) NOT NULL,
-  PRIMARY KEY (TripDate, Name),
-  FOREIGN KEY (TripDate) REFERENCES ScoutTrip(TripDate),
-  FOREIGN KEY (Name) REFERENCES Scout(Name)
+  ScoutTrip_Id INT NOT NULL,
+  Scout_Id INT NOT NULL,
+  PRIMARY KEY (ScoutTrip_Id, Scout_Id),
+  FOREIGN KEY (ScoutTrip_Id) REFERENCES ScoutTrip(Id),
+  FOREIGN KEY (Scout_Id) REFERENCES Scout(Id)
 );
 
