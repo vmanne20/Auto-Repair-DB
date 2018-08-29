@@ -27,7 +27,7 @@ cat <<EOF
 
 
 EOF
-docker run -d --name postgres postgres
+docker run -d --name postgres postgres -c 'log_min_duration_statement=0'
 
 
 
