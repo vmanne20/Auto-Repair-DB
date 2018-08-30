@@ -21,13 +21,8 @@ class ScoutController {
       .collect(Collectors.toList());
   }
   @PostMapping("/scouts")
-  public Scout addScout(Scout scout) {
+  public Scout addScout(@RequestBody Scout scout) {
     System.out.println(scout.toString());
     return repository.save(scout);
-  }
-
-  @DeleteMapping("/scouts/{id}")
-  public void deleteScout(@PathVariable long id) {
-    repository.deleteById(id);
   }
 }

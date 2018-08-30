@@ -1,3 +1,13 @@
+function QueryStringToJSON(str) {
+  var pairs = str.split('&');
+  var result = {}
+  pairs.forEach(function(pair) {
+    pair = pair.split('=');
+    result[pair[0]] = decodeURIComponent(pair[1] || '');
+  });
+  return JSON.parse(JSON.stringify(result));
+}
+
 $(document).ready(function () {
   $('#ScoutTableContainer').jtable({
     title: 'Scouts',
@@ -20,32 +30,21 @@ $(document).ready(function () {
       }
     },
     actions: {
-      deleteAction: function (postData) {
-        console.log("deleting scout...");
-        return $.Deferred(function ($dfd) {
-          $.ajax({
-              url: '/deleteScout',
-              type: 'POST',
-              dataType: 'json',
-              data: postData,
-              success: function (data) {
-                  $dfd.resolve({"Result": "OK"});
-              },
-              error: function () {
-                  $dfd.reject();
-              }
-          });
-        });
-      },
       createAction: function (postData, jtParams) {
+        console.log("creating scout:");
+        postData = QueryStringToJSON(postData);
+        console.log(postData);
         return $.Deferred(function ($dfd) {
           $.ajax({
               url: '/scouts',
               type: 'POST',
+              data: postData,
+              dataType: 'json',
               success: function (data) {
                   $dfd.resolve({ "Result": "OK", "Record": data });
               },
               error: function () {
+                  console.log("error");
                   $dfd.reject();
               }
           });
