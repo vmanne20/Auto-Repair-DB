@@ -38,13 +38,15 @@ $(document).ready(function () {
           $.ajax({
               url: '/scouts',
               type: 'POST',
-              data: postData,
+              contentType: "application/json; charset=utf-8",
+              data: JSON.stringify(postData),
               dataType: 'json',
               success: function (data) {
                   $dfd.resolve({ "Result": "OK", "Record": data });
               },
-              error: function () {
+              error: function (xhr, options, error) {
                   console.log("error");
+                  console.log(xhr.responseText);
                   $dfd.reject();
               }
           });

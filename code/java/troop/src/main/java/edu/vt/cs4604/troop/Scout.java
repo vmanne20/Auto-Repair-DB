@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class Scout {
   @Id
   @SequenceGenerator(name="scout_id", sequenceName="scout_id")
-  @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="scout_id")
+  @GeneratedValue(generator="scout_id")
   private Long id;
 
   
