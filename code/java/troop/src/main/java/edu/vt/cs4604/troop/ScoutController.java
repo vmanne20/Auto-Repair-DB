@@ -1,14 +1,14 @@
 package edu.vt.cs4604.troop;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import org.springframework.web.bind.annotation.RestController;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
 @RestController
 class ScoutController {
+  @Autowired
   private ScoutRepository repository;
 
   public ScoutController(ScoutRepository repository) {
@@ -26,9 +26,8 @@ class ScoutController {
     return repository.save(scout);
   }
 
-  @PostMapping("/deleteScout")
-  public Scout deleteScout(Long scoutId) {
-    Scout = repository.findById(scoutId);
-    repository.deleteScout(scoutId);
+  @DeleteMapping("/scouts/{id}")
+  public void deleteScout(@PathVariable long id) {
+    repository.deleteById(id);
   }
 }
