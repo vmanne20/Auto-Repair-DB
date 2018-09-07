@@ -97,3 +97,21 @@ EOF
 # Startup client
 cd ./code/java
 ./runme.sh
+
+
+cat <<EOF
+##########################################
+## To view database logs issue command:
+
+docker logs postgres
+
+## To view application logs issue command:
+
+docker logs app
+
+## To login to the database issue command:
+
+docker run -it --rm --link postgres:postgres postgres psql -a -h postgres -U postgres 
+##########################################
+EOF
+
