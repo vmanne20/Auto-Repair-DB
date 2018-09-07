@@ -63,7 +63,7 @@ docker logs postgres
 
 
 
-# Startup client
+# Install
 cat <<EOF
 ##########################################
 #     Connecting using psql client       #
@@ -91,3 +91,8 @@ cat <<EOF
 # docker rm -f postgres
 
 EOF
+
+
+# Startup client
+cd ./CS4604-project/code/java
+./runme.sh
