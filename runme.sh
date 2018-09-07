@@ -50,7 +50,8 @@ cat <<EOF
 
 EOF
 [ -d CS4604-project ] && rm -rf CS4604-project
-git clone https://code.vt.edu/rquintin/CS4604-project.git || exit 1
+mkdir CS4604-project && cd CS4604-project
+git clone https://code.vt.edu/rquintin/CS4604-project.git . || exit 1
 
 # Wait for server to initialize
 while [ -z "$(docker logs postgres | grep 'database system is ready to accept connections')" ]; do
@@ -71,12 +72,12 @@ cat <<EOF
 # Use Ctrl-D to exit
 EOF
 
-if [ -f CS4604-project/sql/install.sql ]; then
-  volume="$(pwd)/CS4604-project/sql:/sql"
+if [ -f ./sql/install.sql ]; then
+  volume="$(pwd)/sql:/sql"
   docker run -it --rm -v $volume --link postgres:postgres postgres psql -a -h postgres -U postgres -f /sql/install.sql
 fi
-if [ -f CS4604-project/sql/load.sql ]; then
-  volume="$(pwd)/CS4604-project/sql:/sql"
+if [ -f ./sql/load.sql ]; then
+  volume="$(pwd)/sql:/sql"
   docker run -it --rm -v $volume --link postgres:postgres postgres psql -a -h postgres -U postgres -f /sql/load.sql
 fi
 cat <<EOF
@@ -94,5 +95,5 @@ EOF
 
 
 # Startup client
-cd ./CS4604-project/code/java
+cd ./code/java
 ./runme.sh
