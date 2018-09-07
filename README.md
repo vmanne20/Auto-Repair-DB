@@ -15,8 +15,8 @@ Develop a system to track scouts, trips and which scouts have attended each trip
 
 The entities in this project are a *ScoutTrip* and a *Scout*. A Scout *Attends* a ScoutTrip. 
 
-A ScoutTrip is uniquely identified by the *TripDate*.
-A Scout is uniquely identified by the *Name*.
+A ScoutTrip is uniquely identified by *Id* or the *TripDate*.
+A Scout is uniquely identified by *Id* or the *Name*.
 Many Scouts Attend many ScoutTrips.
 
 ![ER Diagram](diagrams/entity-relationship.png  "ER Diagram")
