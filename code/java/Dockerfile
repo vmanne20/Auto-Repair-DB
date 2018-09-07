@@ -1,9 +1,8 @@
-FROM openjdk
+FROM dtr.it.vt.edu/rquintin/cs4604-proj-java:latest
 
-ADD code/java/troop /code
-ADD code/java/m2_repo.tgz /root/.m2/
+ADD code/java/troop /
 COPY sql/install.sql /code/src/main/resources/schema.sql
 COPY sql/load.sql /code/src/main/resources/data.sql
 
-WORKDIR code
+WORKDIR /code
 CMD ["./mvnw", "spring-boot:run"]
