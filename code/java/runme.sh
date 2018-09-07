@@ -11,15 +11,13 @@ docker run -d --rm -p 8080:8080 \
 
 
 cat <<EOF
-To view database logs issue command:
+##########################################
+## To view database logs issue command:
 
-```
 docker logs postgres
-```
 
-To view application logs issue command:
+## To view application logs issue command:
 
-```
 docker logs app
-```
+##########################################
 EOF
