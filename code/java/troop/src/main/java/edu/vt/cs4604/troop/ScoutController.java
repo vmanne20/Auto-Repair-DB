@@ -32,4 +32,5 @@ class ScoutController {
     System.out.println("getting active scouts");
     return repository.activeScouts().stream()
       .collect(Collectors.toList());
+  }
 }
