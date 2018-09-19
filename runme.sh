@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -ex
 MODULE="sql"
 # Turn on debug
 if [ "$1" == "-d" ]; then
@@ -49,9 +49,13 @@ cat <<EOF
 
 
 EOF
-[ -d CS4604-project ] && rm -rf CS4604-project
-mkdir CS4604-project && cd CS4604-project
-git clone https://code.vt.edu/rquintin/CS4604-project.git . || exit 1
+[ -d CS4604-project ] || mkdir CS4604-project
+cd CS4604-project 
+if [ -d .git ]; then
+  git pull
+else
+  git clone https://code.vt.edu/rquintin/CS4604-project.git . || exit 1
+fi
 
 # Wait for server to initialize
 while [ -z "$(docker logs postgres | grep 'database system is ready to accept connections')" ]; do
