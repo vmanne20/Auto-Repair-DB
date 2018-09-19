@@ -17,6 +17,7 @@ class ScoutController {
 
   @GetMapping("/scouts")
   public Collection<Scout> scouts() {
+    System.out.println("getting scouts");
     return repository.findAll().stream()
       .collect(Collectors.toList());
   }
