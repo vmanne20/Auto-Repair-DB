@@ -4,7 +4,16 @@ import lombok.*;
 import java.time.LocalDate;
 import javax.persistence.*;
 
-@NamedQuery(name = "Scout.activeScouts", query = "select scout.* from scout, attends, scouttrip where scout.id = attends.scout_id and scouttrip.id = attends.scouttrip_id and scouttrip.tripdate > current_date - 365;")
+/*
+ * NamedNativeQueries allow us to use _SQL_ queries
+ * to perform complex queries against the database.
+ * Alternatively NamedQueries use _JPQL_ to accomplish
+ * the same thing.
+ * https://en.wikipedia.org/wiki/Java_Persistence_Query_Language
+ */
+@NamedNativeQueries({
+  @NamedNativeQuery(name = "Scout.activeScouts", query = "select s.* from Scout s, Attends a, ScoutTrip st where s.id = a.scout_id and st.id = a.scouttrip_id and st.tripdate > current_date - 365", resultClass = Scout.class)
+})
 
 @Entity
 @Getter @Setter
