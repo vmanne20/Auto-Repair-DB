@@ -9,6 +9,8 @@ insert into ScoutTrip (TripDate, Location, MinAge, MinRank) values ('2018-02-18'
 insert into Scout (Name, DOB, Rank) values ('Joe', '2006-03-21', 'Tenderfoot');
 insert into Scout (Name, DOB, Rank) values ('Parikh', '2004-03-21', 'Star');
 insert into Scout (Name, DOB, Rank) values ('Timmy', '2002-03-21', 'Eagle');
+insert into Scout (Name, DOB, Rank) values ('Lazy Larry', '2006-03-21', 'Scout');
+
 
 
 insert into attends (ScoutTrip_Id, Scout_Id) values (1, 3);
