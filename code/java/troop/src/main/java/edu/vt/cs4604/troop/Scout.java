@@ -4,6 +4,8 @@ import lombok.*;
 import java.time.LocalDate;
 import javax.persistence.*;
 
+@NamedQuery(name = "Scout.activeScouts", query = "select scout.* from scout, attends, scouttrip where scout.id = attends.scout_id and scouttrip.id = attends.scouttrip_id and scouttrip.tripdate > current_date - 365;")
+
 @Entity
 @Getter @Setter
 @NoArgsConstructor

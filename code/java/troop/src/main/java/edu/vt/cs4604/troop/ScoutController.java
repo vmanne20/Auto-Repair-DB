@@ -26,4 +26,10 @@ class ScoutController {
     System.out.println(scout.toString());
     return repository.save(scout);
   }
+
+  @GetMapping("/activeScouts")
+  public Collection<Scout> activeScouts() {
+    System.out.println("getting active scouts");
+    return repository.activeScouts().stream()
+      .collect(Collectors.toList());
 }
