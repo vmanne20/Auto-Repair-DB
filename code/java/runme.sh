@@ -24,4 +24,15 @@ docker run -d --rm -p 8080:8080 \
   --name app \
   app $*
 
-docker logs -f app
+echo -n "waiting for application to startup."
+i=1
+while [ $i -lt 100 ]; do
+  i=$(($i + 1))
+  echo -n "."
+  if [ $(docker logs app 2>&1 |grep -c -- '--Application Started--') -ne 0 ]; then
+    echo "Started!"
+    break
+  fi
+  sleep 1
+done
+echo
