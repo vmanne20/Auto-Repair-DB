@@ -28,9 +28,9 @@ class ScoutController {
   }
 
   @GetMapping("/activeScouts")
-  public Collection<Scout> activeScouts() {
+  public Collection<Scout> activeScouts(@RequestParam("days") String days) {
     System.out.println("getting active scouts");
-    return repository.activeScouts().stream()
+    return repository.activeScouts(days).stream()
       .collect(Collectors.toList());
   }
 }

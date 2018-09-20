@@ -36,3 +36,4 @@ while [ $i -lt 100 ]; do
   sleep 1
 done
 echo
+docker logs app

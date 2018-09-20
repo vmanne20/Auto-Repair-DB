@@ -12,7 +12,13 @@ import javax.persistence.*;
  * https://en.wikipedia.org/wiki/Java_Persistence_Query_Language
  */
 @NamedNativeQueries({
-  @NamedNativeQuery(name = "Scout.activeScouts", query = "select s.* from Scout s, Attends a, ScoutTrip st where s.id = a.scout_id and st.id = a.scouttrip_id and st.tripdate > current_date - 365", resultClass = Scout.class)
+  @NamedNativeQuery(
+    name = "Scout.activeScouts", 
+    query = "select s.* from Scout s, Attends a, ScoutTrip st " +
+            "where s.id = a.scout_id and st.id = a.scouttrip_id " +
+            "and st.tripdate > now() - ((interval '1 days') * to_number(:days, '99999'))", 
+    resultClass = Scout.class
+  )
 })
 
 @Entity
