@@ -1,6 +1,4 @@
 #!/bin/bash
-set -ex
-MODULE="sql"
 # Turn on debug
 if [ "$1" == "-d" ]; then
   set -x
