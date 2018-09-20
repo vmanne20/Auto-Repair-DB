@@ -16,7 +16,17 @@
   </head>
 
   <body>
-    Click <a href="/client/index.html">here for the main page</a>.
+    Click <a href="/client/index.html">here for the main page</a>.<br/>
+
+    List Scouts who have been on a trip in the past: 
+    <select id="days" onchange="fetchActiveScouts()">
+      <option value="7">Week
+      <option value="30">Month
+      <option value="60">2 Months
+      <option value="180">6 Months
+      <option value="365"> Year
+    </select>
+    
     <div id="ScoutTableContainer"></div>
   </body>
 </html>

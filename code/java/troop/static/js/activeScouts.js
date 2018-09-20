@@ -33,7 +33,7 @@ $(document).ready(function () {
       listAction: function (postData, jtParams) {
         return $.Deferred(function ($dfd) {
           $.ajax({
-              url: '/activeScouts',
+              url: '/activeScouts?days=' + document.getElementById("days").value,
               type: 'GET',
               success: function (data) {
                   $dfd.resolve({ "Result": "OK", "Records": data, "TotalRecordCount": data.length });
@@ -48,3 +48,7 @@ $(document).ready(function () {
   });
   $('#ScoutTableContainer').jtable('load');
 });
+
+function fetchActiveScouts() {
+  $('#ScoutTableContainer').jtable('load');
+}
