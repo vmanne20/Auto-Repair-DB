@@ -40,6 +40,9 @@ Execute the following command:
 
 `curl -o runme.sh https://code.vt.edu/rquintin/CS4604-project/raw/master/runme.sh && bash ./runme.sh`
 
+This will start up a container listening on port 8080. Notice at the top of the page next to the
+node's IP address there is now a link labeled **8080**. Click on that link to use the application.
+
 ### Linux
 
 [Install Docker](https://docs.docker.com/install/#supported-platforms) on your favorite Linux machine.
