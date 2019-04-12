@@ -8,11 +8,11 @@ insert into ScoutTrip (TripDate, Location, MinAge, MinRank) values (current_date
 insert into ScoutTrip (TripDate, Location, MinAge, MinRank) values ('2018-02-18', 'Claytor Lake', null, 'Scout');
 
 
-insert into Scout (Name, DOB, Rank) values ('Joe', '2006-03-21', 'Tenderfoot');
-insert into Scout (Name, DOB, Rank) values ('Parikh', '2004-03-21', 'Star');
-insert into Scout (Name, DOB, Rank) values ('Timmy', '2002-03-21', 'Eagle');
-insert into Scout (Name, DOB, Rank) values ('Sally', '2008-03-21', 'First Class');
-insert into Scout (Name, DOB, Rank) values ('Lazy Larry', '2006-03-21', 'Scout');
+insert into Scout (Name, DOB, Rank, tempfield) values ('Joe', '2006-03-21', 'Tenderfoot', 'hello');
+insert into Scout (Name, DOB, Rank, tempfield) values ('Parikh', '2004-03-21', 'Star', 'hello');
+insert into Scout (Name, DOB, Rank, tempfield) values ('Timmy', '2002-03-21', 'Eagle', 'hello');
+insert into Scout (Name, DOB, Rank, tempfield) values ('Sally', '2008-03-21', 'First Class', 'hello');
+insert into Scout (Name, DOB, Rank, tempfield) values ('Lazy Larry', '2006-03-21', 'Scout', 'hello');
 
 
 

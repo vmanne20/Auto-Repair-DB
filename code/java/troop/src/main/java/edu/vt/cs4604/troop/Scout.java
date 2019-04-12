@@ -35,4 +35,5 @@ public class Scout {
   private String name;
   private LocalDate dob;
   private String rank;
+  private String tempfield;
 }

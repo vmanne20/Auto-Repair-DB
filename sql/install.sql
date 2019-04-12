@@ -24,7 +24,7 @@ CREATE TABLE Scout
   Name VARCHAR(60) NOT NULL,
   DOB DATE NOT NULL,
   Rank VARCHAR(60) NOT NULL,
-  tempfield VARCHAR(60),
+  tempfield VARCHAR(60) NOT NULL,
   PRIMARY KEY (Id),
   UNIQUE (Name)
 );
