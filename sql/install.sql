@@ -54,8 +54,8 @@ CREATE TABLE PhoneNumber
   customer_id INT NOT NULL,
   c_name VARCHAR(60) NOT NULL,
   c_number CHAR(20) NOT NULL,
-  PRIMARY KEY (c_number, customer_id),
-  FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
+  PRIMARY KEY (c_number),
+--   FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
 );
 
 CREATE SEQUENCE car_ID;

@@ -5,8 +5,6 @@
           fields: {
             customer_id: {
                 title: 'Customer ID',
-                key: true,
-                list: true
             },
             c_name: {
                 title: 'Name'

@@ -24,12 +24,11 @@ import javax.persistence.*;
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
 public class PhoneNumber {
-  @Id
+//   @Id
     //   @SequenceGenerator(name="customer_id", sequenceName="customer_id")
     //   @GeneratedValue(generator="car_id")
-  private String customer_id;
-
-  @Id
-  private String c_number;
-  private String c_name;
+    @Id
+    private String c_number;
+    private String customer_id;
+    private String c_name;
 }
