@@ -23,32 +23,32 @@ insert into attends (ScoutTrip_Id, Scout_Id) values (4, 4);
 
 /* Sample data to be inserted at run time .
 */
-insert into Customer (c_name, c_address) values (1, 'Carl Yao', '130 Main St.');
-insert into Customer (c_name, c_address) values (2, 'Vamsi Manne', '220 Main St.');
-insert into Customer (c_name, c_address) values (3, 'Sid Hingorani', '50 Main St.');
-insert into Customer (c_name, c_address) values (4, 'AJ Goudel', '500 Main St.');
-insert into Customer (c_name, c_address) values (5, 'Bob Smith', '780 Main St.');
-insert into Customer (c_name, c_address) values (6, 'Jack Davis', '320 Main St.');
-insert into Customer (c_name, c_address) values (7, 'John Wellesley', '455 Main St.');
-insert into Customer (c_name, c_address) values (8, 'Donald Trump', '1600 Pennsylvania Ave.');
-insert into Customer (c_name, c_address) values (9, 'Robert Mueller', '10 First St.');
-insert into Customer (c_name, c_address) values (10, 'Nancy Pelosi', '10 First St.');
+insert into Customer (c_name, c_address) values ('Carl Yao', '130 Main St.');
+insert into Customer (c_name, c_address) values ('Vamsi Manne', '220 Main St.');
+insert into Customer (c_name, c_address) values ('Sid Hingorani', '50 Main St.');
+insert into Customer (c_name, c_address) values ('AJ Goudel', '500 Main St.');
+insert into Customer (c_name, c_address) values ('Bob Smith', '780 Main St.');
+insert into Customer (c_name, c_address) values ('Jack Davis', '320 Main St.');
+insert into Customer (c_name, c_address) values ('John Wellesley', '455 Main St.');
+insert into Customer (c_name, c_address) values ('Donald Trump', '1600 Pennsylvania Ave.');
+insert into Customer (c_name, c_address) values ('Robert Mueller', '10 First St.');
+insert into Customer (c_name, c_address) values ('Nancy Pelosi', '10 First St.');
 
-insert into Car (car_ID, make_year, make, model, customer_ID) values (1, '2001', 'Honda', 'Accord', 2);
-insert into Car (car_ID, make_year, make, model, customer_ID) values (2, '2004', 'Mazda', 'CX-9', 1);
-insert into Car (car_ID, make_year, make, model, customer_ID) values (3, '2005', 'BMW', '335i', 3);
-insert into Car (car_ID, make_year, make, model, customer_ID) values (4, '2007', 'Mercedes-Benz', 'C200', 4);
-insert into Car (car_ID, make_year, make, model, customer_ID) values (5, '2009', 'Audi', 'A6', 6);
-insert into Car (car_ID, make_year, make, model, customer_ID) values (6, '1996', 'Ford', 'Taurus', 7);
-insert into Car (car_ID, make_year, make, model, customer_ID) values (7, '2015', 'Toyota', 'Corolla', 5);
-insert into Car (car_ID, make_year, make, model, customer_ID) values (8, '2018', 'Honda', 'Civic', 2);
-insert into Car (car_ID, make_year, make, model, customer_ID) values (9, '2003', 'Toyota', 'Camry', 10);
-insert into Car (car_ID, make_year, make, model, customer_ID) values (10, '2008', 'Honda', 'Pilot', 9);
-insert into Car (car_ID, make_year, make, model, customer_ID) values (11, '1990', 'Dodge', 'Ram', 8);
-insert into Car (car_ID, make_year, make, model, customer_ID) values (12, '2005', 'BMW', 'X5', 1);
-insert into Car (car_ID, make_year, make, model, customer_ID) values (13, '2013', 'Audi', 'Q7', 2);
-insert into Car (car_ID, make_year, make, model, customer_ID) values (14, '2018', 'BMW', 'X7', 10);
-insert into Car (car_ID, make_year, make, model, customer_ID) values (15, '1999', 'Audi', 'A4', 8);
+insert into Car (make_year, make, model, customer_ID) values ('2001', 'Honda', 'Accord', 2);
+insert into Car (make_year, make, model, customer_ID) values ('2004', 'Mazda', 'CX-9', 1);
+insert into Car (make_year, make, model, customer_ID) values ('2005', 'BMW', '335i', 3);
+insert into Car (make_year, make, model, customer_ID) values ('2007', 'Mercedes-Benz', 'C200', 4);
+insert into Car (make_year, make, model, customer_ID) values ('2009', 'Audi', 'A6', 6);
+insert into Car (make_year, make, model, customer_ID) values ('1996', 'Ford', 'Taurus', 7);
+insert into Car (make_year, make, model, customer_ID) values ('2015', 'Toyota', 'Corolla', 5);
+insert into Car (make_year, make, model, customer_ID) values ('2018', 'Honda', 'Civic', 2);
+insert into Car (make_year, make, model, customer_ID) values ('2003', 'Toyota', 'Camry', 10);
+insert into Car (make_year, make, model, customer_ID) values ('2008', 'Honda', 'Pilot', 9);
+insert into Car (make_year, make, model, customer_ID) values ('1990', 'Dodge', 'Ram', 8);
+insert into Car (make_year, make, model, customer_ID) values ('2005', 'BMW', 'X5', 1);
+insert into Car (make_year, make, model, customer_ID) values ('2013', 'Audi', 'Q7', 2);
+insert into Car (make_year, make, model, customer_ID) values ('2018', 'BMW', 'X7', 10);
+insert into Car (make_year, make, model, customer_ID) values ('1999', 'Audi', 'A4', 8);
 
 insert into PhoneNumber (customer_ID, c_number) values (1, '(316) 874-3435');
 insert into PhoneNumber (customer_ID, c_number) values (1, '(375) 529-2179');
