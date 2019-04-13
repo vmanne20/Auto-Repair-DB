@@ -15,8 +15,8 @@ $(document).ready(function () {
     fields: {
       id: {
         title: 'Id',
-        key: true
-        // list: false
+        key: true,
+        list: false
       },
       name: {
         title: 'Name'

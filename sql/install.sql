@@ -40,13 +40,13 @@ CREATE TABLE Attends
 );
 
 
-CREATE SEQUENCE customer_ID;
+CREATE SEQUENCE Customer_Id;
 CREATE TABLE Customer
 (
-  customer_ID INT DEFAULT nextval('customer_ID') NOT NULL,
+  customer_id INT DEFAULT nextval('Customer_Id') NOT NULL,
   c_name VARCHAR(60) NOT NULL,
   c_address VARCHAR(100) NOT NULL,
-  PRIMARY KEY (customer_ID)
+  PRIMARY KEY (customer_id)
 );
 
 CREATE SEQUENCE car_ID;
@@ -56,15 +56,15 @@ CREATE TABLE Car
   make_year VARCHAR(5) NOT NULL,
   make VARCHAR(60) NOT NULL,
   model VARCHAR(60) NOT NULL,
-  customer_ID INT NOT NULL,
+  customer_id INT NOT NULL,
   PRIMARY KEY (car_ID),
-  FOREIGN KEY (customer_ID) REFERENCES Customer(customer_ID)
+  FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
 );
 
 CREATE TABLE PhoneNumber
 (
   c_number CHAR(20) NOT NULL,
-  customer_ID INT NOT NULL,
-  PRIMARY KEY (c_number, customer_ID),
-  FOREIGN KEY (customer_ID) REFERENCES Customer(customer_ID)
+  customer_id INT NOT NULL,
+  PRIMARY KEY (c_number, customer_id),
+  FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
 );
