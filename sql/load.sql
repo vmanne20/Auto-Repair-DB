@@ -50,7 +50,7 @@ insert into Car (make_year, make, model, customer_ID) values ('2013', 'Audi', 'Q
 insert into Car (make_year, make, model, customer_ID) values ('2018', 'BMW', 'X7', 10);
 insert into Car (make_year, make, model, customer_ID) values ('1999', 'Audi', 'A4', 8);
 
-insert into PhoneNumber (c_id, c_name, c_number) values ('1', 'Carl Yao', '(316) 874-3435');
+insert into PhoneNumber (c_name, c_number) values ('Carl Yao', '(316) 874-3435');
 -- insert into PhoneNumber (customer_ID, c_number) values (1, '(316) 874-3435');
 -- insert into PhoneNumber (customer_ID, c_number) values (1, '(375) 529-2179');
 -- insert into PhoneNumber (customer_ID, c_number) values (1, '(989) 470-4397');

@@ -3,15 +3,16 @@
         $('#PhoneTableContainer').jtable({
           title: 'Phone Numbers',
           fields: {
-            customer_id: {
+            p_id: {
                 title: 'Customer ID',
+                key: true,
+                list: false
             },
             c_name: {
                 title: 'Name'
             },
             c_number: {
-                title: 'Number',
-                key: true
+                title: 'Number'
             }
           },
           actions: {
