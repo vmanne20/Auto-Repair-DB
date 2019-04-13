@@ -4,7 +4,7 @@ drop table if exists scout cascade;
 
 drop table if exists Customer cascade;
 drop table if exists Car cascade;
-drop table if exists phone_number cascade;
+drop table if exists PhoneNumber cascade;
 
 CREATE SEQUENCE ScoutTrip_Id;
 CREATE TABLE ScoutTrip
@@ -49,6 +49,15 @@ CREATE TABLE Customer
   PRIMARY KEY (customer_id)
 );
 
+CREATE TABLE PhoneNumber
+(
+  customer_id INT NOT NULL,
+  c_name VARCHAR(60) NOT NULL,
+  c_number CHAR(20) NOT NULL,
+  PRIMARY KEY (c_number, customer_id),
+  FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
+);
+
 CREATE SEQUENCE car_ID;
 CREATE TABLE Car
 (
@@ -61,11 +70,4 @@ CREATE TABLE Car
   FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
 );
 
-CREATE TABLE PhoneNumber
-(
-  customer_id INT NOT NULL,
-  c_name VARCHAR(60) NOT NULL,
-  c_number CHAR(20) NOT NULL,
-  PRIMARY KEY (c_number, customer_id),
-  FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
-);
+
