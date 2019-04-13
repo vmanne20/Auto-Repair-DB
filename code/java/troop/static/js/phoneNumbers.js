@@ -11,8 +11,7 @@
             },
             c_number: {
                 title: 'Number',
-                key: true,
-                list: true
+                key: true
             }
           },
           actions: {
