@@ -8,6 +8,7 @@ function QueryStringToJSON(str) {
   return JSON.parse(JSON.stringify(result));
 }
 
+// SCOUTS
 $(document).ready(function () {
   $('#ScoutTableContainer').jtable({
     title: 'Scouts',
@@ -28,9 +29,7 @@ $(document).ready(function () {
         title: 'Birth Date',
         type: 'date'
       },
-      tempfield: {
-        title: 'Temp Field'
-      }
+      tempfield: {title: 'Temp Field'}
     },
     actions: {
       createAction: function (postData, jtParams) {
@@ -74,3 +73,5 @@ $(document).ready(function () {
   });
   $('#ScoutTableContainer').jtable('load');
 });
+
+
