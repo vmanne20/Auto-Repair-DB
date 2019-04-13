@@ -53,7 +53,7 @@ CREATE TABLE PhoneNumber
 (
   c_id VARCHAR(20) NOT NULL,
   c_name VARCHAR(60) NOT NULL,
-  c_number CHAR(20) NOT NULL,
+  c_number VARCHAR(20) NOT NULL,
   PRIMARY KEY (c_number)
 --   FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
 );
