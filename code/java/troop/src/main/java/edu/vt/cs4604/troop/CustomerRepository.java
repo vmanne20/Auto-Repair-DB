@@ -12,5 +12,5 @@ interface CustomerRepository extends JpaRepository<Customer, Long> {
    * @return  A list of scouts who have attended a trip recently.
    */
   @Query(nativeQuery = true)
-  public List<Scout> activeScouts(@Param("days")String days);
+  public List<Customer> activeCustomers(@Param("days")String days);
 }
