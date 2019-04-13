@@ -23,16 +23,16 @@ insert into attends (ScoutTrip_Id, Scout_Id) values (4, 4);
 
 /* Sample data to be inserted at run time .
 */
-insert into Customer (customer_ID, c_name, c_address) values (1, 'Carl Yao', '130 Main St.');
-insert into Customer (customer_ID, c_name, c_address) values (2, 'Vamsi Manne', '220 Main St.');
-insert into Customer (customer_ID, c_name, c_address) values (3, 'Sid Hingorani', '50 Main St.');
-insert into Customer (customer_ID, c_name, c_address) values (4, 'AJ Goudel', '500 Main St.');
-insert into Customer (customer_ID, c_name, c_address) values (5, 'Bob Smith', '780 Main St.');
-insert into Customer (customer_ID, c_name, c_address) values (6, 'Jack Davis', '320 Main St.');
-insert into Customer (customer_ID, c_name, c_address) values (7, 'John Wellesley', '455 Main St.');
-insert into Customer (customer_ID, c_name, c_address) values (8, 'Donald Trump', '1600 Pennsylvania Ave.');
-insert into Customer (customer_ID, c_name, c_address) values (9, 'Robert Mueller', '10 First St.');
-insert into Customer (customer_ID, c_name, c_address) values (10, 'Nancy Pelosi', '10 First St.');
+insert into Customer (c_name, c_address) values (1, 'Carl Yao', '130 Main St.');
+insert into Customer (c_name, c_address) values (2, 'Vamsi Manne', '220 Main St.');
+insert into Customer (c_name, c_address) values (3, 'Sid Hingorani', '50 Main St.');
+insert into Customer (c_name, c_address) values (4, 'AJ Goudel', '500 Main St.');
+insert into Customer (c_name, c_address) values (5, 'Bob Smith', '780 Main St.');
+insert into Customer (c_name, c_address) values (6, 'Jack Davis', '320 Main St.');
+insert into Customer (c_name, c_address) values (7, 'John Wellesley', '455 Main St.');
+insert into Customer (c_name, c_address) values (8, 'Donald Trump', '1600 Pennsylvania Ave.');
+insert into Customer (c_name, c_address) values (9, 'Robert Mueller', '10 First St.');
+insert into Customer (c_name, c_address) values (10, 'Nancy Pelosi', '10 First St.');
 
 insert into Car (car_ID, make_year, make, model, customer_ID) values (1, '2001', 'Honda', 'Accord', 2);
 insert into Car (car_ID, make_year, make, model, customer_ID) values (2, '2004', 'Mazda', 'CX-9', 1);

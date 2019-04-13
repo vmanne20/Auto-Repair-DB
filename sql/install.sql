@@ -1,6 +1,7 @@
 drop table if exists attends cascade;
 drop table if exists scouttrip cascade;
 drop table if exists scout cascade;
+
 drop table if exists Customer cascade;
 drop table if exists Car cascade;
 drop table if exists phone_number cascade;
@@ -43,8 +44,8 @@ CREATE SEQUENCE customer_ID;
 CREATE TABLE Customer
 (
   customer_ID INT DEFAULT nextval('customer_ID') NOT NULL,
-  c_name VARCHAR NOT NULL,
-  c_address VARCHAR NOT NULL,
+  c_name VARCHAR(60) NOT NULL,
+  c_address VARCHAR(100) NOT NULL,
   PRIMARY KEY (customer_ID)
 );
 
@@ -52,9 +53,9 @@ CREATE SEQUENCE car_ID;
 CREATE TABLE Car
 (
   car_ID INT DEFAULT nextval('car_ID') NOT NULL,
-  make_year INT NOT NULL,
-  make VARCHAR NOT NULL,
-  model VARCHAR NOT NULL,
+  make_year VARCHAR(5) NOT NULL,
+  make VARCHAR(60) NOT NULL,
+  model VARCHAR(60) NOT NULL,
   customer_ID INT NOT NULL,
   PRIMARY KEY (car_ID),
   FOREIGN KEY (customer_ID) REFERENCES Customer(customer_ID)
