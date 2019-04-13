@@ -50,23 +50,24 @@ insert into Car (make_year, make, model, customer_ID) values ('2013', 'Audi', 'Q
 insert into Car (make_year, make, model, customer_ID) values ('2018', 'BMW', 'X7', 10);
 insert into Car (make_year, make, model, customer_ID) values ('1999', 'Audi', 'A4', 8);
 
-insert into PhoneNumber (customer_ID, c_number) values (1, '(316) 874-3435');
-insert into PhoneNumber (customer_ID, c_number) values (1, '(375) 529-2179');
-insert into PhoneNumber (customer_ID, c_number) values (1, '(989) 470-4397');
-insert into PhoneNumber (customer_ID, c_number) values (2, '(204) 386-9308');
-insert into PhoneNumber (customer_ID, c_number) values (2, '(921) 781-7476');
-insert into PhoneNumber (customer_ID, c_number) values (3, '(827) 406-8498');
-insert into PhoneNumber (customer_ID, c_number) values (4, '(554) 690-6469');
-insert into PhoneNumber (customer_ID, c_number) values (5, '(224) 761-3489');
-insert into PhoneNumber (customer_ID, c_number) values (6, '(911) 489-2920');
-insert into PhoneNumber (customer_ID, c_number) values (6, '(310) 301-4766');
-insert into PhoneNumber (customer_ID, c_number) values (7, '(607) 857-3535');
-insert into PhoneNumber (customer_ID, c_number) values (7, '(383) 554-7756');
-insert into PhoneNumber (customer_ID, c_number) values (7, '(807) 472-8953');
-insert into PhoneNumber (customer_ID, c_number) values (8, '(824) 791-9502');
-insert into PhoneNumber (customer_ID, c_number) values (8, '(383) 588-5457');
-insert into PhoneNumber (customer_ID, c_number) values (9, '(311) 582-5381');
-insert into PhoneNumber (customer_ID, c_number) values (10, '(679) 939-5399');
-insert into PhoneNumber (customer_ID, c_number) values (10, '(971) 559-5233');
+insert into PhoneNumber (customer_id, c_name, c_number) values (1, 'Carl Yao', '(316) 874-3435');
+-- insert into PhoneNumber (customer_ID, c_number) values (1, '(316) 874-3435');
+-- insert into PhoneNumber (customer_ID, c_number) values (1, '(375) 529-2179');
+-- insert into PhoneNumber (customer_ID, c_number) values (1, '(989) 470-4397');
+-- insert into PhoneNumber (customer_ID, c_number) values (2, '(204) 386-9308');
+-- insert into PhoneNumber (customer_ID, c_number) values (2, '(921) 781-7476');
+-- insert into PhoneNumber (customer_ID, c_number) values (3, '(827) 406-8498');
+-- insert into PhoneNumber (customer_ID, c_number) values (4, '(554) 690-6469');
+-- insert into PhoneNumber (customer_ID, c_number) values (5, '(224) 761-3489');
+-- insert into PhoneNumber (customer_ID, c_number) values (6, '(911) 489-2920');
+-- insert into PhoneNumber (customer_ID, c_number) values (6, '(310) 301-4766');
+-- insert into PhoneNumber (customer_ID, c_number) values (7, '(607) 857-3535');
+-- insert into PhoneNumber (customer_ID, c_number) values (7, '(383) 554-7756');
+-- insert into PhoneNumber (customer_ID, c_number) values (7, '(807) 472-8953');
+-- insert into PhoneNumber (customer_ID, c_number) values (8, '(824) 791-9502');
+-- insert into PhoneNumber (customer_ID, c_number) values (8, '(383) 588-5457');
+-- insert into PhoneNumber (customer_ID, c_number) values (9, '(311) 582-5381');
+-- insert into PhoneNumber (customer_ID, c_number) values (10, '(679) 939-5399');
+-- insert into PhoneNumber (customer_ID, c_number) values (10, '(971) 559-5233');
 
 
