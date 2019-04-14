@@ -69,7 +69,7 @@ CREATE TABLE Car
   make_year VARCHAR(5) NOT NULL,
   make VARCHAR(60) NOT NULL,
   model VARCHAR(60) NOT NULL,
-  PRIMARY KEY (Id),
+  PRIMARY KEY (Id)
 --   FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
 );
 

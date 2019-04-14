@@ -3,7 +3,7 @@ package edu.vt.cs4604.troop;
 import lombok.*;
 // import java.time.LocalDate;
 import javax.persistence.*;
-import java.io.*;
+// import java.io.*;
 
 /*
  * NamedNativeQueries allow us to use _SQL_ queries
@@ -54,7 +54,4 @@ public class PhoneNumber {
     }
 }
 
-class CompositeKey implements Serializable {
-    private String c_number;
-    private Long c_id;
-}
+
