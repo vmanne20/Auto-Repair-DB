@@ -13,7 +13,7 @@ import javax.persistence.*;
  */
 @NamedNativeQueries({
   @NamedNativeQuery(
-    name = "PhoneNumber.activeNums", 
+    name = "phone_number.activeNums", 
     query = "select * from phone_number", 
     resultClass = PhoneNumber.class
   )
@@ -28,6 +28,7 @@ public class PhoneNumber {
       @SequenceGenerator(name="p_id", sequenceName="p_id")
       @GeneratedValue(generator="p_id")
     private Long p_id;
+    private String c_id;
     private String c_name;
     private String c_number;
 }
