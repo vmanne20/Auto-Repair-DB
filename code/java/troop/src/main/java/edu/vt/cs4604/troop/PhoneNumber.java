@@ -25,8 +25,8 @@ import javax.persistence.*;
 @ToString @EqualsAndHashCode
 public class PhoneNumber {
   @Id
-      @SequenceGenerator(name="customer_id", sequenceName="customer_id")
-      @GeneratedValue(generator="car_id")
+      @SequenceGenerator(name="p_id", sequenceName="p_id")
+      @GeneratedValue(generator="p_id")
     private Long p_id;
     private String c_name;
     private String c_number;
