@@ -50,7 +50,7 @@ CREATE TABLE Customer
 );
 
 CREATE SEQUENCE Phone_Id;
-CREATE TABLE PhoneNumber
+CREATE TABLE phone_number
 (
   p_id INT DEFAULT nextval('Phone_Id') NOT NULL,
   c_name VARCHAR(60) NOT NULL,

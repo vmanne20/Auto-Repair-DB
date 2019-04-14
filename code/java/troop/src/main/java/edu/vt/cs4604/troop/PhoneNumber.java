@@ -14,7 +14,7 @@ import javax.persistence.*;
 @NamedNativeQueries({
   @NamedNativeQuery(
     name = "PhoneNumber.activeNums", 
-    query = "select * from PhoneNumber", 
+    query = "select * from phone_number", 
     resultClass = PhoneNumber.class
   )
 })
