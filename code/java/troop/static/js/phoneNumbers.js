@@ -25,7 +25,7 @@
               console.log(postData);
               return $.Deferred(function ($dfd) {
                 $.ajax({
-                  url: '/phonenumbers',
+                  url: '/phoneNumbers',
                   type: 'POST',
                   contentType: "application/json; charset=utf-8",
                   data: JSON.stringify(postData),
@@ -45,7 +45,7 @@
             listAction: function (postData, jtParams) {
               return $.Deferred(function ($dfd) {
                 $.ajax({
-                  url: '/phonenumbers',
+                  url: '/phoneNumbers',
                   type: 'GET',
                   success: function (data) {
                     $dfd.resolve({ "Result": "OK", "Records": data, "TotalRecordCount": data.length });

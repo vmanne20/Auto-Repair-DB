@@ -15,15 +15,15 @@ class PhoneNumberController {
     this.repository = repository;
   }
 
-  @GetMapping("/phonenumbers")
-  public Collection<PhoneNumber> numbers() {
+  @GetMapping("/phoneNumbers")
+  public Collection<PhoneNumber> phoneNumbers() {
     System.out.println("getting numbers");
     return repository.findAll().stream()
       .collect(Collectors.toList());
   }
-  
-  @PostMapping("/phonenumbers")
-  public PhoneNumber addNumber(@RequestBody PhoneNumber phoneNumber) {
+
+  @PostMapping("/phoneNumbers")
+  public PhoneNumber addPhoneNumber(@RequestBody PhoneNumber phoneNumber) {
     System.out.println(phoneNumber.toString());
     return repository.save(phoneNumber);
   }

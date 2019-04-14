@@ -3,7 +3,7 @@
         $('#CustomerTableContainer').jtable({
           title: 'Customers',
           fields: {
-            customer_id: {
+            id: {
                 title: 'Customer Id',
                 key: true,
                 list: false
