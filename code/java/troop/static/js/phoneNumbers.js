@@ -3,7 +3,7 @@
         $('#PhoneTableContainer').jtable({
           title: 'Phone Numbers',
           fields: {
-            p_id: {
+            id: {
                 title: 'Phone ID',
                 key: true,
                 list: false
