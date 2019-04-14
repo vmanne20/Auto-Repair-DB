@@ -32,27 +32,27 @@ public class PhoneNumber {
     //   @GeneratedValue(generator="phone_id")
     // private Long id;
 
-    @EmbeddedId
-    private CompositeKey compositeKey;  // includes c_id & c_number
+    // @EmbeddedId
+    // private CompositeKey compositeKey;  // includes c_id & c_number
 
     private String c_name;
 
-    // @Id
-    // private String c_number;
-
     @Id
+    private String c_number;
+
+    // @Id
     @ManyToOne
     @JoinColumn(name="c_id")
     private Customer customer;
 
     public PhoneNumber() {
-
+        
     }
 
-    public PhoneNumber(CompositeKey compositeKey, Customer customer) {
+    public PhoneNumber(String c_number, Customer customer) {
         this.customer = customer;
-        this.c_name = customer.getName();
-        this.compositeKey = compositeKey;
+        c_name = customer.getName();
+        this.c_number = c_number;
     }
 }
 

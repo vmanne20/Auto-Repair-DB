@@ -45,20 +45,9 @@ public class Customer {
 
         this.numbers = new HashSet<>();
         for (int i = 0; i < numbers.length; i++) {
-            CompositeKey key = new CompositeKey(id, numbers[i]);
-            PhoneNumber pn = new PhoneNumber(key, this);
+            PhoneNumber pn = new PhoneNumber(numbers[i], this);
             this.numbers.add(pn);
         }
-        
-        // this.numbers.forEach(phoneNumber -> { 
-        //     phoneNumber.setName(c_name);
-        //     phoneNumber.setNumber((String) numbers[i]);
-        //     phoneNumber.setCustomer(this);
-        //     i++;
-        // });
-
-        // this.numbers = Stream.of(numbers).collect(Collectors.toSet());
-        // this.numbers.forEach(x -> x.setCustomer(this));
     }
 
     public String getName() {
