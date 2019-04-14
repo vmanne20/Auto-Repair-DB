@@ -25,34 +25,29 @@ import javax.persistence.*;
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
 @Table(name="phone_number")
-@IdClass(CompositeKey.class)
+// @IdClass(CompositeKey.class)
 public class PhoneNumber {
 //   @Id
     //   @SequenceGenerator(name="phone_id", sequenceName="phone_id")
     //   @GeneratedValue(generator="phone_id")
     // private Long id;
 
-    // @EmbeddedId
-    // private CompositeKey compositeKey;  // includes c_id & c_number
+    @EmbeddedId
+    private CompositeKey compositeKey;  // includes c_id & c_number
 
     private String c_name;
 
-    @Id
-    private String c_number;
-
     // @Id
-    @ManyToOne
-    @JoinColumn(name="c_id")
-    private Customer customer;
+    // private String c_number;
 
     public PhoneNumber() {
-        
+
     }
 
-    public PhoneNumber(String c_number, Customer customer) {
-        this.customer = customer;
-        c_name = customer.getName();
-        this.c_number = c_number;
+    public PhoneNumber(String c_name, CompositeKey compositeKey) {
+        this.c_name = c_name;
+        this.compositeKey = compositeKey;
+        
     }
 }
 

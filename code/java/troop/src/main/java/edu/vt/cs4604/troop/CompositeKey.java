@@ -6,28 +6,36 @@ import javax.validation.constraints.*;
 @Embeddable
 public class CompositeKey implements Serializable {
    
+    // @Id
+    // private Long c_id;
+
+    // @Id
     @NotNull
-    private Long c_id;
+    @ManyToOne
+    @JoinColumn(name="c_id")
+    private Customer customer;
    
+    // @Id
     @NotNull
     @Size(max = 20)
     private String c_number;
+   
 
     public CompositeKey() {
 
     }
 
-    public CompositeKey(long c_id, String c_number) {
-        this.c_id = c_id;
+    public CompositeKey(String c_number, Customer customer) {
+        this.customer = customer;
         this.c_number = c_number;
     }
 
     public Long getCustomerId() {
-        return c_id;
+        return customer.getId();
     }
 
     public void setCustomerId(Long c_id) {
-        this.c_id = c_id;
+        customer.setId(c_id);
     }
 
     public String getCustomerNumber() {
@@ -46,12 +54,12 @@ public class CompositeKey implements Serializable {
         CompositeKey that = (CompositeKey) o;
 
         if (!c_number.equals(that.c_number)) return false;
-        return c_id.equals(that.c_id);
+        return customer.getId().equals(that.customer.getId());
     }
 
     @Override
     public int hashCode() {
-        int result = c_id.hashCode();
+        int result = customer.getId().hashCode();
         result = 31 * result + c_number.hashCode();
         return result;
     }

@@ -45,12 +45,21 @@ public class Customer {
 
         this.numbers = new HashSet<>();
         for (int i = 0; i < numbers.length; i++) {
-            PhoneNumber pn = new PhoneNumber(numbers[i], this);
+            CompositeKey key = new CompositeKey(numbers[i], this);
+            PhoneNumber pn = new PhoneNumber(this.c_name, key);
             this.numbers.add(pn);
         }
     }
 
     public String getName() {
         return c_name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long c_id) {
+        id = c_id;
     }
 }
