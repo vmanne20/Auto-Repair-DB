@@ -21,6 +21,7 @@ class PhoneNumberController {
     return repository.findAll().stream()
       .collect(Collectors.toList());
   }
+  
   @PostMapping("/phonenumbers")
   public PhoneNumber addNumber(@RequestBody PhoneNumber phoneNumber) {
     System.out.println(phoneNumber.toString());
