@@ -46,7 +46,7 @@ CREATE TABLE Customer
   Id INT DEFAULT nextval('Customer_Id') NOT NULL,
   c_name VARCHAR(60) NOT NULL,
   c_address VARCHAR(100) NOT NULL,
-  PRIMARY KEY (customer_id)
+  PRIMARY KEY (Id)
 );
 
 CREATE SEQUENCE Phone_Id;
@@ -56,7 +56,7 @@ CREATE TABLE phone_number
   c_id VARCHAR(20) NOT NULL,
   c_name VARCHAR(60) NOT NULL,
   c_number VARCHAR(20) NOT NULL,
-  PRIMARY KEY (p_id)
+  PRIMARY KEY (Id)
 --   FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
 );
 
