@@ -25,6 +25,7 @@ import java.util.*;
 @Getter @Setter
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
+@Table(name="customer")
 public class Customer {
   @Id
   @SequenceGenerator(name="customer_id", sequenceName="customer_id")
@@ -44,7 +45,8 @@ public class Customer {
 
         this.numbers = new HashSet<>();
         for (int i = 0; i < numbers.length; i++) {
-            PhoneNumber pn = new PhoneNumber(c_name, numbers[i], this);
+            CompositeKey key = new CompositeKey(id, numbers[i]);
+            PhoneNumber pn = new PhoneNumber(key, this);
             this.numbers.add(pn);
         }
         
@@ -57,5 +59,9 @@ public class Customer {
 
         // this.numbers = Stream.of(numbers).collect(Collectors.toSet());
         // this.numbers.forEach(x -> x.setCustomer(this));
+    }
+
+    public String getName() {
+        return c_name;
     }
 }
