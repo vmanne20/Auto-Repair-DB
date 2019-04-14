@@ -3,6 +3,7 @@ package edu.vt.cs4604.troop;
 import lombok.*;
 // import java.time.LocalDate;
 import javax.persistence.*;
+import java.io.*;
 
 /*
  * NamedNativeQueries allow us to use _SQL_ queries
@@ -23,12 +24,37 @@ import javax.persistence.*;
 @Getter @Setter
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
+@IdClass(CompositeKey.class)
 public class PhoneNumber {
-  @Id
-      @SequenceGenerator(name="phone_id", sequenceName="phone_id")
-      @GeneratedValue(generator="phone_id")
-    private Long id;
-    private String c_id;
+//   @Id
+    //   @SequenceGenerator(name="phone_id", sequenceName="phone_id")
+    //   @GeneratedValue(generator="phone_id")
+    // private Long id;
+
     private String c_name;
+
+    @Id
     private String c_number;
+
+    @Id
+    @ManyToOne
+    @JoinColumn(name="c_id")
+    private Customer customer;
+
+    public void setName(String c_name) {
+        this.c_name = c_name;
+    }
+
+    public void setNumber(String c_number) {
+        this.c_number = c_number;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+}
+
+class CompositeKey implements Serializable {
+    private String c_number;
+    private Long c_id;
 }

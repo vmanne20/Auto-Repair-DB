@@ -3,45 +3,47 @@
         $('#PhoneTableContainer').jtable({
           title: 'Phone Numbers',
           fields: {
-            id: {
-                title: 'Phone ID',
-                key: true,
-                list: false
-            },
+            // id: {
+            //     title: 'Phone ID',
+            //     key: true,
+            //     list: false
+            // },
             c_id: {
-                title: 'Customer ID'
+                title: 'Customer ID',
+                key: true
             },
             c_name: {
                 title: 'Customer Name'
             },
             c_number: {
-                title: 'Number'
+                title: 'Number',
+                key: true
             }
           },
           actions: {
-            createAction: function (postData, jtParams) {
-              console.log("creating phone number:");
-              postData = QueryStringToJSON(postData);
-              console.log(postData);
-              return $.Deferred(function ($dfd) {
-                $.ajax({
-                  url: '/phoneNumbers',
-                  type: 'POST',
-                  contentType: "application/json; charset=utf-8",
-                  data: JSON.stringify(postData),
-                  dataType: 'json',
-                  success: function (data) {
-                    $dfd.resolve({ "Result": "OK", "Record": data });
-                  },
-                  error: function (xhr, options, error) {
-                    console.log("error");
-                    console.log(xhr.responseText);
-                    $dfd.reject();
-                  }
-                });
-              });
-            }
-            ,
+            // createAction: function (postData, jtParams) {
+            //   console.log("creating phone number:");
+            //   postData = QueryStringToJSON(postData);
+            //   console.log(postData);
+            //   return $.Deferred(function ($dfd) {
+            //     $.ajax({
+            //       url: '/phoneNumbers',
+            //       type: 'POST',
+            //       contentType: "application/json; charset=utf-8",
+            //       data: JSON.stringify(postData),
+            //       dataType: 'json',
+            //       success: function (data) {
+            //         $dfd.resolve({ "Result": "OK", "Record": data });
+            //       },
+            //       error: function (xhr, options, error) {
+            //         console.log("error");
+            //         console.log(xhr.responseText);
+            //         $dfd.reject();
+            //       }
+            //     });
+            //   });
+            // }
+            // ,
             listAction: function (postData, jtParams) {
               return $.Deferred(function ($dfd) {
                 $.ajax({
