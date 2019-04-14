@@ -25,7 +25,7 @@ import javax.persistence.*;
 @Getter @Setter
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
-@Table(name="Customer")
+// @Table(name="Customer")
 public class Customer {
   @Id
   @SequenceGenerator(name="customer_id", sequenceName="customer_id")
