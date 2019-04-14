@@ -41,17 +41,22 @@ public class PhoneNumber {
     @JoinColumn(name="c_id")
     private Customer customer;
 
-    public void setName(String c_name) {
+    public PhoneNumber(String c_name, String c_number, Customer customer) {
         this.c_name = c_name;
-    }
-
-    public void setNumber(String c_number) {
         this.c_number = c_number;
-    }
-
-    public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+    // public void setName(String c_name) {
+    //     this.c_name = c_name;
+    // }
+
+    // public void setNumber(String c_number) {
+    //     this.c_number = c_number;
+    // }
+
+    // public void setCustomer(Customer customer) {
+    //     this.customer = customer;
+    // }
 }
 
 

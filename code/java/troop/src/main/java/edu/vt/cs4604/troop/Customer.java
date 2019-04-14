@@ -37,17 +37,24 @@ public class Customer {
   @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private Set<PhoneNumber> numbers;
 
-    int i = 0;
+    // int i = 0;
     public Customer(String c_name, String c_address, Object[] numbers) {
         this.c_name = c_name;
         this.c_address = c_address;
 
-        this.numbers.forEach(phoneNumber -> { 
-            phoneNumber.setName(c_name);
-            phoneNumber.setNumber((String) numbers[i]);
-            phoneNumber.setCustomer(this);
-            i++;
-        });
+        this.numbers = new HashSet<>();
+        for (int i = 0; i < numbers.length; i++) {
+            PhoneNumber pn = new PhoneNumber(c_name, (String) numbers[i], this);
+            this.numbers.add(pn);
+        }
+        
+        // this.numbers.forEach(phoneNumber -> { 
+        //     phoneNumber.setName(c_name);
+        //     phoneNumber.setNumber((String) numbers[i]);
+        //     phoneNumber.setCustomer(this);
+        //     i++;
+        // });
+
         // this.numbers = Stream.of(numbers).collect(Collectors.toSet());
         // this.numbers.forEach(x -> x.setCustomer(this));
     }
