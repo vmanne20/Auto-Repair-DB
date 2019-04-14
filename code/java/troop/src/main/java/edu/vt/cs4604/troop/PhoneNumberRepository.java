@@ -6,7 +6,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.repository.query.Param;
 
 @RepositoryRestResource
-interface PhoneNumberRepository extends JpaRepository<PhoneNumber, String> {
+interface PhoneNumberRepository extends JpaRepository<PhoneNumber, Long> {
   /**
    * Finds active customers
    * @return  A list of customers.
