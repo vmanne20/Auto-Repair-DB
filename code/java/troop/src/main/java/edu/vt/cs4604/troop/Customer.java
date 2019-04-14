@@ -3,7 +3,7 @@ package edu.vt.cs4604.troop;
 import lombok.*;
 // import java.time.LocalDate;
 import javax.persistence.*;
-import java.util.*;
+// import java.util.*;
 // import java.util.stream.Collectors;
 // import java.util.stream.Stream;
 /*
@@ -25,7 +25,7 @@ import java.util.*;
 @Getter @Setter
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
-@Table(name="customer")
+@Table(name="Customer")
 public class Customer {
   @Id
   @SequenceGenerator(name="customer_id", sequenceName="customer_id")
@@ -34,32 +34,4 @@ public class Customer {
 
   private String c_name;
   private String c_address;
-
-  @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-    private Set<PhoneNumber> numbers;
-
-    // int i = 0;
-    public Customer(String c_name, String c_address, String[] numbers) {
-        this.c_name = c_name;
-        this.c_address = c_address;
-
-        this.numbers = new HashSet<>();
-        for (int i = 0; i < numbers.length; i++) {
-            CompositeKey key = new CompositeKey(numbers[i], this);
-            PhoneNumber pn = new PhoneNumber(this.c_name, key);
-            this.numbers.add(pn);
-        }
-    }
-
-    public String getName() {
-        return c_name;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long c_id) {
-        id = c_id;
-    }
 }

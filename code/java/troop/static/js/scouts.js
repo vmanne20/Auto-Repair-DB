@@ -3,15 +3,7 @@ function QueryStringToJSON(str) {
   var result = {}
   pairs.forEach(function (pair) {
     pair = pair.split('=');
-    // result[pair[0]] = decodeURIComponent(pair[1] || '');
-    pairStr = decodeURIComponent(pair[1] || '');
-    if (pairStr.indexOf(';') > -1) {    // stores input of multiple phone numbers into array
-        phones = pairStr.split(';');
-        result[pair[0]] = phones;
-    } else {
-        result[pair[0]] = pairStr;
-    }
-    
+    result[pair[0]] = decodeURIComponent(pair[1] || '');
   });
   return JSON.parse(JSON.stringify(result));
 }

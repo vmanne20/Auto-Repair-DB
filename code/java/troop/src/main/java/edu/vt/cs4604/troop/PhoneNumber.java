@@ -27,28 +27,14 @@ import javax.persistence.*;
 @Table(name="phone_number")
 // @IdClass(CompositeKey.class)
 public class PhoneNumber {
-//   @Id
-    //   @SequenceGenerator(name="phone_id", sequenceName="phone_id")
-    //   @GeneratedValue(generator="phone_id")
-    // private Long id;
+    @Id
+      @SequenceGenerator(name="phone_id", sequenceName="phone_id")
+      @GeneratedValue(generator="phone_id")
+    private Long id;
 
-    @EmbeddedId
-    private CompositeKey compositeKey;  // includes c_id & c_number
-
+    private String c_id;
+    private String c_number;
     private String c_name;
-
-    // @Id
-    // private String c_number;
-
-    public PhoneNumber() {
-
-    }
-
-    public PhoneNumber(String c_name, CompositeKey compositeKey) {
-        this.c_name = c_name;
-        this.compositeKey = compositeKey;
-        
-    }
 }
 
 

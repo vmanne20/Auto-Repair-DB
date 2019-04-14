@@ -5,18 +5,14 @@
           fields: {
             id: {
                 title: 'Customer Id',
-                key: true
-                // list: false
+                key: true,
+                list: false
             },
             c_name: {
                 title: 'Name'
             },
             c_address: {
                 title: 'Address'
-            },
-            numbers: {
-                title: 'Phone Number(s)',
-                list: false
             }
           },
           actions: {

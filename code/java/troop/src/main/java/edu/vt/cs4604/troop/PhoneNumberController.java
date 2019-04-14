@@ -22,11 +22,11 @@ class PhoneNumberController {
       .collect(Collectors.toList());
   }
 
-//   @PostMapping("/phoneNumbers")
-//   public PhoneNumber addPhoneNumber(@RequestBody PhoneNumber phoneNumber) {
-//     System.out.println(phoneNumber.toString());
-//     return repository.save(phoneNumber);
-//   }
+  @PostMapping("/phoneNumbers")
+  public PhoneNumber addPhoneNumber(@RequestBody PhoneNumber phoneNumber) {
+    System.out.println(phoneNumber.toString());
+    return repository.save(phoneNumber);
+  }
 
   @GetMapping("/activeNums")
   public Collection<PhoneNumber> activeNums(@RequestParam("days") String days) {
