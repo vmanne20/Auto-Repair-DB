@@ -38,13 +38,13 @@ public class Customer {
     private Set<PhoneNumber> numbers;
 
     // int i = 0;
-    public Customer(String c_name, String c_address, Object[] numbers) {
+    public Customer(String c_name, String c_address, String[] numbers) {
         this.c_name = c_name;
         this.c_address = c_address;
 
         this.numbers = new HashSet<>();
         for (int i = 0; i < numbers.length; i++) {
-            PhoneNumber pn = new PhoneNumber(c_name, (String) numbers[i], this);
+            PhoneNumber pn = new PhoneNumber(c_name, numbers[i], this);
             this.numbers.add(pn);
         }
         
