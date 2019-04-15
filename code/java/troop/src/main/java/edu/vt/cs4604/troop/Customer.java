@@ -25,7 +25,6 @@ import javax.persistence.*;
 @Getter @Setter
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
-// @Table(name="Customer")
 public class Customer {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

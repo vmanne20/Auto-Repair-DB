@@ -24,7 +24,6 @@ import javax.persistence.*;
 @Getter @Setter
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
-// @Table(name="phone_number")
 // @IdClass(CompositeKey.class)
 public class PhoneNumber {
     @Id

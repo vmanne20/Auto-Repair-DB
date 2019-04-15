@@ -57,6 +57,8 @@ CREATE TABLE phone_number
 --   c_name VARCHAR(60) NOT NULL,
   c_number VARCHAR(20) NOT NULL,
   PRIMARY KEY (Id)
+-- PRIMARY KEY (c_id, c_number)
+-- FOREIGN KEY (c_id) REFERENCES Customer(Id)
 -- UNIQUE (c_number)
 );
 
@@ -69,7 +71,7 @@ CREATE TABLE Car
   make VARCHAR(60) NOT NULL,
   model VARCHAR(60) NOT NULL,
   PRIMARY KEY (Id)
---   FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
+--   FOREIGN KEY (customer_id) REFERENCES Customer(Id)
 );
 
 
