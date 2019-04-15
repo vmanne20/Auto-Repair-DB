@@ -5,8 +5,8 @@
           fields: {
             id: {
                 title: 'Phone ID',
-                key: true
-                // list: false
+                key: true,
+                list: true
             },
             c_id: {
                 title: 'Customer ID'
