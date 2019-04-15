@@ -52,7 +52,7 @@ cd CS4604-project
 if [ -d .git ]; then
   git pull
 else
-  git clone https://code.vt.edu/sid97/CS4604-project.git . || exit 1
+  git clone https://oauth2:abpdnnv9PcRtWCse9snP@code.vt.edu/sid97/CS4604-project.git . || exit 1
 fi
 
 # Wait for server to initialize
