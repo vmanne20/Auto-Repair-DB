@@ -33,4 +33,6 @@ class CustomerController {
     return repository.activeCustomers(days).stream()
       .collect(Collectors.toList());
   }
+
+  
 }
