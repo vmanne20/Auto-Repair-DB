@@ -24,12 +24,27 @@ import javax.persistence.*;
 @Getter @Setter
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
-// @IdClass(CompositeKey.class)
-public class PhoneNumber {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
+@IdClass(PhoneNumberPK.class)
+public class PhoneNumber {
+    // @Id
+    // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // private Long id;
+
+    @Id
+    @Column(name = "c_id")
+    private String c_id;
+
+    @Id
+    @Column(name = "c_number")
+    private String c_number;
+
+    @ManyToOne
+    @JoinColumn(name="c_id", insertable=false, updatable=false)
+    private Customer customer;
+}
+
+class PhoneNumberPK {
     private String c_id;
     private String c_number;
 }

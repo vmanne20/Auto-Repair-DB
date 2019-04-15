@@ -49,17 +49,16 @@ CREATE TABLE Customer
   PRIMARY KEY (id)
 );
 
-CREATE SEQUENCE Phone_Id;
+-- CREATE SEQUENCE Phone_Id;
 CREATE TABLE phone_number
 (
-  id INT DEFAULT nextval('Phone_Id') NOT NULL,
-  c_id VARCHAR(60) NOT NULL,
---   c_name VARCHAR(60) NOT NULL,
-  c_number VARCHAR(20) NOT NULL,
-  PRIMARY KEY (id)
--- PRIMARY KEY (c_id, c_number)
--- FOREIGN KEY (c_id) REFERENCES Customer(Id)
--- UNIQUE (c_number)
+--   id INT DEFAULT nextval('Phone_Id') NOT NULL,
+    c_id VARCHAR(60) NOT NULL,
+    c_number VARCHAR(20) NOT NULL,
+--   PRIMARY KEY (id)
+    PRIMARY KEY (c_id, c_number),
+    FOREIGN KEY (c_id) REFERENCES Customer(id),
+    UNIQUE (c_number)
 );
 
 CREATE SEQUENCE car_ID;
