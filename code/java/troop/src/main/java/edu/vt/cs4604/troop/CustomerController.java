@@ -21,8 +21,15 @@ class CustomerController {
     return repository.findAll().stream()
       .collect(Collectors.toList());
   }
+
   @PostMapping("/customers")
   public Customer addCustomer(@RequestBody Customer customer) {
+    System.out.println(customer.toString());
+    return repository.save(customer);
+  }
+
+  @PutMapping("/customers")
+  public Customer updateCustomer(@RequestBody Customer customer) {
     System.out.println(customer.toString());
     return repository.save(customer);
   }

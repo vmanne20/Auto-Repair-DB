@@ -39,29 +39,29 @@
               });
             }
             ,
-            // updateAction: function (postData, jtParams) {
-            //     console.log("creating customer:");
-            //     postData = QueryStringToJSON(postData);
-            //     console.log(postData);
-            //     return $.Deferred(function ($dfd) {
-            //       $.ajax({
-            //         url: '/customers',
-            //         type: 'POST',
-            //         contentType: "application/json; charset=utf-8",
-            //         data: JSON.stringify(postData),
-            //         dataType: 'json',
-            //         success: function (data) {
-            //           $dfd.resolve({ "Result": "OK", "Record": data });
-            //         },
-            //         error: function (xhr, options, error) {
-            //           console.log("error");
-            //           console.log(xhr.responseText);
-            //           $dfd.reject();
-            //         }
-            //       });
-            //     });
-            //   }
-            // ,
+            updateAction: function (postData, jtParams) {
+                console.log("creating customer:");
+                postData = QueryStringToJSON(postData);
+                console.log(postData);
+                return $.Deferred(function ($dfd) {
+                  $.ajax({
+                    url: '/customers',
+                    type: 'PUT',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(postData),
+                    dataType: 'json',
+                    success: function (data) {
+                      $dfd.resolve({ "Result": "OK", "Record": data });
+                    },
+                    error: function (xhr, options, error) {
+                      console.log("error");
+                      console.log(xhr.responseText);
+                      $dfd.reject();
+                    }
+                  });
+                });
+              }
+            ,
             listAction: function (postData, jtParams) {
               return $.Deferred(function ($dfd) {
                 $.ajax({
