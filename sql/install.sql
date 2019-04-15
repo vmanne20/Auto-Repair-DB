@@ -64,7 +64,7 @@ CREATE SEQUENCE car_ID;
 CREATE TABLE Car
 (
   Id INT DEFAULT nextval('car_ID') NOT NULL,
-  customer_id INT NOT NULL,
+  customer_id VARCHAR(20) NOT NULL,
   make_year VARCHAR(5) NOT NULL,
   make VARCHAR(60) NOT NULL,
   model VARCHAR(60) NOT NULL,

@@ -8,6 +8,9 @@
                 key: true,
                 list: false
             },
+            customer_id: {
+                title: 'Customer Id'
+            },
             make_year: {
                 title: 'Make Year'
             },

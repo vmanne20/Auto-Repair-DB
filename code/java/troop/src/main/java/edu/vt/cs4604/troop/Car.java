@@ -29,6 +29,7 @@ public class Car {
   @GeneratedValue(generator="car_id")
   private Long id;
 
+  private String customer_id;
   private String make_year;
   private String make;
   private String model;
