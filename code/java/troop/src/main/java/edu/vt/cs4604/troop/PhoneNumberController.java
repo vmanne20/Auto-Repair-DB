@@ -28,6 +28,12 @@ class PhoneNumberController {
     return repository.save(phoneNumber);
   }
 
+  @PutMapping("/phoneNumbers")
+  public PhoneNumber updatePhoneNumber(@RequestBody PhoneNumber phoneNumber) {
+    System.out.println(phoneNumber.toString());
+    return repository.save(phoneNumber);
+  }
+
   @GetMapping("/activeNums")
   public Collection<PhoneNumber> activeNums(@RequestParam("days") String days) {
     System.out.println("getting active numbers");

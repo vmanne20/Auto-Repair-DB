@@ -21,8 +21,15 @@ class CarController {
     return repository.findAll().stream()
       .collect(Collectors.toList());
   }
+
   @PostMapping("/cars")
-  public Car addCustomer(@RequestBody Car car) {
+  public Car addCar(@RequestBody Car car) {
+    System.out.println(car.toString());
+    return repository.save(car);
+  }
+
+  @PutMapping("/cars")
+  public Car updateCar(@RequestBody Car car) {
     System.out.println(car.toString());
     return repository.save(car);
   }

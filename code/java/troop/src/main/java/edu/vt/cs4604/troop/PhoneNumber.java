@@ -28,8 +28,6 @@ import javax.persistence.*;
 // @IdClass(CompositeKey.class)
 public class PhoneNumber {
     @Id
-    //   @SequenceGenerator(name="phone_id", sequenceName="phone_id")
-    //   @GeneratedValue(generator="phone_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 

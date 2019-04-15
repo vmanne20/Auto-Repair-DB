@@ -25,8 +25,6 @@ import javax.persistence.*;
 @ToString @EqualsAndHashCode
 public class Car {
   @Id
-//   @SequenceGenerator(name="car_id", sequenceName="car_id")
-//   @GeneratedValue(generator="car_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
