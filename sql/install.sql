@@ -43,20 +43,20 @@ CREATE TABLE Attends
 CREATE SEQUENCE Customer_Id;
 CREATE TABLE Customer
 (
-  Id INT DEFAULT nextval('Customer_Id') NOT NULL,
+  id INT DEFAULT nextval('Customer_Id') NOT NULL,
   c_name VARCHAR(60) NOT NULL,
   c_address VARCHAR(100) NOT NULL,
-  PRIMARY KEY (Id)
+  PRIMARY KEY (id)
 );
 
 CREATE SEQUENCE Phone_Id;
 CREATE TABLE phone_number
 (
-  Id INT DEFAULT nextval('Phone_Id') NOT NULL,
+  id INT DEFAULT nextval('Phone_Id') NOT NULL,
   c_id VARCHAR(60) NOT NULL,
 --   c_name VARCHAR(60) NOT NULL,
   c_number VARCHAR(20) NOT NULL,
-  PRIMARY KEY (Id)
+  PRIMARY KEY (id)
 -- PRIMARY KEY (c_id, c_number)
 -- FOREIGN KEY (c_id) REFERENCES Customer(Id)
 -- UNIQUE (c_number)
@@ -65,12 +65,12 @@ CREATE TABLE phone_number
 CREATE SEQUENCE car_ID;
 CREATE TABLE Car
 (
-  Id INT DEFAULT nextval('car_ID') NOT NULL,
+  id INT DEFAULT nextval('car_ID') NOT NULL,
   customer_id VARCHAR(20) NOT NULL,
   make_year VARCHAR(5) NOT NULL,
   make VARCHAR(60) NOT NULL,
   model VARCHAR(60) NOT NULL,
-  PRIMARY KEY (Id)
+  PRIMARY KEY (id)
 --   FOREIGN KEY (customer_id) REFERENCES Customer(Id)
 );
 

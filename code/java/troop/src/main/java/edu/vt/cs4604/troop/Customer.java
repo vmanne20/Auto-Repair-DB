@@ -28,7 +28,8 @@ import javax.persistence.*;
 public class Customer {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    // @OneToMany(cascade = CascadeType.ALL)
+    // @JoinColumn(name = "Id")
   private Long id;
 
   private String c_name;
