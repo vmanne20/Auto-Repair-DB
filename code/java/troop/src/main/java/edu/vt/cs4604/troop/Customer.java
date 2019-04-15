@@ -28,8 +28,10 @@ import javax.persistence.*;
 // @Table(name="Customer")
 public class Customer {
   @Id
-  @SequenceGenerator(name="customer_id", sequenceName="customer_id")
-  @GeneratedValue(generator="customer_id")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id", updatable = true, nullable = false)
+//   @SequenceGenerator(name="customer_id", sequenceName="customer_id")
+//   @GeneratedValue(generator="customer_id")
   private Long id;
 
   private String c_name;
