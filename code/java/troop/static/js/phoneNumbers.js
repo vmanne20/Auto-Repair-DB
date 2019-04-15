@@ -4,12 +4,12 @@
           title: 'Phone Numbers',
           fields: {
             id: {
-                title: 'Phone ID',
+                title: 'Phone Id',
                 key: true,
                 list: true
             },
             c_id: {
-                title: 'Customer ID'
+                title: 'Customer Id'
                 // key: true
             },
             c_number: {
