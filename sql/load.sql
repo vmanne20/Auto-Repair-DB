@@ -14,15 +14,12 @@ insert into Scout (Name, DOB, Rank, tempfield) values ('Timmy', '2002-03-21', 'E
 insert into Scout (Name, DOB, Rank, tempfield) values ('Sally', '2008-03-21', 'First Class', 'hello');
 insert into Scout (Name, DOB, Rank, tempfield) values ('Lazy Larry', '2006-03-21', 'Scout', 'hello');
 
-
-
 insert into attends (ScoutTrip_Id, Scout_Id) values (1, 3);
 insert into attends (ScoutTrip_Id, Scout_Id) values (2, 1);
 insert into attends (ScoutTrip_Id, Scout_Id) values (3, 2);
 insert into attends (ScoutTrip_Id, Scout_Id) values (4, 4);
 
-/* Sample data to be inserted at run time .
-*/
+
 insert into Customer (c_name, c_address) values ('Carl Yao', '130 Main St.');
 insert into Customer (c_name, c_address) values ('Vamsi Manne', '220 Main St.');
 insert into Customer (c_name, c_address) values ('Sid Hingorani', '50 Main St.');
@@ -34,21 +31,21 @@ insert into Customer (c_name, c_address) values ('Donald Trump', '1600 Pennsylva
 insert into Customer (c_name, c_address) values ('Robert Mueller', '10 First St.');
 insert into Customer (c_name, c_address) values ('Nancy Pelosi', '10 First St.');
 
-insert into Car (make_year, make, model, customer_ID) values ('2', '2001', 'Honda', 'Accord');
-insert into Car (make_year, make, model, customer_ID) values ('1', '2004', 'Mazda', 'CX-9');
-insert into Car (make_year, make, model, customer_ID) values ('3', '2005', 'BMW', '335i');
--- insert into Car (make_year, make, model, customer_ID) values ('2007', 'Mercedes-Benz', 'C200', 4);
--- insert into Car (make_year, make, model, customer_ID) values ('2009', 'Audi', 'A6', 6);
--- insert into Car (make_year, make, model, customer_ID) values ('1996', 'Ford', 'Taurus', 7);
--- insert into Car (make_year, make, model, customer_ID) values ('2015', 'Toyota', 'Corolla', 5);
--- insert into Car (make_year, make, model, customer_ID) values ('2018', 'Honda', 'Civic', 2);
--- insert into Car (make_year, make, model, customer_ID) values ('2003', 'Toyota', 'Camry', 10);
--- insert into Car (make_year, make, model, customer_ID) values ('2008', 'Honda', 'Pilot', 9);
--- insert into Car (make_year, make, model, customer_ID) values ('1990', 'Dodge', 'Ram', 8);
--- insert into Car (make_year, make, model, customer_ID) values ('2005', 'BMW', 'X5', 1);
--- insert into Car (make_year, make, model, customer_ID) values ('2013', 'Audi', 'Q7', 2);
--- insert into Car (make_year, make, model, customer_ID) values ('2018', 'BMW', 'X7', 10);
--- insert into Car (make_year, make, model, customer_ID) values ('1999', 'Audi', 'A4', 8);
+insert into Car (customer_id, make_year, make, model) values ('2', '2001', 'Honda', 'Accord');
+insert into Car (customer_id, make_year, make, model) values ('1', '2004', 'Mazda', 'CX-9');
+insert into Car (customer_id, make_year, make, model) values ('3', '2005', 'BMW', '335i');
+-- insert into Car (customer_id, make_year, make, model) values ('2007', 'Mercedes-Benz', 'C200', 4);
+-- insert into Car (customer_id, make_year, make, model) values ('2009', 'Audi', 'A6', 6);
+-- insert into Car (customer_id, make_year, make, model) values ('1996', 'Ford', 'Taurus', 7);
+-- insert into Car (customer_id, make_year, make, model) values ('2015', 'Toyota', 'Corolla', 5);
+-- insert into Car (customer_id, make_year, make, model) values ('2018', 'Honda', 'Civic', 2);
+-- insert into Car (customer_id, make_year, make, model) values ('2003', 'Toyota', 'Camry', 10);
+-- insert into Car (customer_id, make_year, make, model) values ('2008', 'Honda', 'Pilot', 9);
+-- insert into Car (customer_id, make_year, make, model) values ('1990', 'Dodge', 'Ram', 8);
+-- insert into Car (customer_id, make_year, make, model) values ('2005', 'BMW', 'X5', 1);
+-- insert into Car (customer_id, make_year, make, model) values ('2013', 'Audi', 'Q7', 2);
+-- insert into Car (customer_id, make_year, make, model) values ('2018', 'BMW', 'X7', 10);
+-- insert into Car (customer_id, make_year, make, model) values ('1999', 'Audi', 'A4', 8);
 
 -- insert into phone_number (c_id, c_name, c_number) values ('1', 'Carl Yao', '(316) 874-3435');
 -- insert into phone_number (c_id, c_name, c_number) values ('8', 'Donald Trump', '(703) 234-1209');

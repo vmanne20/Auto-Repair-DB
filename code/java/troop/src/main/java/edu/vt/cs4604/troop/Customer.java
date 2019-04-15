@@ -28,23 +28,8 @@ import javax.persistence.*;
 // @Table(name="Customer")
 public class Customer {
   @Id
-//   @GeneratedValue(strategy = GenerationType.IDENTITY)
-//   @Column(name = "id", updatable = true, nullable = false)
-//   @GeneratedValue(generator = "sequence-generator")
-//     @GenericGenerator(
-//       name = "sequence-generator",
-//       strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
-//       parameters = {
-//         @Parameter(name = "sequence_name", value = "user_sequence"),
-//         @Parameter(name = "initial_value", value = "1"),
-//         @Parameter(name = "increment_size", value = "1")
-//         }
-//     )
-
-//   @SequenceGenerator(name="customer_id", sequenceName="customer_id")
-//   @GeneratedValue(generator="customer_id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  
+
   private Long id;
 
   private String c_name;
