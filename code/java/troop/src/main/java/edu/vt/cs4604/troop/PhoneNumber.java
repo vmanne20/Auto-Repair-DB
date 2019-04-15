@@ -34,7 +34,6 @@ public class PhoneNumber {
 
     private String c_id;
     private String c_number;
-    private String c_name;
 }
 
 

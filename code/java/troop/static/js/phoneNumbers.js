@@ -12,9 +12,6 @@
                 title: 'Customer ID'
                 // key: true
             },
-            c_name: {
-                title: 'Customer Name'
-            },
             c_number: {
                 title: 'Number'
                 // key: true

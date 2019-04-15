@@ -54,7 +54,7 @@ CREATE TABLE phone_number
 (
   Id INT DEFAULT nextval('Phone_Id') NOT NULL,
   c_id VARCHAR(60) NOT NULL,
-  c_name VARCHAR(60) NOT NULL,
+--   c_name VARCHAR(60) NOT NULL,
   c_number VARCHAR(20) NOT NULL,
   PRIMARY KEY (Id)
 -- UNIQUE (c_number)
