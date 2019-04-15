@@ -44,6 +44,7 @@ public class Customer {
 //   @SequenceGenerator(name="customer_id", sequenceName="customer_id")
 //   @GeneratedValue(generator="customer_id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  
   private Long id;
 
   private String c_name;
