@@ -1,6 +1,9 @@
 package edu.vt.cs4604.troop;
 
 import lombok.*;
+
+import java.io.Serializable;
+
 // import java.time.LocalDate;
 import javax.persistence.*;
 // import java.io.*;
@@ -25,9 +28,10 @@ import javax.persistence.*;
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
 
-// @IdClass(PhoneNumberPK.class)
+@IdClass(PhoneNumberPK.class)
 public class PhoneNumber {
 
+    @Id
     private Long c_id;
     private String c_name;
 
@@ -40,9 +44,9 @@ public class PhoneNumber {
     // private Customer customer;
 }
 
-// class PhoneNumberPK {
-//     private Long c_id;
-//     private String c_number;
-// }
+class PhoneNumberPK implements Serializable {
+    private Long c_id;
+    private String c_number;
+}
 
 

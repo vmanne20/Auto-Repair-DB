@@ -5,6 +5,9 @@
           fields: {
             c_id: {
                 title: 'Customer Id',
+                key: true,
+                create: true,
+                edit: true,
                 list: false
             },
             c_name: {
