@@ -32,6 +32,13 @@ import javax.persistence.*;
 public class PhoneNumber {
 
     @Id
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // @OneToMany
+    // // (cascade = CascadeType.ALL)
+    // @JoinColumn(name = "id")
+    private Long id;
+
+    // @Id
     private Long c_id;
     private String c_name;
 

@@ -3,22 +3,27 @@
         $('#PhoneTableContainer').jtable({
           title: 'Phone Numbers',
           fields: {
-            c_id: {
+            id: {
                 title: 'Customer Id',
-                key: true,
-                create: true,
-                edit: true,
-                list: false
+                key: true
+                // list: false
+            },
+            c_id: {
+                title: 'Customer Id'
+                // key: true,
+                // create: true,
+                // edit: true,
+                // list: false
             },
             c_name: {
                 title: 'Customer Name'
                 // key: true
             },
             c_number: {
-                title: 'Number',
-                key: true,
-                create: true,
-                edit: true
+                title: 'Number'
+                // key: true,
+                // create: true,
+                // edit: true
             }
           },
           actions: {
