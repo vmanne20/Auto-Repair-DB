@@ -33,7 +33,7 @@ public class PhoneNumber {
 
     // @Id
     // @Column(name = "c_id")
-    private Long c_id;
+    private Integer c_id;
 
     // @Id
     // @Column(name = "c_number")
