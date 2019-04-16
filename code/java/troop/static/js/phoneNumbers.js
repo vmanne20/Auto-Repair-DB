@@ -12,8 +12,10 @@
                 // key: true
             },
             c_number: {
-                title: 'Number'
-                // key: true
+                title: 'Number',
+                key: true,
+                create: true,
+                edit: true
             }
           },
           actions: {
