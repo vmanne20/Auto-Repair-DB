@@ -28,7 +28,7 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  private String customer_id;
+  private Long customer_id;
   private String make_year;
   private String make;
   private String model;

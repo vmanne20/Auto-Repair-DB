@@ -31,9 +31,9 @@ insert into Customer (c_name, c_address) values ('Donald Trump', '1600 Pennsylva
 insert into Customer (c_name, c_address) values ('Robert Mueller', '10 First St.');
 insert into Customer (c_name, c_address) values ('Nancy Pelosi', '10 First St.');
 
-insert into Car (customer_id, make_year, make, model) values ('2', '2001', 'Honda', 'Accord');
-insert into Car (customer_id, make_year, make, model) values ('1', '2004', 'Mazda', 'CX-9');
-insert into Car (customer_id, make_year, make, model) values ('3', '2005', 'BMW', '335i');
+insert into Car (customer_id, make_year, make, model) values (2, '2001', 'Honda', 'Accord');
+insert into Car (customer_id, make_year, make, model) values (1, '2004', 'Mazda', 'CX-9');
+insert into Car (customer_id, make_year, make, model) values (3, '2005', 'BMW', '335i');
 -- insert into Car (customer_id, make_year, make, model) values ('2007', 'Mercedes-Benz', 'C200', 4);
 -- insert into Car (customer_id, make_year, make, model) values ('2009', 'Audi', 'A6', 6);
 -- insert into Car (customer_id, make_year, make, model) values ('1996', 'Ford', 'Taurus', 7);
