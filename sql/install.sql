@@ -49,7 +49,7 @@ CREATE TABLE customer
   PRIMARY KEY (id)
 );
 
--- CREATE SEQUENCE Phone_Id;
+CREATE SEQUENCE Phone_Id;
 CREATE TABLE phone_number
 (
     id INT DEFAULT nextval('Phone_Id') NOT NULL,
