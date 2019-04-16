@@ -28,7 +28,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
 
-@IdClass(PhoneNumberPK.class)
+// @IdClass(PhoneNumberPK.class)
 public class PhoneNumber {
 
     @Id
@@ -42,7 +42,7 @@ public class PhoneNumber {
     private Long c_id;
     private String c_name;
 
-    @Id
+    // @Id
     // @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String c_number;
 
@@ -51,9 +51,9 @@ public class PhoneNumber {
     // private Customer customer;
 }
 
-class PhoneNumberPK implements Serializable {
-    private Long c_id;
-    private String c_number;
-}
+// class PhoneNumberPK implements Serializable {
+//     private Long c_id;
+//     private String c_number;
+// }
 
 
