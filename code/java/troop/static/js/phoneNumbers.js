@@ -3,18 +3,18 @@
         $('#PhoneTableContainer').jtable({
           title: 'Phone Numbers',
           fields: {
-            // id: {
-            //     title: 'Phone Id',
-            //     key: true,
-            //     list: true
-            // },
+            id: {
+                title: 'Phone Id',
+                key: true,
+                list: true
+            },
             c_id: {
-                title: 'Customer Id',
-                key: true
+                title: 'Customer Id'
+                // key: true
             },
             c_number: {
-                title: 'Number',
-                key: true
+                title: 'Number'
+                // key: true
             }
           },
           actions: {

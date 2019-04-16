@@ -25,28 +25,28 @@ import javax.persistence.*;
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
 
-@IdClass(PhoneNumberPK.class)
+// @IdClass(PhoneNumberPK.class)
 public class PhoneNumber {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     // @Id
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // private Long id;
-
-    @Id
-    @Column(name = "c_id")
+    // @Column(name = "c_id")
     private Long c_id;
 
-    @Id
-    @Column(name = "c_number")
+    // @Id
+    // @Column(name = "c_number")
     private String c_number;
 
-    @ManyToOne
-    @JoinColumn(name="c_id", insertable=false, updatable=false)
-    private Customer customer;
+    // @ManyToOne
+    // @JoinColumn(name="c_id", insertable=false, updatable=false)
+    // private Customer customer;
 }
 
-class PhoneNumberPK {
-    private Long c_id;
-    private String c_number;
-}
+// class PhoneNumberPK {
+//     private Long c_id;
+//     private String c_number;
+// }
 
 
