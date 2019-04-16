@@ -55,7 +55,7 @@ CREATE TABLE phone_number
     id INT DEFAULT nextval('Phone_Id') NOT NULL,
     c_id INT NOT NULL,
     c_number VARCHAR(20) NOT NULL,
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
     -- PRIMARY KEY (c_id, c_number),
     -- FOREIGN KEY (c_id) REFERENCES Customer(id),
     UNIQUE (c_number)
