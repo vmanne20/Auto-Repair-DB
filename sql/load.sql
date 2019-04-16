@@ -47,10 +47,10 @@ insert into Car (customer_id, make_year, make, model) values (3, '2005', 'BMW', 
 -- insert into Car (customer_id, make_year, make, model) values ('2018', 'BMW', 'X7', 10);
 -- insert into Car (customer_id, make_year, make, model) values ('1999', 'Audi', 'A4', 8);
 
-insert into phone_number (c_id, c_number) values (1, '(316) 874-3435');
-insert into phone_number (c_id, c_number) values (8, '(703) 234-1209');
-insert into phone_number (c_id, c_number) values (5, '(404) 234-9742');
-insert into phone_number (c_id, c_number) values (6, '(703) 434-2487');
+insert into phone_number (c_id, c_name, c_number) values (1, , 'Carl Yao', '(316) 874-3435');
+insert into phone_number (c_id, c_name, c_number) values (8, 'Donald Trump', '(703) 234-1209');
+insert into phone_number (c_id, c_name, c_number) values (5, 'Bob Smith', '(404) 234-9742');
+insert into phone_number (c_id, c_name, c_number) values (6, 'Jack Davis', '(703) 434-2487');
 
 -- insert into phone_number (c_id, c_number) values ('1', '(316) 874-3435');
 -- insert into phone_number (c_id, c_number) values ('8', '(703) 234-1209');

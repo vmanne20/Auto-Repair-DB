@@ -2,8 +2,8 @@ drop table if exists attends cascade;
 drop table if exists scouttrip cascade;
 drop table if exists scout cascade;
 
-drop table if exists Customer cascade;
-drop table if exists Car cascade;
+drop table if exists customer cascade;
+drop table if exists car cascade;
 drop table if exists phone_number cascade;
 
 CREATE SEQUENCE ScoutTrip_Id;
@@ -41,7 +41,7 @@ CREATE TABLE Attends
 
 
 CREATE SEQUENCE Customer_Id;
-CREATE TABLE Customer
+CREATE TABLE customer
 (
   id INT DEFAULT nextval('Customer_Id') NOT NULL,
   c_name VARCHAR(60) NOT NULL,
@@ -49,20 +49,21 @@ CREATE TABLE Customer
   PRIMARY KEY (id)
 );
 
-CREATE SEQUENCE Phone_Id;
+-- CREATE SEQUENCE Phone_Id;
 CREATE TABLE phone_number
 (
-    id INT DEFAULT nextval('Phone_Id') NOT NULL,
+    -- id INT DEFAULT nextval('Phone_Id') NOT NULL,
     c_id INT NOT NULL,
+    c_name VARCHAR(60) NOT NULL,
     c_number VARCHAR(20) NOT NULL,
-    PRIMARY KEY (id),
+    PRIMARY KEY (c_number),
     -- PRIMARY KEY (c_id, c_number),
     -- FOREIGN KEY (c_id) REFERENCES Customer(id),
     UNIQUE (c_number)
 );
 
 CREATE SEQUENCE car_ID;
-CREATE TABLE Car
+CREATE TABLE car
 (
   id INT DEFAULT nextval('car_ID') NOT NULL,
   customer_id INT NOT NULL,
@@ -72,5 +73,12 @@ CREATE TABLE Car
   PRIMARY KEY (id)
 --   FOREIGN KEY (customer_id) REFERENCES Customer(Id)
 );
+
+-- CREATE TABLE all_records
+-- (
+--     id INT DEFAULT nextval('Customer_Id') NOT NULL,
+--     c_name VARCHAR(60) NOT NULL,
+--     c_address VARCHAR(100) NOT NULL,
+-- );
 
 

@@ -27,16 +27,12 @@ import javax.persistence.*;
 
 // @IdClass(PhoneNumberPK.class)
 public class PhoneNumber {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
-    // @Id
-    // @Column(name = "c_id")
     private Long c_id;
+    private String c_name;
 
-    // @Id
-    // @Column(name = "c_number")
+    @Id
+    // @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String c_number;
 
     // @ManyToOne
