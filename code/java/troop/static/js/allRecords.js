@@ -1,7 +1,7 @@
     // CARS
     $(document).ready(function () {
 
-        $('#CustomerTableContainer').jtable({
+        $('#AllTableContainer').jtable({
             title: 'All Records',
             fields: {
                 c_id: {
@@ -45,7 +45,7 @@
             }
           }
         });
-        $('#CustomerTableContainer').jtable('load');
+        $('#AllTableContainer').jtable('load');
     });
       
     //   function fetchAllRecords() {
