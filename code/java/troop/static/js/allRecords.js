@@ -16,17 +16,17 @@
                     title: 'Address'
                 },
                 c_number: {
-                    title: 'Address'
+                    title: 'Number'
                 },
                 make_year: {
-                    title: 'Address'
+                    title: 'Make Year'
                 },
                 make: {
-                    title: 'Address'
+                    title: 'Make'
                 },
                 model: {
-                    title: 'Address'
-                },
+                    title: 'Model'
+                }
             },
           actions: {
             listAction: function (postData, jtParams) {

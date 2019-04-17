@@ -73,7 +73,7 @@
                 });
               }
             ,
-            deleteAction: function (postData) {
+            deleteAction: function (postData, jtParams) {
                 console.log("deleting car:");
                 postData = QueryStringToJSON(postData);
                 console.log(postData);
