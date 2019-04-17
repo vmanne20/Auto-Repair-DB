@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Collection;
 import java.util.stream.Collectors;
+import org.json.JSONObject;
 
 @RestController
 class PhoneNumberController {
@@ -32,6 +33,22 @@ class PhoneNumberController {
   public PhoneNumber updatePhoneNumber(@RequestBody PhoneNumber phoneNumber) {
     System.out.println(phoneNumber.toString());
     return repository.save(phoneNumber);
+  }
+
+  @DeleteMapping("/phoneNumbers")
+  public JSONObject deletePhoneNumber(@RequestBody Long p_id) {
+    System.out.println(p_id);
+    // Car deletedCar = null;
+    JSONObject obj = new JSONObject();
+    try {
+        // deletedCar = repository.findById(carId).get();
+        repository.deleteById(p_id);
+        obj.put("Result", "OK");
+    } catch (Exception e) {
+        e.printStackTrace();
+        obj.put("Result", "ERROR");
+    }
+    return obj;
   }
 
   @GetMapping("/activeNums")

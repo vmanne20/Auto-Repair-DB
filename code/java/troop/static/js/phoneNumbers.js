@@ -72,6 +72,29 @@
                 });
               }
             ,
+            deleteAction: function (postData, jtParams) {
+                console.log("deleting phoneNumber:");
+                // postData = QueryStringToJSON(postData);
+                console.log(postData);
+                return $.Deferred(function ($dfd) {
+                  $.ajax({
+                    url: '/phoneNumbers',
+                    type: 'DELETE',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(postData['p_id']),
+                    dataType: 'json',
+                    success: function (data) {
+                      $dfd.resolve({ "Result": "OK", "Record": data });
+                    },
+                    error: function (xhr, options, error) {
+                      console.log("error");
+                      console.log(xhr.responseText);
+                      $dfd.reject();
+                    }
+                  });
+                });
+              }
+              , 
             listAction: function (postData, jtParams) {
               return $.Deferred(function ($dfd) {
                 $.ajax({

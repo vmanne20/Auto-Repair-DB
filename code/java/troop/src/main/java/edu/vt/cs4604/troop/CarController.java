@@ -5,11 +5,7 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Collection;
-import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
-
-
-import com.fasterxml.jackson.databind.util.JSONPObject;
 
 @RestController
 class CarController {
