@@ -3,23 +3,23 @@ package edu.vt.cs4604.troop;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.ArrayList;
+// import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
+// import java.util.List;
 import java.util.stream.Collectors;
-import javax.persistence.*;
+// import javax.persistence.*;
 
 @RestController
 class AllRecordsController {
   @Autowired
   private AllRecordsRepository repository;
-  private EntityManagerFactory emfactory;
-  private EntityManager em;
+//   private EntityManagerFactory emfactory;
+//   private EntityManager em;
 
   public AllRecordsController(AllRecordsRepository repository) {
     this.repository = repository;
-    emfactory = Persistence.createEntityManagerFactory( "Eclipselink_JPA" );
-    em = emfactory.createEntityManager();
+    // emfactory = Persistence.createEntityManagerFactory( "Eclipselink_JPA" );
+    // em = emfactory.createEntityManager();
   }
 
   @GetMapping("/allRecords")

@@ -52,15 +52,15 @@ public class AllRecords {
     private String make;
     private String model;
 
-    public AllRecords(Long c_id, String c_name, String c_address, 
-    String c_number, String make_year, String make, String model) {
-        this.c_id = c_id;
-        this.c_name = c_name;
-        this.c_address = c_address;
-        this.c_number = c_number;
-        this.make_year = make_year;
-        this.make = make;
-        this.model = model;
-    }
+    // public AllRecords(Long c_id, String c_name, String c_address, 
+    // String c_number, String make_year, String make, String model) {
+    //     this.c_id = c_id;
+    //     this.c_name = c_name;
+    //     this.c_address = c_address;
+    //     this.c_number = c_number;
+    //     this.make_year = make_year;
+    //     this.make = make;
+    //     this.model = model;
+    // }
 
 }
