@@ -6,10 +6,14 @@
             id: {
                 title: 'Car Id',
                 key: true,
-                list: true
+                list: false
             },
-            customer_id: {
-                title: 'Customer Id'
+            c_id: {
+                title: 'Customer Id',
+                list: false
+            },
+            c_name: {
+                title: 'Customer Name'
             },
             make_year: {
                 title: 'Make Year'

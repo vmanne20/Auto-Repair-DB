@@ -66,19 +66,12 @@ CREATE SEQUENCE car_ID;
 CREATE TABLE car
 (
   id INT DEFAULT nextval('car_ID') NOT NULL,
-  customer_id INT NOT NULL,
+  c_id INT NOT NULL,
+  c_name VARCHAR(60) NOT NULL,
   make_year VARCHAR(5) NOT NULL,
   make VARCHAR(60) NOT NULL,
   model VARCHAR(60) NOT NULL,
   PRIMARY KEY (id)
 --   FOREIGN KEY (customer_id) REFERENCES Customer(Id)
 );
-
--- CREATE TABLE all_records
--- (
---     id INT DEFAULT nextval('Customer_Id') NOT NULL,
---     c_name VARCHAR(60) NOT NULL,
---     c_address VARCHAR(100) NOT NULL,
--- );
-
 
