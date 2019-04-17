@@ -26,7 +26,7 @@ import javax.persistence.*;
 public class Car {
   @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  private Long car_id;
 
   private Long c_id;
   private String c_name;

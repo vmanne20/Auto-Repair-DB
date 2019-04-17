@@ -3,7 +3,7 @@
         $('#CarTableContainer').jtable({
           title: 'Cars',
           fields: {
-            id: {
+            car_id: {
                 title: 'Car Id',
                 key: true,
                 list: false

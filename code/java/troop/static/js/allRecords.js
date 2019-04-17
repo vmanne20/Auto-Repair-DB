@@ -1,7 +1,7 @@
     // CARS
     $(document).ready(function () {
         $('#CustomerTableContainer').jtable({
-            title: 'Customers',
+            title: 'All Records',
             fields: {
                 id: {
                     title: 'Customer Id',

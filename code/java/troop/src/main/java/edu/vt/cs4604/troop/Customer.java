@@ -16,7 +16,7 @@ import javax.persistence.*;
 @NamedNativeQueries({
   @NamedNativeQuery(
     name = "Customer.activeCustomers", 
-    query = "select * from Customer", 
+    query = "select * from customer a, phone_number b, car c where a.c_id = b.c_id and a.c_id = c.c_id group by a;", 
     resultClass = Customer.class
   )
 })
@@ -31,7 +31,7 @@ public class Customer {
     // @OneToMany
     // // (cascade = CascadeType.ALL)
     // @JoinColumn(name = "id")
-  private Long id;
+  private Long c_id;
 
   private String c_name;
   private String c_address;

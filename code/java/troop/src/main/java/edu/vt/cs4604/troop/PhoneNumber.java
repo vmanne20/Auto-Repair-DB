@@ -36,7 +36,7 @@ public class PhoneNumber {
     // @OneToMany
     // // (cascade = CascadeType.ALL)
     // @JoinColumn(name = "id")
-    private Long id;
+    private Long p_id;
 
     // @Id
     private Long c_id;
