@@ -3,6 +3,7 @@ package edu.vt.cs4604.troop;
 import lombok.*;
 // import java.time.LocalDate;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /*
  * NamedNativeQueries allow us to use _SQL_ queries
@@ -28,10 +29,15 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long car_id;
 
+  @NotNull
   private Long c_id;
+  @NotNull
   private String c_name;
+  @NotNull
   private String make_year;
+  @NotNull
   private String make;
+  @NotNull
   private String model;
 
   public Long getId() {
