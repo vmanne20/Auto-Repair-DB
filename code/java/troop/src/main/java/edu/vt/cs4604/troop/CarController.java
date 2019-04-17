@@ -34,6 +34,12 @@ class CarController {
     return repository.save(car);
   }
 
+  @DeleteMapping("/cars")
+  public void deleteCar(@RequestBody Car car) {
+    System.out.println(car.toString());
+    repository.delete(car);
+  }
+
   @GetMapping("/activeCars")
   public Collection<Car> activeCars(@RequestParam("days") String days) {
     System.out.println("getting active cars");
