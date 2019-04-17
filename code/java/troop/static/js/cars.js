@@ -75,14 +75,14 @@
             ,
             deleteAction: function (postData, jtParams) {
                 console.log("deleting car:");
-                postData = QueryStringToJSON(postData);
+                // postData = QueryStringToJSON(postData);
                 console.log(postData);
                 return $.Deferred(function ($dfd) {
                   $.ajax({
                     url: '/cars',
                     type: 'DELETE',
                     contentType: "application/json; charset=utf-8",
-                    data: JSON.stringify(postData),
+                    data: JSON.stringify(postData['car_id']),
                     dataType: 'json',
                     success: function (data) {
                       $dfd.resolve({ "Result": "OK", "Record": data });
