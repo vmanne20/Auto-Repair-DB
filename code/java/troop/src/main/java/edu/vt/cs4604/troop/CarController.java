@@ -35,9 +35,11 @@ class CarController {
   }
 
   @DeleteMapping("/cars")
-  public void deleteCar(@RequestBody Car car) {
+  public Car deleteCar(@RequestBody Car car) {
     System.out.println(car.toString());
     repository.deleteById(car.getId());
+    car = null;
+    return repository.save(null);
   }
 
   @GetMapping("/activeCars")
