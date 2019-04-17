@@ -35,10 +35,9 @@ class CustomerController {
   }
 
   @GetMapping("/activeCustomers")
-  public Collection<Customer> activeCustomers(@RequestParam("days") String days) {
+  public Collection<Customer> activeCustomers() {
     System.out.println("getting active customers");
-    return repository.activeCustomers(days).stream()
-      .collect(Collectors.toList());
+    return repository.activeCustomers().stream().collect(Collectors.toList());
   }
 
   

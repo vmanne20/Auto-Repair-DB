@@ -19,7 +19,7 @@
             listAction: function (postData, jtParams) {
               return $.Deferred(function ($dfd) {
                 $.ajax({
-                  url: '/cars',
+                  url: '/activeCustomers',
                   type: 'GET',
                   success: function (data) {
                     $dfd.resolve({ "Result": "OK", "Records": data, "TotalRecordCount": data.length });
