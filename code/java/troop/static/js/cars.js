@@ -6,7 +6,7 @@
             car_id: {
                 title: 'Car Id',
                 key: true,
-                list: false
+                list: true
             },
             c_id: {
                 title: 'Customer Id',
