@@ -1,10 +1,10 @@
 # Hot Wheel Auto Repair CS4604 Project
 
 ## Team Members
-* vmanne20
-* aarjab
-* sid97
-* mmk9624
+* vmanne20 - Vamsi Manne
+* aarjab - Aarjab Goudel
+* sid97 - Sid Hingorani
+* mmk9624 - Carl Yao
 
 ## Project Description
 Hot Wheels Auto Repair would like for your group to create a database backed application that will track customers and their cars. The system should track name, address and multiple phone numbers for each customer. It should also keep track of which cars belong to each customer. The year, make and model of each car should be tracked. Users should be able to update information about customers and their cars as well as add new customers and cars.
@@ -40,7 +40,7 @@ In the left-hand menu, click on "ADD NEW INSTANCE"
 This will start a Docker instance (node) and log you in as the root user.
 Execute the following command:
 
-`curl -o runme.sh https://code.vt.edu/sid97/CS4604-project/raw/master/runme.sh && bash ./runme.sh`
+`curl -o runme.sh https://code.vt.edu/sid97/CS4604-project/raw/working-master/runme.sh && bash ./runme.sh`
 
 This will start up a container listening on port 8080. Notice at the top of the page next to the
 node's IP address there is now a link labeled **8080**. Click on that link to use the application.
@@ -50,4 +50,4 @@ node's IP address there is now a link labeled **8080**. Click on that link to us
 [Install Docker](https://docs.docker.com/install/#supported-platforms) on your favorite Linux machine.
 Open a terminal, change directory into some work location and execute the following command:
 
-`curl -o runme.sh https://code.vt.edu/sid97/CS4604-project/raw/master/runme.sh && bash ./runme.sh`
+`curl -o runme.sh https://code.vt.edu/sid97/CS4604-project/raw/working-master/runme.sh && bash ./runme.sh`
