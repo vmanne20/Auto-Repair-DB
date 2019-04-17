@@ -17,7 +17,7 @@ class AllRecordsController {
 
   @GetMapping("/allRecords")
   public Collection<AllRecords> allRecords() {
-    System.out.println("getting active customers");
+    System.out.println("getting all records");
     return repository.allRecords().stream().collect(Collectors.toList());
   }
 }
