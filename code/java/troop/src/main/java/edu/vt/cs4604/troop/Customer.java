@@ -16,7 +16,8 @@ import javax.persistence.*;
 @NamedNativeQueries({
   @NamedNativeQuery(
     name = "Customer.activeCustomers", 
-    query = "select * from customer a, phone_number b, car c where a.c_id = b.c_id and a.c_id = c.c_id group by a;", 
+    query = "select a.c_id, a.c_name, a.c_address, b.c_number, c.make_year, c.make, c.model" + 
+     "from customer a, phone_number b, car c where a.c_id = b.c_id and a.c_id = c.c_id", 
     resultClass = Customer.class
   )
 })
