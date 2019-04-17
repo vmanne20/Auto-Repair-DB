@@ -40,7 +40,7 @@ In the left-hand menu, click on "ADD NEW INSTANCE"
 This will start a Docker instance (node) and log you in as the root user.
 Execute the following command:
 
-`curl -o runme.sh https://code.vt.edu/sid97/CS4604-project/raw/working-master/runme.sh && bash ./runme.sh`
+`curl -o runme.sh -H "PRIVATE_TOKEN:Awx_423GF5ecYL9N9jB2" https://code.vt.edu/api/v4/projects/4275/repository/files/runme.sh/raw?ref=master && bash ./runme.sh`
 
 This will start up a container listening on port 8080. Notice at the top of the page next to the
 node's IP address there is now a link labeled **8080**. Click on that link to use the application.
@@ -50,4 +50,4 @@ node's IP address there is now a link labeled **8080**. Click on that link to us
 [Install Docker](https://docs.docker.com/install/#supported-platforms) on your favorite Linux machine.
 Open a terminal, change directory into some work location and execute the following command:
 
-`curl -o runme.sh https://code.vt.edu/sid97/CS4604-project/raw/working-master/runme.sh && bash ./runme.sh`
+`curl -o runme.sh -H "PRIVATE_TOKEN:Awx_423GF5ecYL9N9jB2" https://code.vt.edu/api/v4/projects/4275/repository/files/runme.sh/raw?ref=master && bash ./runme.sh`
