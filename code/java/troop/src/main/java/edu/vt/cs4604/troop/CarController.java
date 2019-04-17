@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Collection;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 @RestController
@@ -35,14 +36,13 @@ class CarController {
   }
 
   @DeleteMapping("/cars")
-  public String deleteCar(@RequestBody Car car) {
+  public void deleteCar(@RequestBody Car car) {
     System.out.println(car.toString());
     try {
         repository.delete(car);
     } catch (Exception e) {
-        return "Error";
+        throw e;
     }
-    return "Delete successful!";
   }
 
   @GetMapping("/activeCars")
