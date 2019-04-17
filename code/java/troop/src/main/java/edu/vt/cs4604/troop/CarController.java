@@ -36,14 +36,16 @@ class CarController {
   }
 
   @DeleteMapping("/cars")
-  public String deleteCar(@RequestBody Long carId) {
+  public Car deleteCar(@RequestBody Long carId) {
     System.out.println(carId);
+    Car deletedCar = null;
     try {
+        deletedCar = repository.findById(carId).get();
         repository.deleteById(carId);
-    } catch (NullPointerException e) {
-        return e.toString();
+    } catch (Exception e) {
+        System.out.println(e.toString());
     }
-    return "Delete was sucessful!";
+    return deletedCar;
   }
 
   @GetMapping("/activeCars")
