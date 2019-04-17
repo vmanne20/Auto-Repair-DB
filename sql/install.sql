@@ -75,3 +75,14 @@ CREATE TABLE car
 --   FOREIGN KEY (customer_id) REFERENCES Customer(Id)
 );
 
+CREATE TABLE all_records
+(
+  c_id INT NOT NULL,
+  c_name VARCHAR(60) NOT NULL,
+  c_address VARCHAR(100) NOT NULL,
+  c_number VARCHAR(20) NOT NULL,
+  make_year VARCHAR(5) NOT NULL,
+  make VARCHAR(60) NOT NULL,
+  model VARCHAR(60) NOT NULL,
+  PRIMARY KEY (c_id)
+);

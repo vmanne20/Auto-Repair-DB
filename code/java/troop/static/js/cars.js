@@ -10,7 +10,8 @@
             },
             c_id: {
                 title: 'Customer Id',
-                list: false
+                list: false, 
+                edit: false
             },
             c_name: {
                 title: 'Customer Name'
@@ -80,7 +81,7 @@
                   $.ajax({
                     url: '/cars',
                     type: 'DELETE',
-                    contentType: "application/json; charset=utf-8",
+                    // contentType: "application/json; charset=utf-8",
                     data: JSON.stringify(postData),
                     dataType: 'json',
                     success: function (data) {

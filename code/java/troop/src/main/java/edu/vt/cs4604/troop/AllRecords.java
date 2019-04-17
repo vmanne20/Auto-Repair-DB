@@ -13,27 +13,28 @@ import javax.persistence.*;
  * the same thing.
  * https://en.wikipedia.org/wiki/Java_Persistence_Query_Language
  */
-// @NamedNativeQueries({
-//   @NamedNativeQuery(
-//     name = "Customer.activeCustomers", 
-//     query = "select a.c_id, a.c_name, a.c_address, b.c_number, c.make_year, c.make, c.model" + 
-//      "from customer a, phone_number b, car c where a.c_id = b.c_id and a.c_id = c.c_id", 
-//     resultClass = AllRecords.class
-//   )
-// })
+
+@NamedNativeQueries({
+    @NamedNativeQuery(
+      name = "AllRecords.allRecords", 
+      query = "select a.c_id, a.c_name, a.c_address, b.c_number, c.make_year, c.make, c.model" + 
+       "from customer a, phone_number b, car c where a.c_id = b.c_id and a.c_id = c.c_id", 
+      resultClass = AllRecords.class
+    )
+  })
 
 @Entity
 @Getter @Setter
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
-public class Customer {
+public class AllRecords {
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // @OneToMany
-    // // (cascade = CascadeType.ALL)
-    // @JoinColumn(name = "id")
   private Long c_id;
 
   private String c_name;
   private String c_address;
+  private String c_number;
+  private String make_year;
+  private String make;
+  private String model;
 }

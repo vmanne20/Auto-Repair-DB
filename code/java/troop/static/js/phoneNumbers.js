@@ -11,11 +11,8 @@
             },
             c_id: {
                 title: 'Customer Id', 
-                list: false
-                // key: true,
-                // create: true,
-                // edit: true,
-                // list: false
+                list: false,
+                edit: false
             },
             c_name: {
                 title: 'Customer Name'
