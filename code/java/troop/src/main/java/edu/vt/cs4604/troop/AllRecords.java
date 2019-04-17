@@ -27,21 +27,21 @@ import javax.persistence.*;
 @Getter @Setter
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
-@SqlResultSetMapping(
-    name="AllRecordsResult",
-    classes={
-      @ConstructorResult(
-        targetClass=AllRecords.class,
-        columns={
-          @ColumnResult(name="c_id", type=Long.class),
-          @ColumnResult(name="c_name"),
-          @ColumnResult(name="c_address"),
-          @ColumnResult(name="c_number"),
-          @ColumnResult(name="make_year"),
-          @ColumnResult(name="make"),
-          @ColumnResult(name="model")
-        })
-    })
+// @SqlResultSetMapping(
+//     name="AllRecordsResult",
+//     classes={
+//       @ConstructorResult(
+//         targetClass=AllRecords.class,
+//         columns={
+//           @ColumnResult(name="c_id", type=Long.class),
+//           @ColumnResult(name="c_name"),
+//           @ColumnResult(name="c_address"),
+//           @ColumnResult(name="c_number"),
+//           @ColumnResult(name="make_year"),
+//           @ColumnResult(name="make"),
+//           @ColumnResult(name="model")
+//         })
+//     })
 public class AllRecords {
     @Id
     private Long c_id;

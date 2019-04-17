@@ -25,19 +25,19 @@ class AllRecordsController {
   @GetMapping("/allRecords")
   public Collection<AllRecords> allRecords() {
     System.out.println("getting all records");
-    Query q = em.createNamedQuery("allRecordsQuery");
-    List<Object[]> results = q.getResultList();
-    List<AllRecords> records = new ArrayList<>();
-    results.stream().forEach((record) -> {
-        Long c_id = ((Long) record[0]).longValue();
-        String c_name = (String) record[1];
-        String c_address = (String) record[2];
-        String c_number = (String) record[3];
-        String make_year = (String) record[4];
-        String make = (String) record[5];
-        String model = (String) record[6];
-        records.add(new AllRecords(c_id, c_name, c_address, c_number, make_year, make, model));
-    });
-    return records.stream().collect(Collectors.toList());
+    // Query q = em.createNamedQuery("allRecordsQuery");
+    // List<Object[]> results = q.getResultList();
+    // List<AllRecords> records = new ArrayList<>();
+    // results.stream().forEach((record) -> {
+    //     Long c_id = ((Long) record[0]).longValue();
+    //     String c_name = (String) record[1];
+    //     String c_address = (String) record[2];
+    //     String c_number = (String) record[3];
+    //     String make_year = (String) record[4];
+    //     String make = (String) record[5];
+    //     String model = (String) record[6];
+    //     records.add(new AllRecords(c_id, c_name, c_address, c_number, make_year, make, model));
+    // });
+    return repository.allRecords().stream().collect(Collectors.toList());
   }
 }
