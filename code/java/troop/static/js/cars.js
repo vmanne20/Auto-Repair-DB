@@ -10,8 +10,8 @@
             },
             c_id: {
                 title: 'Customer Id',
-                list: false, 
-                edit: false
+                list: false
+                // edit: false
             },
             c_name: {
                 title: 'Customer Name'
