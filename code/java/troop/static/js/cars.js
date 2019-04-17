@@ -81,7 +81,7 @@
                   $.ajax({
                     url: '/cars',
                     type: 'DELETE',
-                    // contentType: "application/json; charset=utf-8",
+                    contentType: "application/json; charset=utf-8",
                     data: JSON.stringify(postData),
                     dataType: 'json',
                     success: function (data) {
