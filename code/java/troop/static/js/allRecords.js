@@ -1,4 +1,4 @@
-    // CARS
+
     $(document).ready(function () {
 
         $('#AllTableContainer').jtable({
