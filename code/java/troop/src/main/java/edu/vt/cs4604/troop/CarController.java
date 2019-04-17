@@ -1,11 +1,15 @@
 package edu.vt.cs4604.troop;
 
 import org.springframework.web.bind.annotation.*;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Collection;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
+
+
+import com.fasterxml.jackson.databind.util.JSONPObject;
 
 @RestController
 class CarController {
@@ -36,16 +40,19 @@ class CarController {
   }
 
   @DeleteMapping("/cars")
-  public Car deleteCar(@RequestBody Long carId) {
+  public JSONObject deleteCar(@RequestBody Long carId) {
     System.out.println(carId);
-    Car deletedCar = null;
+    // Car deletedCar = null;
+    JSONObject obj = new JSONObject();
     try {
-        deletedCar = repository.findById(carId).get();
+        // deletedCar = repository.findById(carId).get();
         repository.deleteById(carId);
+        obj.put("Result", "OK");
     } catch (Exception e) {
-        System.out.println(e.toString());
+        e.printStackTrace();
+        obj.put("Result", "ERROR");
     }
-    return deletedCar;
+    return obj;
   }
 
   @GetMapping("/activeCars")
