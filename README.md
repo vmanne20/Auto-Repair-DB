@@ -29,7 +29,7 @@ The diagram below shows the entity-relationship diagram converted to a relationa
 
 ![Relational Diagram](diagrams/relational1.png "Relational Diagram")
 
-The corresponding sql can be found [here](sql/install.sql).
+The corresponding sql can be found [here](sql/install.sql) and [here](sql/load.sql) .
 
 ## Build/Install/Run
 
