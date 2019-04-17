@@ -33,4 +33,8 @@ public class Car {
   private String make_year;
   private String make;
   private String model;
+
+  public Long getId() {
+      return car_id;
+  }
 }
