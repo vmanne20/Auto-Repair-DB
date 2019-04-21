@@ -45,7 +45,7 @@ insert into Car (c_id, c_name, make_year, make, model) values (9, 'Robert Muelle
 insert into phone_number (c_id, c_name, c_number) values (1, 'Carl Yao', '(316) 874-3435');
 insert into phone_number (c_id, c_name, c_number) values (8, 'Donald Trump', '(703) 234-1209');
 insert into phone_number (c_id, c_name, c_number) values (5, 'Bob Smith', '(404) 234-9742');
-insert into phone_number (c_id, c_name, c_number) values (2, 'Vamsi Manne', '(316) 874-3435');
+insert into phone_number (c_id, c_name, c_number) values (2, 'Vamsi Manne', '(304) 237-2349');
 insert into phone_number (c_id, c_name, c_number) values (3, 'Sid Hingorani', '(375) 529-2179');
 insert into phone_number (c_id, c_name, c_number) values (4, 'AJ Goudel', '(989) 470-4397');
 insert into phone_number (c_id, c_name, c_number) values (6, 'Jack Davis', '(224) 761-3489');
