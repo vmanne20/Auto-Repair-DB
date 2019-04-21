@@ -56,6 +56,4 @@ class CustomerController {
     System.out.println("getting active customers");
     return repository.activeCustomers().stream().collect(Collectors.toList());
   }
-
-  
 }
