@@ -3,6 +3,52 @@
         $('#CustomerTableContainer').jtable({
           title: 'Customers',
           fields: {
+            //CHILD TABLE DEFINITION FOR "PHONE NUMBERS"
+            PhoneNumbers: {
+                title: '',
+                width: '5%',
+                sorting: false,
+                edit: false,
+                create: false,
+                display: function (customerData) {
+                    //Create an image that will be used to open child table
+                    var $img = $('<img src="phone.png" title="Edit phone numbers" />');
+                    //Open child table when user clicks the image
+                    $img.click(function () {
+                        $('#CustomerTableContainer').jtable('openChildTable',
+                                $img.closest('tr'),
+                                {
+                                    title: customerData.record.c_name + ' - Phone numbers',
+                                    actions: {
+                                        listAction: '',
+                                        deleteAction: '/Demo/DeletePhone',
+                                        updateAction: '/Demo/UpdatePhone',
+                                        createAction: '/Demo/CreatePhone'
+                                    },
+                                    fields: {
+                                        c_id: {
+                                            type: 'hidden',
+                                            defaultValue: customerData.record.c_id
+                                        },
+                                        p_id: {
+                                            key: true,
+                                            create: false,
+                                            edit: false,
+                                            list: false
+                                        },
+                                        p_number: {
+                                            title: 'Phone Number',
+                                            width: '30%'
+                                        }
+                                    }
+                                }, function (data) { //opened handler
+                                    data.childTable.jtable('load');
+                                });
+                    });
+                    //Return image to show on the person row
+                    return $img;
+                }
+            },
             c_id: {
                 title: 'Customer Id',
                 key: true
