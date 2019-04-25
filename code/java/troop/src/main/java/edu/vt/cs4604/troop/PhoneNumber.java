@@ -2,8 +2,6 @@ package edu.vt.cs4604.troop;
 
 import lombok.*;
 
-import java.io.Serializable;
-
 // import java.time.LocalDate;
 import javax.persistence.*;
 // import java.io.*;
@@ -34,13 +32,7 @@ public class PhoneNumber {
 
     @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // @OneToMany
-    // // (cascade = CascadeType.ALL)
-    // @JoinColumn(name = "id")
     private Long p_id;
-
-    // private Long c_id;
-    // private String c_name;
 
     private String p_number;
 }

@@ -20,10 +20,88 @@
                                 {
                                     title: customerData.record.c_name + ' - Phone numbers',
                                     actions: {
-                                        listAction: '',
-                                        deleteAction: '/Demo/DeletePhone',
-                                        updateAction: '/Demo/UpdatePhone',
-                                        createAction: '/Demo/CreatePhone'
+                                        createAction: function (postData, jtParams) {
+                                            console.log("creating phone number:");
+                                            postData = QueryStringToJSON(postData);
+                                            console.log(postData);
+                                            return $.Deferred(function ($dfd) {
+                                              $.ajax({
+                                                url: '/phoneNumbers',
+                                                type: 'POST',
+                                                contentType: "application/json; charset=utf-8",
+                                                data: JSON.stringify(postData),
+                                                dataType: 'json',
+                                                success: function (data) {
+                                                  $dfd.resolve({ "Result": "OK", "Record": data });
+                                                },
+                                                error: function (xhr, options, error) {
+                                                  console.log("error");
+                                                  console.log(xhr.responseText);
+                                                  $dfd.reject();
+                                                }
+                                              });
+                                            });
+                                          }
+                                          ,
+                                          updateAction: function (postData, jtParams) {
+                                              console.log("creating phone number:");
+                                              postData = QueryStringToJSON(postData);
+                                              console.log(postData);
+                                              return $.Deferred(function ($dfd) {
+                                                $.ajax({
+                                                  url: '/phoneNumbers',
+                                                  type: 'PUT',
+                                                  contentType: "application/json; charset=utf-8",
+                                                  data: JSON.stringify(postData),
+                                                  dataType: 'json',
+                                                  success: function (data) {
+                                                    $dfd.resolve({ "Result": "OK", "Record": data });
+                                                  },
+                                                  error: function (xhr, options, error) {
+                                                    console.log("error");
+                                                    console.log(xhr.responseText);
+                                                    $dfd.reject();
+                                                  }
+                                                });
+                                              });
+                                            }
+                                          ,
+                                          deleteAction: function (postData, jtParams) {
+                                              console.log("deleting phoneNumber:");
+                                              console.log(postData);
+                                              return $.Deferred(function ($dfd) {
+                                                $.ajax({
+                                                  url: '/phoneNumbers',
+                                                  type: 'DELETE',
+                                                  contentType: "application/json; charset=utf-8",
+                                                  data: JSON.stringify(postData['p_id']),
+                                                  dataType: 'json',
+                                                  success: function (data) {
+                                                    $dfd.resolve({ "Result": "OK", "Record": data });
+                                                  },
+                                                  error: function (xhr, options, error) {
+                                                    console.log("error");
+                                                    console.log(xhr.responseText);
+                                                    $dfd.reject();
+                                                  }
+                                                });
+                                              });
+                                            }
+                                            , 
+                                          listAction: function (postData, jtParams) {
+                                            return $.Deferred(function ($dfd) {
+                                              $.ajax({
+                                                url: '/phoneNumbers',
+                                                type: 'GET',
+                                                success: function (data) {
+                                                  $dfd.resolve({ "Result": "OK", "Records": data, "TotalRecordCount": data.length });
+                                                },
+                                                error: function () {
+                                                  $dfd.reject();
+                                                }
+                                              });
+                                            });
+                                          }
                                     },
                                     fields: {
                                         c_id: {
@@ -37,8 +115,7 @@
                                             list: false
                                         },
                                         p_number: {
-                                            title: 'Phone Number',
-                                            width: '30%'
+                                            title: 'Phone Number'
                                         }
                                     }
                                 }, function (data) { //opened handler
