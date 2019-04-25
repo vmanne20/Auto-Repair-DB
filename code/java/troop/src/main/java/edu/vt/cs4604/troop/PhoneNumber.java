@@ -15,6 +15,7 @@ import javax.persistence.*;
  * the same thing.
  * https://en.wikipedia.org/wiki/Java_Persistence_Query_Language
  */
+
 @NamedNativeQueries({
   @NamedNativeQuery(
     name = "PhoneNumber.activeNums", 
@@ -38,22 +39,8 @@ public class PhoneNumber {
     // @JoinColumn(name = "id")
     private Long p_id;
 
-    // @Id
-    private Long c_id;
-    private String c_name;
+    // private Long c_id;
+    // private String c_name;
 
-    // @Id
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String c_number;
-
-    // @ManyToOne
-    // @JoinColumn(name="c_id", insertable=false, updatable=false)
-    // private Customer customer;
+    private String p_number;
 }
-
-// class PhoneNumberPK implements Serializable {
-//     private Long c_id;
-//     private String c_number;
-// }
-
-
