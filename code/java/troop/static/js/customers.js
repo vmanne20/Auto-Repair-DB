@@ -6,13 +6,13 @@
             //CHILD TABLE DEFINITION FOR "PHONE NUMBERS"
             PhoneNumbers: {
                 title: '',
-                width: '5%',
+                width: '1%',
                 sorting: false,
                 edit: false,
                 create: false,
                 display: function (customerData) {
                     //Create an image that will be used to open child table
-                    let $img = $('<img src="http://jtable.org/Content/images/Misc/phone_metro.png" style="display:block;" width="100%" height="100%"/>');
+                    let $img = $('<img src="http://jtable.org/Content/images/Misc/phone_metro.png" align="center" style="display:block; cursor: pointer;" width="100%" height="100%"/>');
                     //Open child table when user clicks the image
                     $img.click(function () {
                         $('#CustomerTableContainer').jtable('openChildTable',
@@ -128,7 +128,8 @@
             },
             c_id: {
                 title: 'Customer Id',
-                key: true
+                key: true,
+                width: '5%'
                 // list: false
             },
             c_name: {
