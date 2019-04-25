@@ -54,8 +54,8 @@ insert into Car (c_id, c_name, make_year, make, model) values (9, 'Robert Muelle
 -- insert into phone_number (c_id, c_name, c_number) values (9, 'Robert Mueller', '(554) 690-6469');
 
 
-insert into phone_number (p_number) values ('(316) 874-3435');
-insert into phone_number (p_number) values ('(703) 234-1209');
+-- insert into phone_number (p_number) values ('(316) 874-3435');
+-- insert into phone_number (p_number) values ('(703) 234-1209');
 
 -- insert into PhoneNumber (customer_ID, c_number) values (1, '(316) 874-3435');
 -- insert into PhoneNumber (customer_ID, c_number) values (1, '(375) 529-2179');

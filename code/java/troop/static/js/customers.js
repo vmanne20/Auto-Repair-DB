@@ -12,7 +12,7 @@
                 create: false,
                 display: function (customerData) {
                     //Create an image that will be used to open child table
-                    var $img = $('<img src="phone.png" title="Edit phone numbers" />');
+                    let $img = $('<img src="phone.png" style="display:block;" width="100%" height="100%" title="Edit phone numbers" />');
                     //Open child table when user clicks the image
                     $img.click(function () {
                         $('#CustomerTableContainer').jtable('openChildTable',
