@@ -33,6 +33,6 @@ public class PhoneNumber {
     @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long p_id;
-
+    private Long c_id;
     private String p_number;
 }

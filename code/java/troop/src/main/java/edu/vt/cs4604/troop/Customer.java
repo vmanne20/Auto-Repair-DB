@@ -3,7 +3,7 @@ package edu.vt.cs4604.troop;
 import lombok.*;
 // import java.time.LocalDate;
 import javax.persistence.*;
-// import java.util.*;
+import java.util.*;
 // import java.util.stream.Collectors;
 // import java.util.stream.Stream;
 /*
@@ -35,4 +35,8 @@ public class Customer {
 
   private String c_name;
   private String c_address;
+
+  @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "c_id", referencedColumnName = "c_id", nullable = false)
+  List<PhoneNumber> phone_numbers;
 }

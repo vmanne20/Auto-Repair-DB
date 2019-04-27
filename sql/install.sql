@@ -53,6 +53,7 @@ CREATE SEQUENCE Phone_Id;
 CREATE TABLE phone_number
 (
     p_id INT DEFAULT nextval('Phone_Id') NOT NULL,
+    c_id INT NOT NULL,
     p_number VARCHAR(20) NOT NULL,
     PRIMARY KEY (p_id),
     UNIQUE (p_number)

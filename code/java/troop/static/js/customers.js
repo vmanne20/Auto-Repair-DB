@@ -6,7 +6,7 @@
             //CHILD TABLE DEFINITION FOR "PHONE NUMBERS"
             PhoneNumbers: {
                 title: '',
-                width: '1%',
+                width: '0.5%',
                 sorting: false,
                 edit: false,
                 create: false,
@@ -18,7 +18,7 @@
                         $('#CustomerTableContainer').jtable('openChildTable',
                                 $img.closest('tr'),
                                 {
-                                    title: customerData.record.c_name + ' - Phone numbers',
+                                    title: customerData.record.c_name,
                                     actions: {
                                         createAction: function (postData, jtParams) {
                                             console.log("creating phone number:");
@@ -106,6 +106,7 @@
                                     fields: {
                                         c_id: {
                                             type: 'hidden',
+                                            title: 'Customer Id',
                                             defaultValue: customerData.record.c_id
                                         },
                                         p_id: {
@@ -115,7 +116,7 @@
                                             list: false
                                         },
                                         p_number: {
-                                            title: 'Phone Number'
+                                            title: 'Phone Numbers'
                                         }
                                     }
                                 }, function (data) { //opened handler
@@ -129,7 +130,7 @@
             c_id: {
                 title: 'Customer Id',
                 key: true,
-                width: '5%'
+                width: '15%'
                 // list: false
             },
             c_name: {
