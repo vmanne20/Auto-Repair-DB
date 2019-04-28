@@ -27,9 +27,6 @@ import javax.persistence.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @OneToMany
-    // // (cascade = CascadeType.ALL)
-    // @JoinColumn(name = "id")
     private Long c_id;
 
     private String c_name;
