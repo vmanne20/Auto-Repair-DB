@@ -6,7 +6,7 @@
             //CHILD TABLE DEFINITION FOR "PHONE NUMBERS"
             PhoneNumbers: {
                 title: '',
-                width: '0.5%',
+                width: '0.8%',
                 sorting: false,
                 edit: false,
                 create: false,
@@ -130,7 +130,7 @@
             c_id: {
                 title: 'Customer Id',
                 key: true,
-                width: '15%'
+                width: '5%'
                 // list: false
             },
             c_name: {

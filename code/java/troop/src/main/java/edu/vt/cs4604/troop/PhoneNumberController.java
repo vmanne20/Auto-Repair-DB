@@ -7,10 +7,19 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 import org.json.JSONObject;
 
+// import javax.persistence.EntityManager;
+// import javax.persistence.PersistenceContext;
+
 @RestController
 class PhoneNumberController {
   @Autowired
   private PhoneNumberRepository repository;
+
+//   @Autowired
+//   private CustomerRepository custRepo;
+
+//   @PersistenceContext
+//   private EntityManager em;
 
   public PhoneNumberController(PhoneNumberRepository repository) {
     this.repository = repository;
@@ -26,6 +35,10 @@ class PhoneNumberController {
   @PostMapping("/phoneNumbers")
   public PhoneNumber addPhoneNumber(@RequestBody PhoneNumber phoneNumber) {
     System.out.println(phoneNumber.toString());
+    // Customer customer = em.find(Customer.class, phoneNumber.getCustomer().getId());
+    Customer customer = phoneNumber.getCustomer();
+    customer.addPhoneNumber(phoneNumber);
+    phoneNumber.setCustomer(customer);
     return repository.save(phoneNumber);
   }
 
