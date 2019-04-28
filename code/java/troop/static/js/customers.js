@@ -6,7 +6,7 @@
             //CHILD TABLE DEFINITION FOR "PHONE NUMBERS"
             PhoneNumbers: {
                 title: '',
-                width: '0.8%',
+                width: '0.7%',
                 sorting: false,
                 edit: false,
                 create: false,
@@ -116,7 +116,7 @@
                                             list: false
                                         },
                                         p_number: {
-                                            title: 'Numbers'
+                                            // title: 'Numbers'
                                         }
                                     }
                                 }, function (data) { //opened handler
