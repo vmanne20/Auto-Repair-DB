@@ -22,6 +22,7 @@ import java.util.*;
 })
 
 @Entity
+@Table(name = "customer")
 @Getter @Setter
 @NoArgsConstructor
 @ToString @EqualsAndHashCode

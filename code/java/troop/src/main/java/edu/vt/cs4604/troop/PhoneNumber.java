@@ -23,10 +23,10 @@ import javax.persistence.*;
 })
 
 @Entity
+@Table(name = "phone_number")
 @Getter @Setter
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
-
 // @IdClass(PhoneNumberPK.class)
 public class PhoneNumber {
 
