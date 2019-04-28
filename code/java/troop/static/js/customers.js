@@ -18,7 +18,7 @@
                         $('#CustomerTableContainer').jtable('openChildTable',
                                 $img.closest('tr'),
                                 {
-                                    title: customerData.record.c_name,
+                                    title: customerData.record.c_name + '\'s Numbers',
                                     actions: {
                                         createAction: function (postData, jtParams) {
                                             console.log("creating phone number:");

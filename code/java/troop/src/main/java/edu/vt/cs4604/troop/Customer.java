@@ -38,5 +38,5 @@ public class Customer {
 
   @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "c_id", referencedColumnName = "c_id", nullable = false)
-  List<PhoneNumber> phone_numbers;
+  List<PhoneNumber> phone_numbers = new ArrayList<>();
 }
