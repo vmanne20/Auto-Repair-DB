@@ -2,7 +2,7 @@ package edu.vt.cs4604.troop;
 
 import lombok.*;
 import javax.persistence.*;
-import java.util.*;
+// import java.util.*;
 
 /*
  * NamedNativeQueries allow us to use _SQL_ queries
@@ -27,7 +27,7 @@ import java.util.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // @OneToMany
+    @OneToMany
     // // (cascade = CascadeType.ALL)
     // @JoinColumn(name = "id")
     private Long c_id;
@@ -35,16 +35,16 @@ public class Customer {
     private String c_name;
     private String c_address;
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "c_id", referencedColumnName = "c_id", nullable = false)
-    List<PhoneNumber> phoneNumbers = new ArrayList<PhoneNumber>();
+    // @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    // @JoinColumn(name = "c_id", referencedColumnName = "c_id", nullable = false)
+    // List<PhoneNumber> phoneNumbers = new ArrayList<PhoneNumber>();
 
-    public void addPhoneNumber(PhoneNumber pn) {
-        pn.setCustomer(this);
-        phoneNumbers.add(pn);
-    }
+    // public void addPhoneNumber(PhoneNumber pn) {
+    //     pn.setCustomer(this);
+    //     phoneNumbers.add(pn);
+    // }
 
-    public Long getId() {
-        return c_id;
-    }
+    // public Long getId() {
+    //     return c_id;
+    // }
  }

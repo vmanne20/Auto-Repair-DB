@@ -34,17 +34,18 @@ public class PhoneNumber {
      @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long p_id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "c_id")
-    private Customer customer;
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "c_id")
+    // private Customer customer;
+    private Long c_id;
 
     private String p_number;
 
-    public Customer getCustomer() {
-        return customer;
-    }
+    // public Customer getCustomer() {
+    //     return customer;
+    // }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
+    // public void setCustomer(Customer customer) {
+    //     this.customer = customer;
+    // }
 }
