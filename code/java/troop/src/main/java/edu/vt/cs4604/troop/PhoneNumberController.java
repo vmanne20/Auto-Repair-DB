@@ -25,26 +25,26 @@ class PhoneNumberController {
     this.repository = repository;
   }
 
-  @GetMapping("/phoneNumbers")
-  public Collection<PhoneNumber> phoneNumbers() {
+  @GetMapping("/get-phone-numbers/{c_id}")
+  public Collection<PhoneNumber> phoneNumbers(@PathVariable("c_id") Long c_id) {
     System.out.println("getting numbers");
-    return repository.findAll().stream()
+    return repository.findById(c_id).stream()
       .collect(Collectors.toList());
   }
 
-  @PostMapping("/phoneNumbers")
+  @PostMapping("/add-phone-numbers")
   public PhoneNumber addPhoneNumber(@RequestBody PhoneNumber phoneNumber) {
     System.out.println(phoneNumber.toString());
     return repository.save(phoneNumber);
   }
 
-  @PutMapping("/phoneNumbers")
+  @PutMapping("/update-phone-numbers")
   public PhoneNumber updatePhoneNumber(@RequestBody PhoneNumber phoneNumber) {
     System.out.println(phoneNumber.toString());
     return repository.save(phoneNumber);
   }
 
-  @DeleteMapping("/phoneNumbers")
+  @DeleteMapping("/delete-phone-numbers")
   public JSONObject deletePhoneNumber(@RequestBody Long p_id) {
     System.out.println(p_id);
     // Car deletedCar = null;

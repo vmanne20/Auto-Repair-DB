@@ -26,7 +26,7 @@
                                             console.log(postData);
                                             return $.Deferred(function ($dfd) {
                                               $.ajax({
-                                                url: '/phoneNumbers',
+                                                url: '/add-phone-numbers',
                                                 type: 'POST',
                                                 contentType: "application/json; charset=utf-8",
                                                 data: JSON.stringify(postData),
@@ -49,7 +49,7 @@
                                               console.log(postData);
                                               return $.Deferred(function ($dfd) {
                                                 $.ajax({
-                                                  url: '/phoneNumbers',
+                                                  url: '/update-phone-numbers',
                                                   type: 'PUT',
                                                   contentType: "application/json; charset=utf-8",
                                                   data: JSON.stringify(postData),
@@ -71,7 +71,7 @@
                                               console.log(postData);
                                               return $.Deferred(function ($dfd) {
                                                 $.ajax({
-                                                  url: '/phoneNumbers',
+                                                  url: '/delete-phone-numbers',
                                                   type: 'DELETE',
                                                   contentType: "application/json; charset=utf-8",
                                                   data: JSON.stringify(postData['p_id']),
@@ -91,7 +91,7 @@
                                           listAction: function (postData, jtParams) {
                                             return $.Deferred(function ($dfd) {
                                               $.ajax({
-                                                url: '/phoneNumbers',
+                                                url: '/get-phone-numbers/' + c_id,
                                                 type: 'GET',
                                                 success: function (data) {
                                                   $dfd.resolve({ "Result": "OK", "Records": data, "TotalRecordCount": data.length });
