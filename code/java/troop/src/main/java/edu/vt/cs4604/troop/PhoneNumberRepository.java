@@ -8,7 +8,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.repository.query.Param;
 
 @RepositoryRestResource
-public interface PhoneNumberRepository extends JpaRepository<PhoneNumber, Long> {
+interface PhoneNumberRepository extends JpaRepository<PhoneNumber, Long> {
   
 //   @Query(nativeQuery = true)
 //   public List<PhoneNumber> activeNums(@Param("days")String days);
