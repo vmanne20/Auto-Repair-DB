@@ -7,9 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Collection;
 import java.util.stream.Collectors;
 import org.json.JSONObject;
+import java.util.*;
 
-// import javax.persistence.EntityManager;
-// import javax.persistence.PersistenceContext;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 @RestController
 class PhoneNumberController {
@@ -19,8 +21,8 @@ class PhoneNumberController {
 //   @Autowired
 //   private CustomerRepository custRepo;
 
-//   @PersistenceContext
-//   private EntityManager em;
+  @PersistenceContext
+  private EntityManager em;
 
   public PhoneNumberController(PhoneNumberRepository repository) {
     this.repository = repository;
@@ -30,8 +32,13 @@ class PhoneNumberController {
   // @PathVariable(name = "c_id")
   public Collection<PhoneNumber> phoneNumbers(@RequestParam("c_id") Long c_id) {
     System.out.println("getting numbers");
-    return repository.findByCustomerId(c_id).stream()
-      .collect(Collectors.toList());
+    // return repository.findByCustomerId(c_id).stream()
+    //   .collect(Collectors.toList());
+    Query q = em.createNativeQuery("select p.* from phone_number p where p.c_id = :customerId", PhoneNumber.class)
+                .setParameter("customerId", c_id);
+    List<PhoneNumber> phoneList = q.getResultList();
+    return phoneList.stream()
+        .collect(Collectors.toList());
   }
 
   @PostMapping("/add-phone-numbers")

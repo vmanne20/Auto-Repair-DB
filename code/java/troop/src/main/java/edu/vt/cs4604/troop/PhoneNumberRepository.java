@@ -13,10 +13,15 @@ interface PhoneNumberRepository extends JpaRepository<PhoneNumber, Long> {
 //   @Query(nativeQuery = true)
 //   public List<PhoneNumber> activeNums(@Param("days")String days);
 
-/**
+    /**
    * Finds phone numbers for particular customer
    * @return  A list of phone numbers.
    */
-//   @Query(nativeQuery = true)
-  public List<PhoneNumber> findByCustomerId(@Param("c_id") Long c_id);
+    @Query(nativeQuery = true)
+    public List<PhoneNumber> findByCustomerId(@Param("c_id") Long c_id);
+  
 }
+
+// interface PhoneNumberRepositoryCustom {
+//     public List<PhoneNumber> findByCustomerId(@Param("c_id") Long c_id);
+// }
