@@ -18,7 +18,7 @@
                         $('#CustomerTableContainer').jtable('openChildTable',
                                 $img.closest('tr'),
                                 {
-                                    title: customerData.record.c_name + '\'s Phone Numbers',
+                                    title: customerData.record.c_id + ' - ' + customerData.record.c_name,
                                     actions: {
                                         createAction: function (postData, jtParams) {
                                             console.log("creating phone number:");
@@ -105,22 +105,21 @@
                                     },
                                     fields: {
                                         c_id: {
-                                            // type: 'hidden',
+                                            type: 'hidden',
                                             title: 'Customer Id',
                                             width: '3%',
-                                            create: false,
-                                            edit: false,
+                                            // create: false,
+                                            // edit: false,
                                             defaultValue: customerData.record.c_id
                                         },
                                         p_id: {
-                                            title: 'Number',
                                             key: true,
                                             create: false,
                                             edit: false,
                                             list: false
                                         },
                                         p_number: {
-                                            // title: 'Numbers'
+                                            title: 'Phone Numbers'
                                         }
                                     }
                                 }, function (data) { //opened handler
