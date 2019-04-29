@@ -61,11 +61,4 @@ class PhoneNumberController {
     }
     return obj;
   }
-
-  @GetMapping("/activeNums")
-  public Collection<PhoneNumber> activeNums(@RequestParam("days") String days) {
-    System.out.println("getting active numbers");
-    return repository.activeNums(days).stream()
-      .collect(Collectors.toList());
-  }
 }
