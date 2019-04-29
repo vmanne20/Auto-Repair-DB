@@ -108,9 +108,12 @@
                                             // type: 'hidden',
                                             title: 'Customer Id',
                                             width: '3%',
+                                            create: false,
+                                            edit: false,
                                             defaultValue: customerData.record.c_id
                                         },
                                         p_id: {
+                                            title: 'Number',
                                             key: true,
                                             create: false,
                                             edit: false,
