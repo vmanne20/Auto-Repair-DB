@@ -105,8 +105,9 @@
                                     },
                                     fields: {
                                         c_id: {
-                                            type: 'hidden',
+                                            // type: 'hidden',
                                             title: 'Customer Id',
+                                            width: '3%',
                                             defaultValue: customerData.record.c_id
                                         },
                                         p_id: {
@@ -130,7 +131,7 @@
             c_id: {
                 title: 'Customer Id',
                 key: true,
-                width: '5%'
+                width: '3%'
                 // list: false
             },
             c_name: {
