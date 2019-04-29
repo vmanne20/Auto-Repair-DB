@@ -104,12 +104,6 @@
                                           }
                                     },
                                     fields: {
-                                        p_id: {
-                                            key: true,
-                                            create: false,
-                                            edit: false,
-                                            list: false
-                                        },
                                         c_id: {
                                             type: 'hidden',
                                             title: 'Customer Id',
@@ -117,6 +111,12 @@
                                             // create: false,
                                             // edit: false,
                                             defaultValue: customerData.record.c_id
+                                        },
+                                        p_id: {
+                                            key: true,
+                                            create: false,
+                                            edit: false,
+                                            list: false
                                         },
                                         p_number: {
                                             title: 'Phone Numbers'
