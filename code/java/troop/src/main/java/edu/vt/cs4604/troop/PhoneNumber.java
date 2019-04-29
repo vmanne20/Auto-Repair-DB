@@ -17,7 +17,7 @@ import javax.persistence.*;
 @NamedNativeQueries({
   @NamedNativeQuery(
     name = "PhoneNumber.findByCustomerId", 
-    query = "select p.* from phone_number p, customer c where p.c_id = c.c_id", 
+    query = "select p.c_id, p.p_id, p.p_number from phone_number p, customer c where p.c_id = c.c_id", 
     resultClass = PhoneNumber.class
   )
 })
