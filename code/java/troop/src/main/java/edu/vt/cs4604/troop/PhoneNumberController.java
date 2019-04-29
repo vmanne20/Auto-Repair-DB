@@ -35,10 +35,6 @@ class PhoneNumberController {
   @PostMapping("/phoneNumbers")
   public PhoneNumber addPhoneNumber(@RequestBody PhoneNumber phoneNumber) {
     System.out.println(phoneNumber.toString());
-    // Customer customer = em.find(Customer.class, phoneNumber.getCustomer().getId());
-    // Customer customer = phoneNumber.getCustomer();
-    // customer.addPhoneNumber(phoneNumber);
-    // phoneNumber.setCustomer(customer);
     return repository.save(phoneNumber);
   }
 
