@@ -2,7 +2,7 @@ package edu.vt.cs4604.troop;
 
 import lombok.*;
 
-// import java.time.LocalDate;
+// import java.sql.Timestamp;
 import javax.persistence.*;
 // import java.io.*;
 
@@ -31,12 +31,14 @@ import javax.persistence.*;
 public class PhoneNumber {
 
     @Id
+    // @Temporal(TemporalType.TIMESTAMP)
      @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long p_id;
 
     // @ManyToOne(fetch = FetchType.LAZY)
     // @JoinColumn(name = "c_id")
     // private Customer customer;
+    @Column(name = "c_id")
     private Long c_id;
 
     private String p_number;

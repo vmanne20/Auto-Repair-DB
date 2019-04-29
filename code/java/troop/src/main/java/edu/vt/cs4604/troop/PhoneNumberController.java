@@ -3,6 +3,7 @@ package edu.vt.cs4604.troop;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
+// import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.stream.Collectors;
 import org.json.JSONObject;
@@ -28,7 +29,7 @@ class PhoneNumberController {
   @GetMapping("/get-phone-numbers/{c_id}")
   public Collection<PhoneNumber> phoneNumbers(@PathVariable("c_id") Long c_id) {
     System.out.println("getting numbers");
-    return repository.findById(c_id).stream()
+    return repository.findByCustomerId(c_id).stream()
       .collect(Collectors.toList());
   }
 
