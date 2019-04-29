@@ -9,12 +9,14 @@ import org.springframework.data.repository.query.Param;
 
 @RepositoryRestResource
 public interface PhoneNumberRepository extends JpaRepository<PhoneNumber, Long> {
-  /**
-   * Finds active customers
-   * @return  A list of customers.
+  
+//   @Query(nativeQuery = true)
+//   public List<PhoneNumber> activeNums(@Param("days")String days);
+
+/**
+   * Finds phone numbers for particular customer
+   * @return  A list of phone numbers.
    */
   @Query(nativeQuery = true)
-  public List<PhoneNumber> activeNums(@Param("days")String days);
-
-//   public List<PhoneNumber> findByCustomerId(@Param("c_id") Long c_id);
+  public List<PhoneNumber> findByCustomerId(@Param("c_id") Long c_id);
 }

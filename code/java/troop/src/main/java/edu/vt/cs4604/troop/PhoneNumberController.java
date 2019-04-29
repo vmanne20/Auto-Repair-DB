@@ -30,7 +30,7 @@ class PhoneNumberController {
   // @PathVariable(name = "c_id")
   public Collection<PhoneNumber> phoneNumbers(@RequestParam("c_id") Long c_id) {
     System.out.println("getting numbers");
-    return repository.findById(c_id).stream()
+    return repository.findByCustomerId(c_id).stream()
       .collect(Collectors.toList());
   }
 
