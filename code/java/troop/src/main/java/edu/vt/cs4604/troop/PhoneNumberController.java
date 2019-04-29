@@ -26,10 +26,11 @@ class PhoneNumberController {
     this.repository = repository;
   }
 
-  @GetMapping("/get-phone-numbers/{c_id}")
-  public Collection<PhoneNumber> phoneNumbers(@PathVariable("c_id") Long c_id) {
+  @GetMapping("/get-phone-numbers")
+  // @PathVariable(name = "c_id")
+  public Collection<PhoneNumber> phoneNumbers(@RequestParam("c_id") Long c_id) {
     System.out.println("getting numbers");
-    return repository.findByCustomerId(c_id).stream()
+    return repository.findById(c_id).stream()
       .collect(Collectors.toList());
   }
 
