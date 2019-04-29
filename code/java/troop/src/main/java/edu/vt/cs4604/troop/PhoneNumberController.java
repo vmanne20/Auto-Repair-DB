@@ -35,7 +35,7 @@ class PhoneNumberController {
     // return repository.findByCustomerId(c_id).stream()
     //   .collect(Collectors.toList());
     Query q = em.createNativeQuery("select p.* from phone_number p where p.c_id = :customerId", PhoneNumber.class)
-                .setParameter("customerId", c_id);
+                .setParameter("customerId", c_id);  
     List<PhoneNumber> phoneList = q.getResultList();
     return phoneList.stream()
         .collect(Collectors.toList());

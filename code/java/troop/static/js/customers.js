@@ -1,7 +1,7 @@
     // CUSTOMERS
     $(document).ready(function () {
         $('#CustomerTableContainer').jtable({
-          title: 'Customers',
+          title: 'CUSTOMERS',
           fields: {
             //CHILD TABLE DEFINITION FOR "PHONE NUMBERS"
             PhoneNumbers: {
