@@ -91,7 +91,7 @@
                                           listAction: function (postData, jtParams) {
                                             return $.Deferred(function ($dfd) {
                                               $.ajax({
-                                                url: '/get-phone-numbers/' + c_id,
+                                                url: '/get-phone-numbers/' + customerData.record.c_id,
                                                 type: 'GET',
                                                 success: function (data) {
                                                   $dfd.resolve({ "Result": "OK", "Records": data, "TotalRecordCount": data.length });
