@@ -38,7 +38,8 @@ public class PhoneNumber {
     // @ManyToOne(fetch = FetchType.LAZY)
     // @JoinColumn(name = "c_id")
     // private Customer customer;
-    // @Column(name = "c_id")
+
+    @Column(name = "c_id")
     private Long c_id;
 
     private String p_number;
