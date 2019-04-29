@@ -32,9 +32,9 @@ public class Customer {
     private String c_name;
     private String c_address;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "c_id", referencedColumnName = "c_id", nullable = false)
-    List<PhoneNumber> phoneNumbers = new ArrayList<PhoneNumber>();
+    // @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    // @JoinColumn(name = "c_id", referencedColumnName = "c_id", nullable = false)
+    // List<PhoneNumber> phoneNumbers = new ArrayList<PhoneNumber>();
 
     // public void addPhoneNumber(PhoneNumber pn) {
     //     pn.setCustomer(this);
