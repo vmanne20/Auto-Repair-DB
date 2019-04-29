@@ -17,6 +17,6 @@ interface PhoneNumberRepository extends JpaRepository<PhoneNumber, Long> {
    * Finds phone numbers for particular customer
    * @return  A list of phone numbers.
    */
-  @Query(nativeQuery = true)
+//   @Query(nativeQuery = true)
   public List<PhoneNumber> findByCustomerId(@Param("c_id") Long c_id);
 }
