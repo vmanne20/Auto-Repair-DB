@@ -21,6 +21,7 @@ import javax.validation.constraints.NotNull;
 })
 
 @Entity
+@Table(name = "car")
 @Getter @Setter
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
@@ -29,10 +30,10 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long car_id;
 
+  @Column(name = "c_id")
   @NotNull
   private Long c_id;
-  @NotNull
-  private String c_name;
+
   @NotNull
   private String make_year;
   @NotNull

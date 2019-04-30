@@ -27,28 +27,14 @@ import javax.persistence.*;
 @Getter @Setter
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
-// @IdClass(PhoneNumberPK.class)
 public class PhoneNumber {
 
     @Id
-    // @Temporal(TemporalType.TIMESTAMP)
      @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long p_id;
-
-    // @ManyToOne(fetch = FetchType.LAZY)
-    // @JoinColumn(name = "c_id")
-    // private Customer customer;
 
     @Column(name = "c_id")
     private Long c_id;
 
     private String p_number;
-
-    // public Customer getCustomer() {
-    //     return customer;
-    // }
-
-    // public void setCustomer(Customer customer) {
-    //     this.customer = customer;
-    // }
 }

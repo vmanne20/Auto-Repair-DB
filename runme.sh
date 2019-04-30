@@ -54,7 +54,7 @@ if [ -d .git ]; then
 else
   git clone https://oauth2:abpdnnv9PcRtWCse9snP@code.vt.edu/sid97/CS4604-project.git . || exit 1
 fi
-git checkout subtables
+git checkout phase3
 
 # Wait for server to initialize
 while [ -z "$(docker logs postgres | grep 'database system is ready to accept connections')" ]; do

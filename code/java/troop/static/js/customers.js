@@ -44,7 +44,7 @@
                                           }
                                           ,
                                           updateAction: function (postData, jtParams) {
-                                              console.log("creating phone number:");
+                                              console.log("updating phone numbers:");
                                               postData = QueryStringToJSON(postData);
                                               console.log(postData);
                                               return $.Deferred(function ($dfd) {
@@ -67,7 +67,7 @@
                                             }
                                           ,
                                           deleteAction: function (postData, jtParams) {
-                                              console.log("deleting phoneNumber:");
+                                              console.log("deleting phone numbers:");
                                               console.log(postData);
                                               return $.Deferred(function ($dfd) {
                                                 $.ajax({
@@ -108,8 +108,6 @@
                                             type: 'hidden',
                                             title: 'Customer Id',
                                             width: '3%',
-                                            // create: false,
-                                            // edit: false,
                                             defaultValue: customerData.record.c_id
                                         },
                                         p_id: {
@@ -120,6 +118,137 @@
                                         },
                                         p_number: {
                                             title: 'Phone Numbers'
+                                        }
+                                    }
+                                }, function (data) { //opened handler
+                                    data.childTable.jtable('load');
+                                });
+                    });
+                    //Return image to show on the person row
+                    return $img;
+                }
+            },
+            //CHILD TABLE DEFINITION FOR "CARS"
+            Cars: {
+                title: '',
+                width: '0.9%',
+                sorting: false,
+                edit: false,
+                create: false,
+                display: function (customerData) {
+                    //Create an image that will be used to open child table
+                    let $img = $('<img src="https://banner2.kisspng.com/20180423/wze/kisspng-sports-car-supercar-car-icon-5addae7f523770.1040273815244775673368.jpg" align="center" style="display:block; cursor: pointer;" width="100%" height="100%"/>');
+                    //Open child table when user clicks the image
+                    $img.click(function () {
+                        $('#CustomerTableContainer').jtable('openChildTable',
+                                $img.closest('tr'),
+                                {
+                                    title: customerData.record.c_id + ' - ' + customerData.record.c_name + '\'s Cars',
+                                    actions: {
+                                        createAction: function (postData, jtParams) {
+                                            console.log("creating car:");
+                                            postData = QueryStringToJSON(postData);
+                                            console.log(postData);
+                                            return $.Deferred(function ($dfd) {
+                                              $.ajax({
+                                                url: '/add-cars',
+                                                type: 'POST',
+                                                contentType: "application/json; charset=utf-8",
+                                                data: JSON.stringify(postData),
+                                                dataType: 'json',
+                                                success: function (data) {
+                                                  $dfd.resolve({ "Result": "OK", "Record": data });
+                                                },
+                                                error: function (xhr, options, error) {
+                                                  console.log("error");
+                                                  console.log(xhr.responseText);
+                                                  $dfd.reject();
+                                                }
+                                              });
+                                            });
+                                          }
+                                          ,
+                                          updateAction: function (postData, jtParams) {
+                                              console.log("updating car:");
+                                              postData = QueryStringToJSON(postData);
+                                              console.log(postData);
+                                              return $.Deferred(function ($dfd) {
+                                                $.ajax({
+                                                  url: '/update-cars',
+                                                  type: 'PUT',
+                                                  contentType: "application/json; charset=utf-8",
+                                                  data: JSON.stringify(postData),
+                                                  dataType: 'json',
+                                                  success: function (data) {
+                                                    $dfd.resolve({ "Result": "OK", "Record": data });
+                                                  },
+                                                  error: function (xhr, options, error) {
+                                                    console.log("error");
+                                                    console.log(xhr.responseText);
+                                                    $dfd.reject();
+                                                  }
+                                                });
+                                              });
+                                            }
+                                          ,
+                                          deleteAction: function (postData, jtParams) {
+                                              console.log("deleting car:");
+                                              console.log(postData);
+                                              return $.Deferred(function ($dfd) {
+                                                $.ajax({
+                                                  url: '/delete-cars',
+                                                  type: 'DELETE',
+                                                  contentType: "application/json; charset=utf-8",
+                                                  data: JSON.stringify(postData['car_id']),
+                                                  dataType: 'json',
+                                                  success: function (data) {
+                                                    $dfd.resolve({ "Result": "OK", "Record": data });
+                                                  },
+                                                  error: function (xhr, options, error) {
+                                                    console.log("error");
+                                                    console.log(xhr.responseText);
+                                                    $dfd.reject();
+                                                  }
+                                                });
+                                              });
+                                            }
+                                            , 
+                                          listAction: function (postData, jtParams) {
+                                            return $.Deferred(function ($dfd) {
+                                              $.ajax({
+                                                url: '/get-cars?c_id=' + customerData.record.c_id,
+                                                type: 'GET',
+                                                success: function (data) {
+                                                  $dfd.resolve({ "Result": "OK", "Records": data, "TotalRecordCount": data.length });
+                                                },
+                                                error: function () {
+                                                  $dfd.reject();
+                                                }
+                                              });
+                                            });
+                                          }
+                                    },
+                                    fields: {
+                                        car_id: {
+                                            key: true,
+                                            create: false,
+                                            edit: false,
+                                            list: false
+                                        },
+                                        c_id: {
+                                            type: 'hidden',
+                                            title: 'Customer Id',
+                                            width: '3%',
+                                            defaultValue: customerData.record.c_id
+                                        },
+                                        make_year: {
+                                            title: 'Make Year'
+                                        },
+                                        make: {
+                                            title: 'Make'
+                                        },
+                                        model: {
+                                            title: 'Model'
                                         }
                                     }
                                 }, function (data) { //opened handler

@@ -7,41 +7,50 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import java.util.*;
+
 @RestController
 class CarController {
   @Autowired
   private CarRepository repository;
 
+  @PersistenceContext
+  private EntityManager em;
+
   public CarController(CarRepository repository) {
     this.repository = repository;
   }
 
-  @GetMapping("/cars")
-  public Collection<Car> cars() {
-    System.out.println("getting cars");
-    return repository.findAll().stream()
-      .collect(Collectors.toList());
+  @GetMapping("/get-cars")
+  public Collection<Car> cars(@RequestParam("c_id") Long c_id) {
+    System.out.println("getting customer's cars");
+    Query q = em.createNativeQuery("select c.* from car c where c.c_id = :customerId", Car.class)
+                .setParameter("customerId", c_id);  
+    List<Car> carList = q.getResultList();
+    return carList.stream()
+        .collect(Collectors.toList());
   }
 
-  @PostMapping("/cars")
+  @PostMapping("/add-cars")
   public Car addCar(@RequestBody Car car) {
     System.out.println(car.toString());
     return repository.save(car);
   }
 
-  @PutMapping("/cars")
+  @PutMapping("/update-cars")
   public Car updateCar(@RequestBody Car car) {
     System.out.println(car.toString());
     return repository.save(car);
   }
 
-  @DeleteMapping("/cars")
+  @DeleteMapping("/delete-cars")
   public JSONObject deleteCar(@RequestBody Long carId) {
     System.out.println(carId);
-    // Car deletedCar = null;
     JSONObject obj = new JSONObject();
     try {
-        // deletedCar = repository.findById(carId).get();
         repository.deleteById(carId);
         obj.put("Result", "OK");
     } catch (Exception e) {

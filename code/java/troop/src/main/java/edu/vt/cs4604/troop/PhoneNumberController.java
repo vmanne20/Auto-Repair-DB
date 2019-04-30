@@ -18,9 +18,6 @@ class PhoneNumberController {
   @Autowired
   private PhoneNumberRepository repository;
 
-//   @Autowired
-//   private CustomerRepository custRepo;
-
   @PersistenceContext
   private EntityManager em;
 
@@ -29,11 +26,8 @@ class PhoneNumberController {
   }
 
   @GetMapping("/get-phone-numbers")
-  // @PathVariable(name = "c_id")
   public Collection<PhoneNumber> phoneNumbers(@RequestParam("c_id") Long c_id) {
     System.out.println("getting numbers");
-    // return repository.findByCustomerId(c_id).stream()
-    //   .collect(Collectors.toList());
     Query q = em.createNativeQuery("select p.* from phone_number p where p.c_id = :customerId", PhoneNumber.class)
                 .setParameter("customerId", c_id);  
     List<PhoneNumber> phoneList = q.getResultList();
@@ -56,10 +50,8 @@ class PhoneNumberController {
   @DeleteMapping("/delete-phone-numbers")
   public JSONObject deletePhoneNumber(@RequestBody Long p_id) {
     System.out.println(p_id);
-    // Car deletedCar = null;
     JSONObject obj = new JSONObject();
     try {
-        // deletedCar = repository.findById(carId).get();
         repository.deleteById(p_id);
         obj.put("Result", "OK");
     } catch (Exception e) {
