@@ -31,16 +31,16 @@ insert into Customer (c_name, c_address) values ('Donald Trump', '1600 Pennsylva
 insert into Customer (c_name, c_address) values ('Robert Mueller', '10 First St.');
 insert into Customer (c_name, c_address) values ('Nancy Pelosi', '10 First St.');
 
-insert into Car (c_id, c_name, make_year, make, model) values (2, 'Vamsi Manne', '2001', 'Honda', 'Accord');
-insert into Car (c_id, c_name, make_year, make, model) values (1, 'Carl Yao', '2004', 'Mazda', 'CX-9');
-insert into Car (c_id, c_name, make_year, make, model) values (3, 'Sid Hingorani', '2005', 'BMW', '335i');
-insert into Car (c_id, c_name, make_year, make, model) values (4, 'AJ Goudel', '2007', 'Mercedes-Benz', 'C200');
-insert into Car (c_id, c_name, make_year, make, model) values (6, 'Jack Davis', '2009', 'Audi', 'A6');
-insert into Car (c_id, c_name, make_year, make, model) values (7, 'John Wellesley', '1996', 'Ford', 'Taurus');
-insert into Car (c_id, c_name, make_year, make, model) values (5, 'Bob Smith', '2015', 'Toyota', 'Corolla');
-insert into Car (c_id, c_name, make_year, make, model) values (2, 'Vamsi Manne', '2018', 'Honda', 'Civic');
-insert into Car (c_id, c_name, make_year, make, model) values (10, 'Nancy Pelosi', '2003', 'Toyota', 'Camry');
-insert into Car (c_id, c_name, make_year, make, model) values (9, 'Robert Mueller', '2008', 'Honda', 'Pilot');
+-- insert into Car (c_id, c_name, make_year, make, model) values (2, 'Vamsi Manne', '2001', 'Honda', 'Accord');
+-- insert into Car (c_id, c_name, make_year, make, model) values (1, 'Carl Yao', '2004', 'Mazda', 'CX-9');
+-- insert into Car (c_id, c_name, make_year, make, model) values (3, 'Sid Hingorani', '2005', 'BMW', '335i');
+-- insert into Car (c_id, c_name, make_year, make, model) values (4, 'AJ Goudel', '2007', 'Mercedes-Benz', 'C200');
+-- insert into Car (c_id, c_name, make_year, make, model) values (6, 'Jack Davis', '2009', 'Audi', 'A6');
+-- insert into Car (c_id, c_name, make_year, make, model) values (7, 'John Wellesley', '1996', 'Ford', 'Taurus');
+-- insert into Car (c_id, c_name, make_year, make, model) values (5, 'Bob Smith', '2015', 'Toyota', 'Corolla');
+-- insert into Car (c_id, c_name, make_year, make, model) values (2, 'Vamsi Manne', '2018', 'Honda', 'Civic');
+-- insert into Car (c_id, c_name, make_year, make, model) values (10, 'Nancy Pelosi', '2003', 'Toyota', 'Camry');
+-- insert into Car (c_id, c_name, make_year, make, model) values (9, 'Robert Mueller', '2008', 'Honda', 'Pilot');
 
 -- insert into phone_number (c_id, c_name, c_number) values (1, 'Carl Yao', '(316) 874-3435');
 -- insert into phone_number (c_id, c_name, c_number) values (8, 'Donald Trump', '(703) 234-1209');

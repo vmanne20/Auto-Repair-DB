@@ -60,17 +60,16 @@ CREATE TABLE phone_number
     UNIQUE (p_number)
 );
 
-CREATE SEQUENCE car_ID;
+CREATE SEQUENCE Car_ID;
 CREATE TABLE car
 (
-  car_id INT DEFAULT nextval('car_ID') NOT NULL,
+  car_id INT DEFAULT nextval('Car_ID') NOT NULL,
   c_id INT NOT NULL,
-  c_name VARCHAR(60) NOT NULL,
   make_year VARCHAR(5) NOT NULL,
   make VARCHAR(60) NOT NULL,
   model VARCHAR(60) NOT NULL,
-  PRIMARY KEY (car_id)
---   FOREIGN KEY (customer_id) REFERENCES Customer(Id)
+  PRIMARY KEY (car_id),
+  FOREIGN KEY (c_id) REFERENCES customer(c_id)
 );
 
 -- CREATE TABLE all_records
