@@ -137,7 +137,7 @@
                 create: false,
                 display: function (customerData) {
                     //Create an image that will be used to open child table
-                    let $img = $('<img src="https://banner2.kisspng.com/20180423/wze/kisspng-sports-car-supercar-car-icon-5addae7f523770.1040273815244775673368.jpg" align="center" style="display:block; cursor: pointer;" width="16" height="16"/>');
+                    let $img = $('<img src="https://i.ya-webdesign.com//images/smart-drawing-tiny-car-2.png" align="center" style="display:block; cursor: pointer;" width="16" height="16"/>');
                     //Open child table when user clicks the image
                     $img.click(function () {
                         $('#CustomerTableContainer').jtable('openChildTable',
