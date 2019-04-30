@@ -6,7 +6,7 @@
             //CHILD TABLE DEFINITION FOR "PHONE NUMBERS"
             PhoneNumbers: {
                 title: '',
-                width: '0.7%',
+                width: '0.9%',
                 sorting: false,
                 edit: false,
                 create: false,

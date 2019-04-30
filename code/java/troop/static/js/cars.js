@@ -1,7 +1,7 @@
     // CARS
     $(document).ready(function () {
         $('#CarTableContainer').jtable({
-          title: 'Cars',
+          title: 'CARS',
           fields: {
             car_id: {
                 title: 'Car Id',
