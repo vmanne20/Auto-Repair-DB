@@ -121,7 +121,7 @@
                                         r_id: {
                                             type: 'hidden',
                                             title: 'Repair Id',
-                                            defaultValue: 0
+                                            defaultValue: "0"
                                         }
                                     }
                                 }, function (data) { //opened handler
