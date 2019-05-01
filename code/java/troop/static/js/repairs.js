@@ -144,10 +144,12 @@
                 title: 'Description'
             },
             parts_cost: {
-                title: 'Parts Cost'
+                title: 'Parts Cost',
+                width: '5%'
             },
             r_time: {
-                title: 'Time (hrs)'
+                title: 'Time (hrs)',
+                width: '5%'
             }
           },
           actions: {
