@@ -9,7 +9,7 @@
                 width: '3%'
             },
             r_name: {
-                title: 'Name', 
+                title: 'Name'
             },
             r_descript: {
                 title: 'Description'

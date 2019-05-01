@@ -3,7 +3,6 @@ package edu.vt.cs4604.troop;
 import lombok.*;
 // import java.time.LocalDate;
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 /*
  * NamedNativeQueries allow us to use _SQL_ queries
@@ -14,8 +13,8 @@ import javax.validation.constraints.NotNull;
  */
 @NamedNativeQueries({
   @NamedNativeQuery(
-    name = "Car.activeCars", 
-    query = "select * from Car", 
+    name = "Repair.activeRepairs", 
+    query = "select * from repair", 
     resultClass = Repair.class
   )
 })
