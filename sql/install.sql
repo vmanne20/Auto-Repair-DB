@@ -100,9 +100,9 @@ CREATE TABLE certification
   cert_name VARCHAR(100) NOT NULL,
   r_id INT NOT NULL,
   m_id INT NOT NULL,
-  PRIMARY KEY (cert_id),
-  FOREIGN KEY (r_id) REFERENCES repair(r_id),
-  FOREIGN KEY (m_id) REFERENCES mechanic(m_id)
+  PRIMARY KEY (cert_id)
+--   FOREIGN KEY (r_id) REFERENCES repair(r_id),
+--   FOREIGN KEY (m_id) REFERENCES mechanic(m_id)
 );
 
 -- CREATE TABLE mechanic_repair_car
