@@ -93,11 +93,22 @@ CREATE TABLE mechanic
   PRIMARY KEY (m_id)
 );
 
--- CREATE SEQUENCE Cert_ID;
--- CREATE TABLE certification
+CREATE SEQUENCE Cert_ID;
+CREATE TABLE certification
+(
+  cert_id INT DEFAULT nextval('Cert_ID') NOT NULL,
+  cert_name VARCHAR(100) NOT NULL,
+  r_id INT NOT NULL,
+  m_id INT NOT NULL,
+  PRIMARY KEY (cert_id),
+  FOREIGN KEY (r_id) REFERENCES repair(r_id),
+  FOREIGN KEY (m_id) REFERENCES mechanic(m_id)
+);
+
+-- CREATE TABLE mechanic_repair_car
 -- (
---   c_id INT DEFAULT nextval('Cert_ID') NOT NULL,
---   c_name VARCHAR(500) NOT NULL,
---   PRIMARY KEY (c_id),
---   FOREIGN KEY (c_id) REFERENCES customer(c_id)
+--   m_id INT NOT NULL,
+--   r_id INT NOT NULL,
+--   car_id INT NOT NULL,
+--   PRIMARY KEY (m_id)
 -- );

@@ -107,7 +107,6 @@
                                         c_id: {
                                             type: 'hidden',
                                             title: 'Customer Id',
-                                            width: '3%',
                                             defaultValue: customerData.record.c_id
                                         },
                                         p_id: {
