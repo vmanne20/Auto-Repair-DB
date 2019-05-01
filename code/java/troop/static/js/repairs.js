@@ -6,7 +6,7 @@
             //CHILD TABLE DEFINITION FOR "CERTS"
             Certs: {
                 title: '',
-                width: '1.3%',
+                width: '1.2%',
                 sorting: false,
                 edit: false,
                 create: false,
