@@ -72,14 +72,33 @@ CREATE TABLE car
   FOREIGN KEY (c_id) REFERENCES customer(c_id)
 );
 
--- CREATE TABLE all_records
+CREATE SEQUENCE Repair_ID;
+CREATE TABLE repair
+(
+  r_id INT DEFAULT nextval('Repair_ID') NOT NULL,
+  r_name VARCHAR(100) NOT NULL,
+  r_descript VARCHAR(500) NOT NULL,
+  parts_cost FLOAT NOT NULL,
+  r_time FLOAT NOT NULL,
+  PRIMARY KEY (r_id)
+);
+
+-- CREATE SEQUENCE Mech_ID;
+-- CREATE TABLE mechanic
 -- (
---   c_id INT NOT NULL,
---   c_name VARCHAR(60) NOT NULL,
---   c_address VARCHAR(100) NOT NULL,
---   c_number VARCHAR(20) NOT NULL,
---   make_year VARCHAR(5) NOT NULL,
---   make VARCHAR(60) NOT NULL,
---   model VARCHAR(60) NOT NULL,
---   PRIMARY KEY (c_id)
+--   m_id INT DEFAULT nextval('Mech_ID') NOT NULL,
+--   m_name VARCHAR(60) NOT NULL,
+--   years_exp INT NOT NULL,
+--   hourly_rate FLOAT NOT NULL,
+--   PRIMARY KEY (m_id),
+--   FOREIGN KEY (c_id) REFERENCES customer(c_id)
+-- );
+
+-- CREATE SEQUENCE Cert_ID;
+-- CREATE TABLE certification
+-- (
+--   c_id INT DEFAULT nextval('Cert_ID') NOT NULL,
+--   c_name VARCHAR(500) NOT NULL,
+--   PRIMARY KEY (c_id),
+--   FOREIGN KEY (c_id) REFERENCES customer(c_id)
 -- );

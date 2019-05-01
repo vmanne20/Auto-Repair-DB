@@ -20,16 +20,27 @@ insert into attends (ScoutTrip_Id, Scout_Id) values (3, 2);
 insert into attends (ScoutTrip_Id, Scout_Id) values (4, 4);
 
 
-insert into Customer (c_name, c_address) values ('Carl Yao', '130 Main St.');
-insert into Customer (c_name, c_address) values ('Vamsi Manne', '220 Main St.');
-insert into Customer (c_name, c_address) values ('Sid Hingorani', '50 Main St.');
-insert into Customer (c_name, c_address) values ('AJ Goudel', '500 Main St.');
-insert into Customer (c_name, c_address) values ('Bob Smith', '780 Main St.');
-insert into Customer (c_name, c_address) values ('Jack Davis', '320 Main St.');
-insert into Customer (c_name, c_address) values ('John Wellesley', '455 Main St.');
-insert into Customer (c_name, c_address) values ('Donald Trump', '1600 Pennsylvania Ave.');
-insert into Customer (c_name, c_address) values ('Robert Mueller', '10 First St.');
-insert into Customer (c_name, c_address) values ('Nancy Pelosi', '10 First St.');
+insert into customer (c_name, c_address) values ('Carl Yao', '130 Main St.');
+insert into customer (c_name, c_address) values ('Vamsi Manne', '220 Main St.');
+insert into customer (c_name, c_address) values ('Sid Hingorani', '50 Main St.');
+insert into customer (c_name, c_address) values ('AJ Goudel', '500 Main St.');
+insert into customer (c_name, c_address) values ('Bob Smith', '780 Main St.');
+insert into customer (c_name, c_address) values ('Jack Davis', '320 Main St.');
+insert into customer (c_name, c_address) values ('John Wellesley', '455 Main St.');
+insert into customer (c_name, c_address) values ('Donald Trump', '1600 Pennsylvania Ave.');
+insert into customer (c_name, c_address) values ('Robert Mueller', '10 First St.');
+insert into customer (c_name, c_address) values ('Nancy Pelosi', '10 First St.');
+
+insert into repair (r_name, r_descript, parts_cost, r_time) values ("Brakes", "fix braking system", 25.00, 2.5);
+insert into repair (r_name, r_descript, parts_cost, r_time) values ("Engine", "replace or tune engine, solve engine light problems", 50.00, 3.0);
+insert into repair (r_name, r_descript, parts_cost, r_time) values ("Flywheel", "replace or fix flywheel in wheel", 15.00, 2.5);
+insert into repair (r_name, r_descript, parts_cost, r_time) values ("Oil Change", "replace oil and oil filter", 10.00, 2.0);
+insert into repair (r_name, r_descript, parts_cost, r_time) values ("Fuel Injection", "clean or replace fuel injector", 30.00, 3.0);
+insert into repair (r_name, r_descript, parts_cost, r_time) values ("Tires", "replace tires", 20.00, 1.5);
+insert into repair (r_name, r_descript, parts_cost, r_time) values ("Transmission", "fix or replace drums, pumps, shafts, or converters", 70.00, 4.0);
+insert into repair (r_name, r_descript, parts_cost, r_time) values ("Clutch", "replace or fix clutch", 20.00, 2.0);
+insert into repair (r_name, r_descript, parts_cost, r_time) values ("Ignition", "fix ignition lock and cylinder", 20.00, 3.5);
+insert into repair (r_name, r_descript, parts_cost, r_time) values ("Cooling System", "clean or replace cooling system", 30.00, 3.0);
 
 -- insert into Car (c_id, c_name, make_year, make, model) values (2, 'Vamsi Manne', '2001', 'Honda', 'Accord');
 -- insert into Car (c_id, c_name, make_year, make, model) values (1, 'Carl Yao', '2004', 'Mazda', 'CX-9');
