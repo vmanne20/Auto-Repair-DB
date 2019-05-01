@@ -83,16 +83,15 @@ CREATE TABLE repair
   PRIMARY KEY (r_id)
 );
 
--- CREATE SEQUENCE Mech_ID;
--- CREATE TABLE mechanic
--- (
---   m_id INT DEFAULT nextval('Mech_ID') NOT NULL,
---   m_name VARCHAR(60) NOT NULL,
---   years_exp INT NOT NULL,
---   hourly_rate FLOAT NOT NULL,
---   PRIMARY KEY (m_id),
---   FOREIGN KEY (c_id) REFERENCES customer(c_id)
--- );
+CREATE SEQUENCE Mech_ID;
+CREATE TABLE mechanic
+(
+  m_id INT DEFAULT nextval('Mech_ID') NOT NULL,
+  m_name VARCHAR(60) NOT NULL,
+  years_exp INT NOT NULL,
+  hourly_rate FLOAT NOT NULL,
+  PRIMARY KEY (m_id)
+);
 
 -- CREATE SEQUENCE Cert_ID;
 -- CREATE TABLE certification

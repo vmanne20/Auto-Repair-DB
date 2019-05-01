@@ -42,6 +42,18 @@ insert into repair (r_name, r_descript, parts_cost, r_time) values ('Clutch', 'r
 insert into repair (r_name, r_descript, parts_cost, r_time) values ('Ignition', 'fix ignition lock and cylinder', 20.00, 3.5);
 insert into repair (r_name, r_descript, parts_cost, r_time) values ('Cooling System', 'clean or replace cooling system', 30.00, 3.0);
 
+insert into mechanic (m_name, years_exp, hourly_rate) values ("John Hammer", 2, 15.00);
+insert into mechanic (m_name, years_exp, hourly_rate) values ("Bob Smith", 3, 17.00);
+insert into mechanic (m_name, years_exp, hourly_rate) values ("Tucker Carlson", 1, 12.00);
+insert into mechanic (m_name, years_exp, hourly_rate) values ("Sean Hannity", 2, 15.00);
+insert into mechanic (m_name, years_exp, hourly_rate) values ("Dustin Rockwell", 5, 20.00);
+insert into mechanic (m_name, years_exp, hourly_rate) values ("James O'Shea", 7, 25.00);
+insert into mechanic (m_name, years_exp, hourly_rate) values ("Connor Giles", 1, 12.00);
+insert into mechanic (m_name, years_exp, hourly_rate) values ("Shane Black", 1, 12.00);
+insert into mechanic (m_name, years_exp, hourly_rate) values ("Robert Downey, Jr.", 3, 17.00);
+insert into mechanic (m_name, years_exp, hourly_rate) values ("Chris Evans", 5, 20.00);
+
+
 -- insert into Car (c_id, c_name, make_year, make, model) values (2, 'Vamsi Manne', '2001', 'Honda', 'Accord');
 -- insert into Car (c_id, c_name, make_year, make, model) values (1, 'Carl Yao', '2004', 'Mazda', 'CX-9');
 -- insert into Car (c_id, c_name, make_year, make, model) values (3, 'Sid Hingorani', '2005', 'BMW', '335i');
