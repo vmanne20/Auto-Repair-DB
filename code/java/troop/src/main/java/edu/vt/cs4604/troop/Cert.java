@@ -25,12 +25,20 @@ import javax.persistence.*;
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
 public class Cert
- {
-  @Id
+{
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long cert_id;
-  private String cert_name;
+    private Long cert_id;
 
+    private String cert_name;
+
+    public Long getCertId() {
+        return cert_id;
+    }
+
+    public String getCertName() {
+        return cert_name;
+    }
 //   @Column(name = "r_id")
 //   private Long r_id;
 

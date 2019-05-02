@@ -44,9 +44,36 @@ class CertController {
         .collect(Collectors.toList());
   }
 
-  @PostMapping("/add-certs")
-  public Cert addCert(@RequestBody Cert cert) {
-    System.out.println(cert.toString());
+//   @PostMapping("/add-certs")
+//   public Cert addCert(@RequestBody Cert cert) {
+//     return repository.save(cert);
+//   }
+
+  @PostMapping("/add-mechanic-certs")
+  public Cert addMechanicCert(@RequestBody Cert cert, @RequestParam("m_id") Long m_id) {
+    String cert_name = cert.getCertName();
+    em.createNativeQuery("insert into certification (cert_name) values (:certName)")
+                .setParameter("certName", cert_name)
+                .executeUpdate();  
+    Long cert_id = cert.getCertId();
+    em.createNativeQuery("insert into mechanic_certification (m_id, cert_id) values (:mechId, :certId)")
+                .setParameter("mechId", m_id)
+                .setParameter("certId", cert_id)
+                .executeUpdate();  
+    return repository.save(cert);
+  }
+
+  @PostMapping("/add-repair-certs")
+  public Cert addRepairCert(@RequestBody Cert cert, @RequestParam("r_id") Long r_id) {
+    String cert_name = cert.getCertName();
+    em.createNativeQuery("insert into certification (cert_name) values (:certName)")
+                .setParameter("certName", cert_name)
+                .executeUpdate();  
+    Long cert_id = cert.getCertId();
+    em.createNativeQuery("insert into repair_certification (r_id, cert_id) values (:repairId, :certId)")
+                .setParameter("repairId", r_id)
+                .setParameter("certId", cert_id)
+                .executeUpdate();  
     return repository.save(cert);
   }
 
