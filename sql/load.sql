@@ -100,7 +100,137 @@ insert into mechanic (m_name, years_exp, hourly_rate) values ('Shane Black', 1, 
 insert into mechanic (m_name, years_exp, hourly_rate) values ('Robert Downey, Jr.', 3, 17.00);
 insert into mechanic (m_name, years_exp, hourly_rate) values ('Chris Evans', 5, 20.00);
 
--- insert into certification () values ();
+-- BRAKES
+-- mechanics 1, 5, 7, 9, 10
+insert into certification (cert_name, r_id, m_id) values ('Brakes', 1, 1);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 1, 1);
+
+insert into certification (cert_name, r_id, m_id) values ('Brakes', 1, 5);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 1, 5);
+
+insert into certification (cert_name, r_id, m_id) values ('Brakes', 1, 7);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 1, 7);
+
+insert into certification (cert_name, r_id, m_id) values ('Brakes', 1, 9);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 1, 9);
+
+insert into certification (cert_name, r_id, m_id) values ('Brakes', 1, 10);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 1, 10);
+
+-- ENGINE
+-- mechanics 4, 8
+insert into certification (cert_name, r_id, m_id) values ('Engine Repair', 2, 4);
+insert into certification (cert_name, r_id, m_id) values ('Suspension and Drive Train', 2, 4);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 2, 4);
+
+insert into certification (cert_name, r_id, m_id) values ('Engine Repair', 2, 8);
+insert into certification (cert_name, r_id, m_id) values ('Suspension and Drive Train', 2, 8);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 2, 8);
+
+-- FLYWHEEL
+-- mechanics 1, 2, 5, 6, 9, 10
+insert into certification (cert_name, r_id, m_id) values ('Axles', 3, 1);
+insert into certification (cert_name, r_id, m_id) values ('Axles', 3, 2);
+insert into certification (cert_name, r_id, m_id) values ('Axles', 3, 5);
+insert into certification (cert_name, r_id, m_id) values ('Axles', 3, 6);
+insert into certification (cert_name, r_id, m_id) values ('Axles', 3, 9);
+insert into certification (cert_name, r_id, m_id) values ('Axles', 3, 10);
+
+-- OIL CHANGE
+
+-- FUEL INJECTION
+-- mechanics 2, 3, 7
+insert into certification (cert_name, r_id, m_id) values ('Automatic Transmission', 5, 2);
+insert into certification (cert_name, r_id, m_id) values ('Suspension and Drive Train', 5, 2);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 5, 2);
+
+insert into certification (cert_name, r_id, m_id) values ('Automatic Transmission', 5, 3);
+insert into certification (cert_name, r_id, m_id) values ('Suspension and Drive Train', 5, 3);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 5, 3);
+
+insert into certification (cert_name, r_id, m_id) values ('Automatic Transmission', 5, 7);
+insert into certification (cert_name, r_id, m_id) values ('Suspension and Drive Train', 5, 7);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 5, 7);
+
+-- TIRES
+-- mechs 1, 2, 3, 5, 6, 8, 9
+insert into certification (cert_name, r_id, m_id) values ('Axles', 6, 1);
+insert into certification (cert_name, r_id, m_id) values ('Axles', 6, 2);
+insert into certification (cert_name, r_id, m_id) values ('Axles', 6, 3);
+insert into certification (cert_name, r_id, m_id) values ('Axles', 6, 5);
+insert into certification (cert_name, r_id, m_id) values ('Axles', 6, 6);
+insert into certification (cert_name, r_id, m_id) values ('Axles', 6, 8);
+insert into certification (cert_name, r_id, m_id) values ('Axles', 6, 9);
+
+-- TRANSMISSION
+-- mechs 2, 4, 6, 8, 10
+insert into certification (cert_name, r_id, m_id) values ('Automatic Transmission', 7, 2);
+insert into certification (cert_name, r_id, m_id) values ('Suspension and Drive Train', 7, 2);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 7, 2);
+
+insert into certification (cert_name, r_id, m_id) values ('Automatic Transmission', 7, 4);
+insert into certification (cert_name, r_id, m_id) values ('Suspension and Drive Train', 7, 4);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 7, 4);
+
+insert into certification (cert_name, r_id, m_id) values ('Automatic Transmission', 7, 6);
+insert into certification (cert_name, r_id, m_id) values ('Suspension and Drive Train', 7, 6);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 7, 6);
+
+insert into certification (cert_name, r_id, m_id) values ('Automatic Transmission', 7, 8);
+insert into certification (cert_name, r_id, m_id) values ('Suspension and Drive Train', 7, 8);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 7, 8);
+
+insert into certification (cert_name, r_id, m_id) values ('Automatic Transmission', 7, 10);
+insert into certification (cert_name, r_id, m_id) values ('Suspension and Drive Train', 7, 10);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 7, 10);
+
+-- CLUTCH
+-- mechs 3, 5, 7, 9
+insert into certification (cert_name, r_id, m_id) values ('Suspension and Drive Train', 8, 3);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 8, 3);
+
+insert into certification (cert_name, r_id, m_id) values ('Suspension and Drive Train', 8, 5);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 8, 5);
+
+insert into certification (cert_name, r_id, m_id) values ('Suspension and Drive Train', 8, 7);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 8, 7);
+
+insert into certification (cert_name, r_id, m_id) values ('Suspension and Drive Train', 8, 9);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 8, 9);
+
+
+-- IGNITION
+-- mechs 1, 2, 4, 5, 7
+insert into certification (cert_name, r_id, m_id) values ('Suspension and Drive Train', 9, 1);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 9, 1);
+
+insert into certification (cert_name, r_id, m_id) values ('Suspension and Drive Train', 9, 2);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 9, 2);
+
+insert into certification (cert_name, r_id, m_id) values ('Suspension and Drive Train', 9, 4);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 9, 4);
+
+insert into certification (cert_name, r_id, m_id) values ('Suspension and Drive Train', 9, 5);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 9, 5);
+
+insert into certification (cert_name, r_id, m_id) values ('Suspension and Drive Train', 9, 7);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 9, 7);
+
+
+-- COOLING SYSTEM
+-- mechs 3, 6, 8, 10
+insert into certification (cert_name, r_id, m_id) values ('Heating and Air Conditioning', 10, 3);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 10, 3);
+
+insert into certification (cert_name, r_id, m_id) values ('Heating and Air Conditioning', 10, 6);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 10, 6);
+
+insert into certification (cert_name, r_id, m_id) values ('Heating and Air Conditioning', 10, 8);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 10, 8);
+
+insert into certification (cert_name, r_id, m_id) values ('Heating and Air Conditioning', 10, 10);
+insert into certification (cert_name, r_id, m_id) values ('Electronic Systems', 10, 10);
+
 
 
 
