@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.*;
 import javax.persistence.Query;
+import javax.transaction.Transactional;
 
 @RestController
 class CertController {
@@ -49,13 +50,17 @@ class CertController {
 //     return repository.save(cert);
 //   }
 
+  @Transactional
   @PostMapping("/add-mechanic-certs")
   public Cert addMechanicCert(@RequestBody Cert cert, @RequestParam("m_id") Long m_id) {
     String cert_name = cert.getCertName();
+    em.joinTransaction();
     em.createNativeQuery("insert into certification (cert_name) values (:certName)")
                 .setParameter("certName", cert_name)
                 .executeUpdate();  
+
     Long cert_id = cert.getCertId();
+    em.joinTransaction();
     em.createNativeQuery("insert into mechanic_certification (m_id, cert_id) values (:mechId, :certId)")
                 .setParameter("mechId", m_id)
                 .setParameter("certId", cert_id)
@@ -63,13 +68,17 @@ class CertController {
     return repository.save(cert);
   }
 
+  @Transactional
   @PostMapping("/add-repair-certs")
   public Cert addRepairCert(@RequestBody Cert cert, @RequestParam("r_id") Long r_id) {
     String cert_name = cert.getCertName();
+    em.joinTransaction();
     em.createNativeQuery("insert into certification (cert_name) values (:certName)")
                 .setParameter("certName", cert_name)
                 .executeUpdate();  
+
     Long cert_id = cert.getCertId();
+    em.joinTransaction();
     em.createNativeQuery("insert into repair_certification (r_id, cert_id) values (:repairId, :certId)")
                 .setParameter("repairId", r_id)
                 .setParameter("certId", cert_id)
