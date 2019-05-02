@@ -102,13 +102,13 @@ insert into mechanic (m_name, years_exp, hourly_rate) values ('Chris Evans', 5, 
 
 
 -- CERTIFICATIONS
-insert into certification (cert_name) values ('Brakes', 1, 1);
-insert into certification (cert_name) values ('Electronic Systems', 1, 1);
-insert into certification (cert_name) values ('Engine Repair', 2, 4);
-insert into certification (cert_name) values ('Suspension and Drive Train', 2, 4);
-insert into certification (cert_name) values ('Axles', 6, 9);
-insert into certification (cert_name) values ('Automatic Transmission', 7, 6);
-insert into certification (cert_name) values ('Heating and Air Conditioning', 10, 10);
+insert into certification (cert_name) values ('Brakes');
+insert into certification (cert_name) values ('Electronic Systems');
+insert into certification (cert_name) values ('Engine Repair');
+insert into certification (cert_name) values ('Suspension and Drive Train');
+insert into certification (cert_name) values ('Axles');
+insert into certification (cert_name) values ('Automatic Transmission');
+insert into certification (cert_name) values ('Heating and Air Conditioning');
 
 -- repair_certification
 insert into repair_certification (r_id, cert_id) values (1, 1);
