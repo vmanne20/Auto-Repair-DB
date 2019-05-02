@@ -99,6 +99,7 @@ CREATE TABLE car_repair_mechanic
   car_id INT NOT NULL,
   m_id INT NOT NULL,
   r_id INT NOT NULL,
+  r_date VARCHAR(100) NOT NULL, 
   PRIMARY KEY (car_id, m_id, r_id),
   FOREIGN KEY (car_id) REFERENCES car(car_id),
   FOREIGN KEY (m_id) REFERENCES mechanic(m_id),
@@ -110,19 +111,6 @@ CREATE TABLE certification
 (
   cert_id INT DEFAULT nextval('Cert_ID') NOT NULL,
   cert_name VARCHAR(100) NOT NULL,
-  r_id INT NOT NULL,
-  m_id INT NOT NULL,
-  PRIMARY KEY (cert_id)
---   FOREIGN KEY (r_id) REFERENCES repair(r_id),
---   FOREIGN KEY (m_id) REFERENCES mechanic(m_id)
-);
-
-CREATE TABLE certification
-(
-  cert_id INT DEFAULT nextval('Cert_ID') NOT NULL,
-  cert_name VARCHAR(100) NOT NULL,
-  r_id INT NOT NULL,
-  m_id INT NOT NULL,
   PRIMARY KEY (cert_id)
 --   FOREIGN KEY (r_id) REFERENCES repair(r_id),
 --   FOREIGN KEY (m_id) REFERENCES mechanic(m_id)
