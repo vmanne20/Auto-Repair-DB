@@ -26,7 +26,7 @@
                                             console.log(postData);
                                             return $.Deferred(function ($dfd) {
                                               $.ajax({
-                                                url: '/add-certs?r_id=' + repairData.record.r_id,
+                                                url: '/add-repair-certs?r_id=' + repairData.record.r_id,
                                                 type: 'POST',
                                                 contentType: "application/json; charset=utf-8",
                                                 data: JSON.stringify(postData),

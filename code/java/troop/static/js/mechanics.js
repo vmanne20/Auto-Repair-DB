@@ -26,7 +26,7 @@
                                             console.log(postData);
                                             return $.Deferred(function ($dfd) {
                                               $.ajax({
-                                                url: '/add-certs?m_id=' + mechanicData.record.m_id,
+                                                url: '/add-mechanic-certs?m_id=' + mechanicData.record.m_id,
                                                 type: 'POST',
                                                 contentType: "application/json; charset=utf-8",
                                                 data: JSON.stringify(postData),
