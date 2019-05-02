@@ -31,9 +31,9 @@ public class Cert
   private Long cert_id;
   private String cert_name;
 
-  @Column(name = "r_id")
-  private Long r_id;
+//   @Column(name = "r_id")
+//   private Long r_id;
 
-  @Column (name = "m_id")
-  private Long m_id;
+//   @Column (name = "m_id")
+//   private Long m_id;
 }
