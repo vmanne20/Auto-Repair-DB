@@ -19,7 +19,6 @@ insert into attends (ScoutTrip_Id, Scout_Id) values (2, 1);
 insert into attends (ScoutTrip_Id, Scout_Id) values (3, 2);
 insert into attends (ScoutTrip_Id, Scout_Id) values (4, 4);
 
-
 insert into customer (c_name, c_address) values ('Carl Yao', '130 Main St.');
 insert into customer (c_name, c_address) values ('Vamsi Manne', '220 Main St.');
 insert into customer (c_name, c_address) values ('Sid Hingorani', '50 Main St.');
@@ -30,6 +29,54 @@ insert into customer (c_name, c_address) values ('John Wellesley', '455 Main St.
 insert into customer (c_name, c_address) values ('Donald Trump', '1600 Pennsylvania Ave.');
 insert into customer (c_name, c_address) values ('Robert Mueller', '10 First St.');
 insert into customer (c_name, c_address) values ('Nancy Pelosi', '10 First St.');
+
+insert into phone_number (c_id, p_number) values (1, '(316) 874-3435');
+insert into phone_number (c_id, p_number) values (1, '(703) 234-1209');
+insert into phone_number (c_id, p_number) values (1, '(404) 234-9742');
+insert into phone_number (c_id, p_number) values (1, '(304) 237-2349');
+insert into phone_number (c_id, p_number) values (2, '(375) 529-2179');
+insert into phone_number (c_id, p_number) values (2, '(989) 470-4397');
+insert into phone_number (c_id, p_number) values (2, '(224) 761-3489');
+insert into phone_number (c_id, p_number) values (3, '(703) 434-2487');
+insert into phone_number (c_id, p_number) values (3, '(311) 582-5381');
+insert into phone_number (c_id, p_number) values (4, '(554) 690-6469');
+insert into phone_number (c_id, p_number) values (4, '(316) 874-3435');
+insert into phone_number (c_id, p_number) values (4, '(375) 529-2179');
+insert into phone_number (c_id, p_number) values (4, '(989) 470-4397');
+insert into phone_number (c_id, p_number) values (5, '(204) 386-9308');
+insert into phone_number (c_id, p_number) values (5, '(921) 781-7476');
+insert into phone_number (c_id, p_number) values (6, '(827) 406-8498');
+insert into phone_number (c_id, p_number) values (7, '(554) 690-6469');
+insert into phone_number (c_id, p_number) values (7, '(224) 761-3489');
+insert into phone_number (c_id, p_number) values (7, '(911) 489-2920');
+insert into phone_number (c_id, p_number) values (8, '(310) 301-4766');
+insert into phone_number (c_id, p_number) values (8, '(607) 857-3535');
+insert into phone_number (c_id, p_number) values (8, '(383) 554-7756');
+insert into phone_number (c_id, p_number) values (8, '(807) 472-8953');
+insert into phone_number (c_id, p_number) values (9, '(824) 791-9502');
+insert into phone_number (c_id, p_number) values (9, '(383) 588-5457');
+insert into phone_number (c_id, p_number) values (9, '(311) 582-5381');
+insert into phone_number (c_id, p_number) values (10, '(679) 939-5399');
+insert into phone_number (c_id, p_number) values (10, '(971) 559-5233');
+
+insert into Car (c_id, make_year, make, model) values (1, '2001', 'Honda', 'Accord');
+insert into Car (c_id, make_year, make, model) values (1, '2004', 'Mazda', 'CX-9');
+insert into Car (c_id, make_year, make, model) values (2, '2005', 'BMW', '335i');
+insert into Car (c_id, make_year, make, model) values (2, '2007', 'Mercedes-Benz', 'C200');
+insert into Car (c_id, make_year, make, model) values (2, '2009', 'Audi', 'A6');
+insert into Car (c_id, make_year, make, model) values (3, '1996', 'Ford', 'Taurus');
+insert into Car (c_id, make_year, make, model) values (4, '2015', 'Toyota', 'Corolla');
+insert into Car (c_id, make_year, make, model) values (4, '2018', 'Honda', 'Civic');
+insert into Car (c_id, make_year, make, model) values (5, '2003', 'Toyota', 'Camry');
+insert into Car (c_id, make_year, make, model) values (5, '2008', 'Honda', 'Pilot');
+insert into Car (c_id, make_year, make, model) values (6, '1994', 'Aston Martin', 'Vantage');
+insert into Car (c_id, make_year, make, model) values (6, '2006', 'Dodge', 'Challenger');
+insert into Car (c_id, make_year, make, model) values (6, '2008', 'Ford', 'Mustang');
+insert into Car (c_id, make_year, make, model) values (7, '2015', 'Honda', 'Odyssey');
+insert into Car (c_id, make_year, make, model) values (7, '2013', 'Toyota', 'Sienna');
+insert into Car (c_id, make_year, make, model) values (8, '1987', 'Chevrolet', 'Camaro');
+insert into Car (c_id, make_year, make, model) values (9, '2009', 'Volkswagen', 'Golf');
+insert into Car (c_id, make_year, make, model) values (10, '2018', 'Toyota', 'Camry');
 
 insert into repair (r_name, r_descript, parts_cost, r_time) values ('Brakes', 'fix braking system', 25.00, 2.5);
 insert into repair (r_name, r_descript, parts_cost, r_time) values ('Engine', 'replace or tune engine, solve engine light problems', 50.00, 3.0);
@@ -53,50 +100,15 @@ insert into mechanic (m_name, years_exp, hourly_rate) values ('Shane Black', 1, 
 insert into mechanic (m_name, years_exp, hourly_rate) values ('Robert Downey, Jr.', 3, 17.00);
 insert into mechanic (m_name, years_exp, hourly_rate) values ('Chris Evans', 5, 20.00);
 
-
--- insert into Car (c_id, c_name, make_year, make, model) values (2, 'Vamsi Manne', '2001', 'Honda', 'Accord');
--- insert into Car (c_id, c_name, make_year, make, model) values (1, 'Carl Yao', '2004', 'Mazda', 'CX-9');
--- insert into Car (c_id, c_name, make_year, make, model) values (3, 'Sid Hingorani', '2005', 'BMW', '335i');
--- insert into Car (c_id, c_name, make_year, make, model) values (4, 'AJ Goudel', '2007', 'Mercedes-Benz', 'C200');
--- insert into Car (c_id, c_name, make_year, make, model) values (6, 'Jack Davis', '2009', 'Audi', 'A6');
--- insert into Car (c_id, c_name, make_year, make, model) values (7, 'John Wellesley', '1996', 'Ford', 'Taurus');
--- insert into Car (c_id, c_name, make_year, make, model) values (5, 'Bob Smith', '2015', 'Toyota', 'Corolla');
--- insert into Car (c_id, c_name, make_year, make, model) values (2, 'Vamsi Manne', '2018', 'Honda', 'Civic');
--- insert into Car (c_id, c_name, make_year, make, model) values (10, 'Nancy Pelosi', '2003', 'Toyota', 'Camry');
--- insert into Car (c_id, c_name, make_year, make, model) values (9, 'Robert Mueller', '2008', 'Honda', 'Pilot');
-
--- insert into phone_number (c_id, c_name, c_number) values (1, 'Carl Yao', '(316) 874-3435');
--- insert into phone_number (c_id, c_name, c_number) values (8, 'Donald Trump', '(703) 234-1209');
--- insert into phone_number (c_id, c_name, c_number) values (5, 'Bob Smith', '(404) 234-9742');
--- insert into phone_number (c_id, c_name, c_number) values (2, 'Vamsi Manne', '(304) 237-2349');
--- insert into phone_number (c_id, c_name, c_number) values (3, 'Sid Hingorani', '(375) 529-2179');
--- insert into phone_number (c_id, c_name, c_number) values (4, 'AJ Goudel', '(989) 470-4397');
--- insert into phone_number (c_id, c_name, c_number) values (6, 'Jack Davis', '(224) 761-3489');
--- insert into phone_number (c_id, c_name, c_number) values (7, 'John Wellesley', '(703) 434-2487');
--- insert into phone_number (c_id, c_name, c_number) values (8, 'Donald Trump', '(311) 582-5381');
--- insert into phone_number (c_id, c_name, c_number) values (9, 'Robert Mueller', '(554) 690-6469');
+-- insert into certification () values ();
 
 
--- insert into phone_number (p_number) values ('(316) 874-3435');
--- insert into phone_number (p_number) values ('(703) 234-1209');
 
--- insert into PhoneNumber (customer_ID, c_number) values (1, '(316) 874-3435');
--- insert into PhoneNumber (customer_ID, c_number) values (1, '(375) 529-2179');
--- insert into PhoneNumber (customer_ID, c_number) values (1, '(989) 470-4397');
--- insert into PhoneNumber (customer_ID, c_number) values (2, '(204) 386-9308');
--- insert into PhoneNumber (customer_ID, c_number) values (2, '(921) 781-7476');
--- insert into PhoneNumber (customer_ID, c_number) values (3, '(827) 406-8498');
--- insert into PhoneNumber (customer_ID, c_number) values (4, '(554) 690-6469');
--- insert into PhoneNumber (customer_ID, c_number) values (5, '(224) 761-3489');
--- insert into PhoneNumber (customer_ID, c_number) values (6, '(911) 489-2920');
--- insert into PhoneNumber (customer_ID, c_number) values (6, '(310) 301-4766');
--- insert into PhoneNumber (customer_ID, c_number) values (7, '(607) 857-3535');
--- insert into PhoneNumber (customer_ID, c_number) values (7, '(383) 554-7756');
--- insert into PhoneNumber (customer_ID, c_number) values (7, '(807) 472-8953');
--- insert into PhoneNumber (customer_ID, c_number) values (8, '(824) 791-9502');
--- insert into PhoneNumber (customer_ID, c_number) values (8, '(383) 588-5457');
--- insert into PhoneNumber (customer_ID, c_number) values (9, '(311) 582-5381');
--- insert into PhoneNumber (customer_ID, c_number) values (10, '(679) 939-5399');
--- insert into PhoneNumber (customer_ID, c_number) values (10, '(971) 559-5233');
+
+
+
+
+
+
 
 

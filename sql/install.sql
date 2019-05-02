@@ -93,6 +93,18 @@ CREATE TABLE mechanic
   PRIMARY KEY (m_id)
 );
 
+-- TERNARY RELATIONSHIP TABLE
+CREATE TABLE car_repair_mechanic
+(
+  car_id INT NOT NULL,
+  m_id INT NOT NULL,
+  r_id INT NOT NULL,
+  PRIMARY KEY (car_id, m_id, r_id),
+  FOREIGN KEY (car_id) REFERENCES car(car_id),
+  FOREIGN KEY (m_id) REFERENCES mechanic(m_id),
+  FOREIGN KEY (r_id) REFERENCES repair(r_id)
+);
+
 CREATE SEQUENCE Cert_ID;
 CREATE TABLE certification
 (
@@ -103,6 +115,35 @@ CREATE TABLE certification
   PRIMARY KEY (cert_id)
 --   FOREIGN KEY (r_id) REFERENCES repair(r_id),
 --   FOREIGN KEY (m_id) REFERENCES mechanic(m_id)
+);
+
+CREATE TABLE certification
+(
+  cert_id INT DEFAULT nextval('Cert_ID') NOT NULL,
+  cert_name VARCHAR(100) NOT NULL,
+  r_id INT NOT NULL,
+  m_id INT NOT NULL,
+  PRIMARY KEY (cert_id)
+--   FOREIGN KEY (r_id) REFERENCES repair(r_id),
+--   FOREIGN KEY (m_id) REFERENCES mechanic(m_id)
+);
+
+CREATE TABLE repair_certification
+(
+  r_id INT NOT NULL,
+  cert_id INT NOT NULL,
+  PRIMARY KEY (r_id, cert_id),
+  FOREIGN KEY (r_id) REFERENCES repair(r_id),
+  FOREIGN KEY (cert_id) REFERENCES certification(cert_id)
+);
+
+CREATE TABLE mechanic_certification
+(
+  m_id INT NOT NULL,
+  cert_id INT NOT NULL,
+  PRIMARY KEY (m_id, cert_id),
+  FOREIGN KEY (m_id) REFERENCES mechanic(m_id),
+  FOREIGN KEY (cert_id) REFERENCES certification(cert_id)
 );
 
 -- CREATE TABLE mechanic_repair_car
