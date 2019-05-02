@@ -145,11 +145,3 @@ CREATE TABLE mechanic_certification
   FOREIGN KEY (m_id) REFERENCES mechanic(m_id),
   FOREIGN KEY (cert_id) REFERENCES certification(cert_id)
 );
-
--- CREATE TABLE mechanic_repair_car
--- (
---   m_id INT NOT NULL,
---   r_id INT NOT NULL,
---   car_id INT NOT NULL,
---   PRIMARY KEY (m_id)
--- );
