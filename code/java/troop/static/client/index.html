@@ -26,7 +26,7 @@
     <!-- <script src="/js/cars.js"></script> -->
 
     <style>
-            .btn {
+            .repairs_button {
                 display: inline-block;
                 padding: 15px 25px;
                 font-size: 15px;
@@ -42,10 +42,37 @@
                 border-radius: 15px;
                 box-shadow: 0 5px black;
             }
+            .repairs_button:hover {background-color: #932424}
+            .repairs_button:active {
+                background-color: #932424;
+                box-shadow: 0 2px black;
+                transform: translateY(4px);
+            }
 
-            .btn:hover {background-color: #932424}
+            .divider{
+                width:7px;
+                height:auto;
+                display:inline-block;
+            }
 
-            .btn:active {
+            .estimates_button {
+                display: inline-block;
+                padding: 15px 25px;
+                font-size: 15px;
+                font-family: 'Lato', sans-serif;
+                font-weight: bold;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                outline: none;
+                color: #fff;
+                background-color: #a43131;
+                border: none;
+                border-radius: 15px;
+                box-shadow: 0 5px black;
+            }
+            .estimates_button:hover {background-color: #932424}
+            .estimates_button:active {
                 background-color: #932424;
                 box-shadow: 0 2px black;
                 transform: translateY(4px);
@@ -62,7 +89,13 @@
         AUTO REPAIR</h1>
 
     <div style="text-align: center; position: relative; bottom: 90%;">
-        <button  class="btn" type="submit" onclick="window.location.href='/client/allRecords.html';"
+        <button  class="repairs_button" type="submit" onclick="window.location.href='/client/repairInfo.html';"
+        style="margin-left: auto; margin-right: auto; position: relative;
+                width: 15%; top: -17px; height: 7%; bottom: 100%;">VIEW PAST REPAIRS</button>
+
+         <div class="divider"></div>
+
+        <button  class="estimates_button" type="submit" onclick="window.location.href='/client/estimates.html';"
         style="margin-left: auto; margin-right: auto; position: relative;
                 width: 15%; top: -17px; height: 7%; bottom: 100%;">GET ESTIMATES</button>
     </div>
@@ -85,27 +118,3 @@
 
   </body> 
 </html>
-
-
-
-<!-- <html>
-  <head>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet">
-</head>
-  <body scroll="no" style="margin: 0; height: 100%; overflow: hidden">
-    <img src="LamboHeader.jpg" style="width: 100%; height: 100%;"/>
-    <h1 style="text-align: center; font-family: 'Goudy Bookletter 1911', Georgia, Times, serif; 
-    font-size: 50px; position: relative; bottom: 100%;">
-        Hot Wheels Auto Repair</h1>
-    <div style="text-align: center; position: relative; bottom: 90%;">
-        <form method="get" action="/webapp.html">
-            <button type="submit" class="btn btn-danger" style="position: relative; 
-            bottom: 100%; width: 10%; height: 7%;">
-                Access Data</button>
-        </form>
-    </div>
-  </body>
-</html> -->

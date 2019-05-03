@@ -115,14 +115,15 @@ CREATE TABLE car_repair_mechanic
 
 -- CREATE VIEW repair_info
 -- (
---   car_id INT NOT NULL,
---   m_id INT NOT NULL,
---   r_id INT NOT NULL,
---   r_date VARCHAR(100) NOT NULL, 
---   PRIMARY KEY (car_id, m_id, r_id),
---   FOREIGN KEY (car_id) REFERENCES car(car_id),
---   FOREIGN KEY (m_id) REFERENCES mechanic(m_id),
---   FOREIGN KEY (r_id) REFERENCES repair(r_id)
+--     m_name VARCHAR(60) NOT NULL,
+--     r_name VARCHAR(100) NOT NULL,
+--     make_year VARCHAR(5) NOT NULL,
+--     make VARCHAR(60) NOT NULL,
+--     model VARCHAR(60) NOT NULL,
+--     r_date VARCHAR(100) NOT NULL,
+--     labor_cost FLOAT NOT NULL,
+--     parts_cost FLOAT NOT NULL,
+--     total_cost FLOAT NOT NULL
 -- );
 
 CREATE SEQUENCE Cert_ID;
