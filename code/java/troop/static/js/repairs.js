@@ -112,16 +112,6 @@
                                         },
                                         cert_name: {
                                             title: 'Name'
-                                        },
-                                        m_id: {
-                                            type: 'hidden',
-                                            title: 'Mechanic Id',
-                                            defaultValue: 0
-                                        },
-                                        r_id: {
-                                            type: 'hidden',
-                                            title: 'Repair Id',
-                                            defaultValue: repairData.record.r_id
                                         }
                                     }
                                 }, function (data) { //opened handler
