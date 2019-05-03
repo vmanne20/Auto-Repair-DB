@@ -18,8 +18,13 @@
             model: {
                 title: 'Model'
             },
+            c_name: {
+                title: 'Customer Name'
+            },
             r_date: {
-                title: 'Date of Repair'
+                title: 'Date of Repair',
+                key: true,
+                type: 'date'
             }
           },
           actions: {

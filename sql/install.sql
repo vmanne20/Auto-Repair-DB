@@ -110,7 +110,8 @@ CREATE TABLE car_repair_mechanic
   PRIMARY KEY (car_id, m_id, r_id),
   FOREIGN KEY (car_id) REFERENCES car(car_id),
   FOREIGN KEY (m_id) REFERENCES mechanic(m_id),
-  FOREIGN KEY (r_id) REFERENCES repair(r_id)
+  FOREIGN KEY (r_id) REFERENCES repair(r_id),
+  UNIQUE(r_date)
 );
 
 CREATE VIEW repair_info_view AS SELECT r.r_name, m.m_name, c.make_year, c.make, c.model, 

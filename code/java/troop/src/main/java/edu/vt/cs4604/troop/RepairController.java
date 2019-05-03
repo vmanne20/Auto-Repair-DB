@@ -37,7 +37,7 @@ class RepairController {
   @GetMapping("/get-repair-info")
   public Collection<RepairInfoView> repairInfo() {
     System.out.println("getting repair info");
-    Query q = em.createNativeQuery("select r from repair_info_view r", 
+    Query q = em.createNativeQuery("select r from RepairInfoView r", 
                 RepairInfoView.class); 
     List<RepairInfoView> pastRepairList = q.getResultList();
     return pastRepairList.stream()

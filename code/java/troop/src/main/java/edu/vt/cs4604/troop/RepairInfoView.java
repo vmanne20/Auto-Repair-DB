@@ -3,6 +3,7 @@ package edu.vt.cs4604.troop;
 import lombok.*;
 // import java.time.LocalDate;
 import javax.persistence.*;
+import java.time.LocalDate;
 
 import org.hibernate.annotations.Immutable;
 
@@ -14,22 +15,12 @@ import org.hibernate.annotations.Immutable;
 @ToString @EqualsAndHashCode
 public class RepairInfoView
 {
+    private String r_name;
+    private String m_name;
+    private String make_year;
+    private String make;
+    private String model;
+    private String c_name;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long cert_id;
-
-    private String cert_name;
-
-    public Long getCertId() {
-        return cert_id;
-    }
-
-    public String getCertName() {
-        return cert_name;
-    }
-//   @Column(name = "r_id")
-//   private Long r_id;
-
-//   @Column (name = "m_id")
-//   private Long m_id;
+    private LocalDate r_date;
 }
