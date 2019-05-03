@@ -16,7 +16,7 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name = "repair_certification")
+// @Table(name = "repair_certification")
 @Getter @Setter
 @NoArgsConstructor
 @ToString @EqualsAndHashCode

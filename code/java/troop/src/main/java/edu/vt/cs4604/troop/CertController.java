@@ -61,7 +61,7 @@ class CertController {
 
     Long cert_id = cert.getCertId();
     em.joinTransaction();
-    em.createNativeQuery("insert into repair_certification (r_id, cert_id) values (?, ?)", RepairCert.class)
+    em.createNativeQuery("insert into repair_certification (r_id, cert_id) values (?, ?)")
                 .setParameter(1, r_id)
                 .setParameter(2, cert_id)
                 .executeUpdate();  
