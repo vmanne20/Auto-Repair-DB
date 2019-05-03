@@ -114,8 +114,9 @@ CREATE TABLE car_repair_mechanic
   UNIQUE(r_date)
 );
 
-CREATE VIEW repair_info_view AS SELECT r.r_name, m.m_name, c.make_year, c.make, c.model, 
-cust.c_name, crm.r_date FROM mechanic m, repair r, car c, customer cust, car_repair_mechanic crm 
+CREATE VIEW repair_info_view AS SELECT r.r_name as r_name, m.m_name as m_name, 
+c.make_year as make_year, c.make as make, c.model as model, cust.c_name as c_name, 
+crm.r_date as r_date FROM mechanic m, repair r, car c, customer cust, car_repair_mechanic crm 
 WHERE crm.m_id = m.m_id AND crm.r_id = r.r_id AND crm.car_id = c.car_id and c.c_id = cust.c_id;
 
 CREATE SEQUENCE Cert_ID;

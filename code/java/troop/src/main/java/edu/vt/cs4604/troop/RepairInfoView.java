@@ -15,12 +15,19 @@ import org.hibernate.annotations.Immutable;
 @ToString @EqualsAndHashCode
 public class RepairInfoView
 {
+    @Column(name = "r_name")
     private String r_name;
+    @Column(name = "m_name")
     private String m_name;
+    @Column(name = "make_year")
     private String make_year;
+    @Column(name = "make")
     private String make;
+    @Column(name = "model")
     private String model;
+    @Column(name = "c_name")
     private String c_name;
     @Id
+    @Column(name = "r_date")
     private LocalDate r_date;
 }
