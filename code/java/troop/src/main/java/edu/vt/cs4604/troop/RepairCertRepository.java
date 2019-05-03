@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.*;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource
-interface RepairCertRepository extends JpaRepository<Repair, RepairCertId> {
+interface RepairCertRepository extends JpaRepository<RepairCert, RepairCertId> {
 
 }
