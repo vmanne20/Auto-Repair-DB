@@ -55,15 +55,15 @@ class CertController {
   public Cert addMechanicCert(@RequestBody Cert cert, @RequestParam("m_id") Long m_id) {
     String cert_name = cert.getCertName();
     em.joinTransaction();
-    em.createNativeQuery("insert into certification (cert_name) values (:certName)")
-                .setParameter("certName", cert_name)
+    em.createNativeQuery("insert into certification (cert_name) values (?)")
+                .setParameter(1, cert_name)
                 .executeUpdate();  
 
     Long cert_id = cert.getCertId();
     em.joinTransaction();
-    em.createNativeQuery("insert into mechanic_certification (m_id, cert_id) values (:mechId, :certId)")
-                .setParameter("mechId", m_id)
-                .setParameter("certId", cert_id)
+    em.createNativeQuery("insert into mechanic_certification (m_id, cert_id) values (?, ?)")
+                .setParameter(1, m_id)
+                .setParameter(2, cert_id)
                 .executeUpdate();  
     return repository.save(cert);
   }
