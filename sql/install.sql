@@ -6,6 +6,13 @@ drop table if exists customer cascade;
 drop table if exists car cascade;
 drop table if exists phone_number cascade;
 
+drop table if exists phone_number repair;
+drop table if exists phone_number mechanic;
+drop table if exists phone_number certification;
+drop table if exists phone_number car_repair_mechanic;
+drop table if exists phone_number repair_certification;
+drop table if exists phone_number mechanic_certification;
+
 CREATE SEQUENCE ScoutTrip_Id;
 CREATE TABLE ScoutTrip
 (
