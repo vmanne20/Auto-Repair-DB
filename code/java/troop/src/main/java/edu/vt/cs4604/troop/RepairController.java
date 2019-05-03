@@ -31,13 +31,14 @@ class RepairController {
       .collect(Collectors.toList());
   }
 
+//   "SELECT r.r_name, m.m_name, c.make_year, c.make, c.model," +
+//     "cust.c_name, crm.r_date FROM mechanic m, repair r, car c, customer cust, car_repair_mechanic crm" + 
+//     "WHERE crm.m_id = m.m_id AND crm.r_id = r.r_id AND crm.car_id = c.car_id and c.c_id = cust.c_id"
   @GetMapping("/get-repair-info")
   public Collection<RepairInfoView> repairInfo() {
     System.out.println("getting repair info");
-    Query q = em.createNativeQuery("SELECT r.r_name, m.m_name, c.make_year, c.make, c.model," +
-    "cust.c_name, crm.r_date FROM mechanic m, repair r, car c, customer cust, car_repair_mechanic crm" + 
-    "WHERE crm.m_id = m.m_id AND crm.r_id = r.r_id AND crm.car_id = c.car_id and c.c_id = cust.c_id", 
-     RepairInfoView.class); 
+    Query q = em.createNativeQuery("select r from repair_info_view r", 
+                RepairInfoView.class); 
     List<RepairInfoView> pastRepairList = q.getResultList();
     return pastRepairList.stream()
         .collect(Collectors.toList());
