@@ -106,25 +106,16 @@ CREATE TABLE car_repair_mechanic
   car_id INT NOT NULL,
   m_id INT NOT NULL,
   r_id INT NOT NULL,
-  r_date VARCHAR(100) NOT NULL, 
+  r_date DATE NOT NULL, 
   PRIMARY KEY (car_id, m_id, r_id),
   FOREIGN KEY (car_id) REFERENCES car(car_id),
   FOREIGN KEY (m_id) REFERENCES mechanic(m_id),
   FOREIGN KEY (r_id) REFERENCES repair(r_id)
 );
 
--- CREATE VIEW repair_info
--- (
---     m_name VARCHAR(60) NOT NULL,
---     r_name VARCHAR(100) NOT NULL,
---     make_year VARCHAR(5) NOT NULL,
---     make VARCHAR(60) NOT NULL,
---     model VARCHAR(60) NOT NULL,
---     r_date VARCHAR(100) NOT NULL,
---     labor_cost FLOAT NOT NULL,
---     parts_cost FLOAT NOT NULL,
---     total_cost FLOAT NOT NULL
--- );
+CREATE VIEW repair_info_view AS SELECT r.r_name, m.m_name, c.make_year, c.make, c.model, 
+cust.c_name, crm.r_date FROM mechanic m, repair r, car c, customer cust, car_repair_mechanic crm 
+WHERE crm.m_id = m.m_id AND crm.r_id = r.r_id AND crm.car_id = c.car_id and c.c_id = cust.c_id;
 
 CREATE SEQUENCE Cert_ID;
 CREATE TABLE certification
@@ -132,8 +123,6 @@ CREATE TABLE certification
   cert_id INT DEFAULT nextval('Cert_ID') NOT NULL,
   cert_name VARCHAR(100) NOT NULL,
   PRIMARY KEY (cert_id)
---   FOREIGN KEY (r_id) REFERENCES repair(r_id),
---   FOREIGN KEY (m_id) REFERENCES mechanic(m_id)
 );
 
 CREATE TABLE repair_certification

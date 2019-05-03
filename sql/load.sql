@@ -178,6 +178,16 @@ insert into mechanic_certification (m_id, cert_id) values (10, 5);
 insert into mechanic_certification (m_id, cert_id) values (10, 4);
 insert into mechanic_certification (m_id, cert_id) values (10, 7);
 
+insert into car_repair_mechanic (car_id, m_id, r_id, r_date) values (1, 1, 1, '2018-03-21');
+insert into car_repair_mechanic (car_id, m_id, r_id, r_date) values (2, 3, 5, '2018-05-13');
+insert into car_repair_mechanic (car_id, m_id, r_id, r_date) values (6, 5, 6, '2018-06-06');
+insert into car_repair_mechanic (car_id, m_id, r_id, r_date) values (2, 9, 5, '2018-07-04');
+insert into car_repair_mechanic (car_id, m_id, r_id, r_date) values (1, 4, 2, '2018-08-17');
+insert into car_repair_mechanic (car_id, m_id, r_id, r_date) values (3, 7, 4, '2018-10-15');
+insert into car_repair_mechanic (car_id, m_id, r_id, r_date) values (7, 8, 9, '2018-12-09');
+insert into car_repair_mechanic (car_id, m_id, r_id, r_date) values (9, 3, 7, '2019-01-29');
+insert into car_repair_mechanic (car_id, m_id, r_id, r_date) values (2, 6, 8, '2019-02-24');
+insert into car_repair_mechanic (car_id, m_id, r_id, r_date) values (10, 3, 5, '2019-03-30');
 
 
 
