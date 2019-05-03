@@ -106,6 +106,18 @@ CREATE TABLE car_repair_mechanic
   FOREIGN KEY (r_id) REFERENCES repair(r_id)
 );
 
+-- CREATE VIEW repair_info
+-- (
+--   car_id INT NOT NULL,
+--   m_id INT NOT NULL,
+--   r_id INT NOT NULL,
+--   r_date VARCHAR(100) NOT NULL, 
+--   PRIMARY KEY (car_id, m_id, r_id),
+--   FOREIGN KEY (car_id) REFERENCES car(car_id),
+--   FOREIGN KEY (m_id) REFERENCES mechanic(m_id),
+--   FOREIGN KEY (r_id) REFERENCES repair(r_id)
+-- );
+
 CREATE SEQUENCE Cert_ID;
 CREATE TABLE certification
 (
@@ -133,3 +145,4 @@ CREATE TABLE mechanic_certification
   FOREIGN KEY (m_id) REFERENCES mechanic(m_id),
   FOREIGN KEY (cert_id) REFERENCES certification(cert_id)
 );
+

@@ -25,21 +25,21 @@ class CertController {
     this.repository = repository;
   }
 
-  @GetMapping("/get-mechanic-certs")
-  public Collection<Cert> getMechanicCerts(@RequestParam("m_id") Long m_id) {
-    System.out.println("getting Mechanic Certs");
-    Query q = em.createNativeQuery("select c.* from certification c, mechanic_certification mc where mc.m_id = :mechId and mc.cert_id = c.cert_id", Cert.class)
-                .setParameter("mechId", m_id);  
-    List<Cert> certList = q.getResultList();
-    return certList.stream()
-        .collect(Collectors.toList());
-  }
-
   @GetMapping("/get-repair-certs")
   public Collection<Cert> getRepairCerts(@RequestParam("r_id") Long r_id) {
     System.out.println("getting Repair Certs");
     Query q = em.createNativeQuery("select c.* from certification c, repair_certification rc where rc.r_id = :repairId and rc.cert_id = c.cert_id", Cert.class)
                 .setParameter("repairId", r_id);  
+    List<Cert> certList = q.getResultList();
+    return certList.stream()
+        .collect(Collectors.toList());
+  }
+
+  @GetMapping("/get-mechanic-certs")
+  public Collection<Cert> getMechanicCerts(@RequestParam("m_id") Long m_id) {
+    System.out.println("getting Mechanic Certs");
+    Query q = em.createNativeQuery("select c.* from certification c, mechanic_certification mc where mc.m_id = :mechId and mc.cert_id = c.cert_id", Cert.class)
+                .setParameter("mechId", m_id);  
     List<Cert> certList = q.getResultList();
     return certList.stream()
         .collect(Collectors.toList());
@@ -51,40 +51,42 @@ class CertController {
 //   }
 
   @Transactional
-  @PostMapping("/add-mechanic-certs")
-  public Cert addMechanicCert(@RequestBody Cert cert, @RequestParam("m_id") Long m_id) {
+  @PostMapping("/add-repair-certs")
+  public Cert addRepairCert(@RequestBody Cert cert, @RequestParam("r_id") Long r_id) {
     String cert_name = cert.getCertName();
     em.joinTransaction();
-    em.createNativeQuery("insert into certification (cert_name) values (?)")
+    em.createNativeQuery("insert into certification (cert_name) values (?)", Cert.class)
                 .setParameter(1, cert_name)
                 .executeUpdate();  
 
     Long cert_id = cert.getCertId();
     em.joinTransaction();
-    em.createNativeQuery("insert into mechanic_certification (m_id, cert_id) values (?, ?)")
-                .setParameter(1, m_id)
+    em.createNativeQuery("insert into repair_certification (r_id, cert_id) values (?, ?)", RepairCert.class)
+                .setParameter(1, r_id)
                 .setParameter(2, cert_id)
                 .executeUpdate();  
     return repository.save(cert);
   }
 
   @Transactional
-  @PostMapping("/add-repair-certs")
-  public Cert addRepairCert(@RequestBody Cert cert, @RequestParam("r_id") Long r_id) {
+  @PostMapping("/add-mechanic-certs")
+  public Cert addMechanicCert(@RequestBody Cert cert, @RequestParam("m_id") Long m_id) {
     String cert_name = cert.getCertName();
     em.joinTransaction();
-    em.createNativeQuery("insert into certification (cert_name) values (:certName)")
-                .setParameter("certName", cert_name)
+    em.createNativeQuery("insert into certification (cert_name) values (?)", Cert.class)
+                .setParameter(1, cert_name)
                 .executeUpdate();  
 
     Long cert_id = cert.getCertId();
     em.joinTransaction();
-    em.createNativeQuery("insert into repair_certification (r_id, cert_id) values (:repairId, :certId)")
-                .setParameter("repairId", r_id)
-                .setParameter("certId", cert_id)
-                .executeUpdate();  
+    Query q = em.createNativeQuery("insert into mechanic_certification (m_id, cert_id) values (?, ?)");
+    q.setParameter(1, m_id);
+    q.setParameter(2, cert_id);
+    q.executeUpdate();  
     return repository.save(cert);
   }
+
+  
 
   @PutMapping("/update-certs")
   public Cert updateCert(@RequestBody Cert cert) {
