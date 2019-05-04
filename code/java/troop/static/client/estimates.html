@@ -19,14 +19,11 @@
     <script src="http://www.jtable.org/Scripts/jtable/jquery.jtable.js" type="text/javascript"></script>
 
     <script src="/js/scouts.js"></script>
-    <script src="/js/customers.js"></script>
-    <script src="/js/repairs.js"></script>
-    <script src="/js/mechanics.js"></script>
-    <!-- <script src="/js/phoneNumbers.js"></script> -->
-    <!-- <script src="/js/cars.js"></script> -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <style>
-            .repairs_button {
+            .home_button {
                 display: inline-block;
                 padding: 15px 25px;
                 font-size: 15px;
@@ -42,8 +39,8 @@
                 border-radius: 15px;
                 box-shadow: 0 5px black;
             }
-            .repairs_button:hover {background-color: #932424}
-            .repairs_button:active {
+            .home_button:hover {background-color: #932424}
+            .home_button:active {
                 background-color: #932424;
                 box-shadow: 0 2px black;
                 transform: translateY(4px);
@@ -60,7 +57,7 @@
         AUTO REPAIR</h1>
 
     <div style="text-align: center; position: relative; bottom: 90%;">
-        <button  class="repairs_button" type="submit" onclick="window.location.href='/client/home.html';"
+        <button  class="home_button" type="submit" onclick="window.location.href='/client/home.html';"
         style="margin-left: auto; margin-right: auto; position: relative;
                 width: 15%; top: -17px; height: 7%; bottom: 100%;">HOME</button>
     </div>
@@ -68,9 +65,13 @@
     <!-- Click <a href="/client/activeScouts.html">here for the active scouts page</a>.<br/><br/> -->
     <!-- <div id="ScoutTableContainer"></div> -->
     
-    <!-- <div style="margin-left: 200px; margin-right: 200px; 
+    <div style="margin-left: 200px; margin-right: 200px; 
     margin-top: 50px; margin-bottom: 50px;
-    position: relative" id="RepairInfoTableContainer"></div> -->
+    position: relative" id="estimate_container">
+
+
+
+    </div>
 
     <!-- <div style="margin: 30px; position: relative" id="PhoneTableContainer"></div> -->
 
