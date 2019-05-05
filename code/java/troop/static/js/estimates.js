@@ -9,22 +9,41 @@ $(document).ready(function () {
                 console.log("All Repair Names: ");
                 for (let i = 0; i < repairNames.length; i++) {
                     console.log(repairNames[i]);
-                    let formInput = document.createElement("INPUT");
-                    formInput.setAttribute("type", "checkbox");
-                    formInput.setAttribute("name", "repair" + (i+1));
-                    formInput.setAttribute("value", (i+1));
 
-                    document.getElementById("estimate_form").appendChild(formInput);
+                    let label = document.createElement("LABEL");
+                    label.setAttribute("class", "container");
+                    label.setAttribute("id", "label" + i);
 
-                    let inputText = document.createTextNode(repairNames[i]);
-                    document.getElementById("estimate_form").appendChild(inputText);
-                    let br = document.createElement("br");
-                    document.getElementById("estimate_form").appendChild(br);
+                    let labelText = document.createTextNode(repairNames[i]);
+                    document.getElementById("label" + i).appendChild(labelText);
+
+                    let input = document.createElement("INPUT");
+                    input.setAttribute("type", "checkbox");
+                    input.setAttribute("name", "repair" + (i+1));
+                    input.setAttribute("value", (i+1));
+                    document.getElementById("label" + i).appendChild(input);
+
+                    let span = document.createElement("SPAN");
+                    span.setAttribute("class", "checkmark");
+                    document.getElementById("label" + i).appendChild(input);
+
+                    document.getElementById("estimate_form").appendChild(label);
+                    // let formInput = document.createElement("INPUT");
+                    // formInput.setAttribute("type", "checkbox");
+                    // formInput.setAttribute("name", "repair" + (i+1));
+                    // formInput.setAttribute("value", (i+1));
+
+                    // document.getElementById("estimate_form").appendChild(formInput);
+
+                    // let inputText = document.createTextNode(repairNames[i]);
+                    // document.getElementById("estimate_form").appendChild(inputText);
+                    // let br = document.createElement("br");
+                    // document.getElementById("estimate_form").appendChild(br);
                 }
 
                 let submitButton = document.createElement("INPUT");
                 submitButton.setAttribute("type", "submit");
-                submitButton.setAttribute("value", "Get Estimates");
+                submitButton.setAttribute("value", "Submit");
                 document.getElementById("estimate_form").appendChild(submitButton);
 
                 $dfd.resolve({ "Result": "OK", "Records": data, "TotalRecordCount": data.length });
@@ -37,10 +56,5 @@ $(document).ready(function () {
 });
 
 
-// let label = document.createElement("LABEL");
-// label.setAttribute("class", "container");
 
-// let input = document.createElement("INPUT");
-// input.setAttribute("type", "checkbox");
-// input.setAttribute("name", "repair" + (i+1));
-// input.setAttribute("value", (i+1));
+
