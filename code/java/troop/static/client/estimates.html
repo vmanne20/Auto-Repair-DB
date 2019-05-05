@@ -55,50 +55,52 @@
                 -moz-user-select: none;
                 -ms-user-select: none;
                 user-select: none;
-                }
+            }
 
-                /* Hide the browser's default checkbox */
-                .container input {
+            /* Hide the browser's default checkbox */
+            .container input {
                 position: absolute;
                 opacity: 0;
                 cursor: pointer;
                 height: 0;
                 width: 0;
-                }
+            }
 
                 /* Create a custom checkbox */
-                .checkmark {
+            .checkmark {
                 position: absolute;
-                text-align: center;
+                /* text-align: center; */
+                top: 0;
+                left: 0;
                 height: 25px;
                 width: 25px;
-                background-color: #eee;
-                }
+                background-color: white;
+            }
 
                 /* On mouse-over, add a grey background color */
-                .container:hover input ~ .checkmark {
+            .container:hover input ~ .checkmark {
                 background-color: #ccc;
-                }
+            }
 
                 /* When the checkbox is checked, add a blue background */
-                .container input:checked ~ .checkmark {
+            .container input:checked ~ .checkmark {
                 background-color: #2196F3;
-                }
+            }
 
                 /* Create the checkmark/indicator (hidden when not checked) */
-                .checkmark:after {
+            .checkmark:after {
                 content: "";
                 position: absolute;
                 display: none;
-                }
+            }
 
                 /* Show the checkmark when checked */
-                .container input:checked ~ .checkmark:after {
+            .container input:checked ~ .checkmark:after {
                 display: block;
-                }
+            }
 
                 /* Style the checkmark/indicator */
-                .container .checkmark:after {
+            .container .checkmark:after {
                 left: 9px;
                 top: 5px;
                 width: 5px;
@@ -108,11 +110,11 @@
                 -webkit-transform: rotate(45deg);
                 -ms-transform: rotate(45deg);
                 transform: rotate(45deg);
-                }
+            }
     </style>
   </head>
 
-  <body>
+  <body style="text-align: center;">
     <img src="hotwheels.png" style="display:block; margin-left: auto;
     margin-right: auto; height: 22%; width: 22%;"/>
 
@@ -132,11 +134,11 @@
     <div style="margin-left: 200px; margin-right: 200px; 
     margin-top: 50px; margin-bottom: 50px;
     position: relative; background-color:rgba(255, 255, 255, 0.954); border: 10px black;
-    height: 300px; border-radius: 30px;" id="estimate_container">
+    height: 350px; border-radius: 30px;" id="estimate_container">
 
         <h1 style="text-align: center; line-height: 75px;"> Get Repair Estimates</h1>
         <p style="text-align: center; font-size: 23px;"> Select repairs from the dropdown to generate an estimate of the total cost.</p>
-        <form style="text-align: center;" action="/get-estimates" method="GET">
+        <form style="display:inline-block;" action="/get-estimates" method="GET">
               <label class="container">Brakes
                 <input type="checkbox" name="1" value="brakes">
                 <span class="checkmark"></span>

@@ -6,7 +6,7 @@ $(document).ready(function () {
           type: 'GET',
           success: function (data) {
             repairNames = data;
-            console.log("Repair Names: ");
+            console.log("All Repair Names: ");
             console.log(repairNames);
             $dfd.resolve({ "Result": "OK", "Records": data, "TotalRecordCount": data.length });
           },
