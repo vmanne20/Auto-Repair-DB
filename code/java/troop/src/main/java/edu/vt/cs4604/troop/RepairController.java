@@ -44,6 +44,18 @@ class RepairController {
         .collect(Collectors.toList());
   }
 
+  @GetMapping("/get-estimates")
+  public Repair getEstimates(@RequestParam Map<String,String> requestParams) {
+
+    
+    System.out.println("getting Repair Certs");
+    Query q = em.createNativeQuery("select c.* from certification c, repair_certification rc where rc.r_id = :repairId and rc.cert_id = c.cert_id", Cert.class)
+                .setParameter("repairId", r_id);  
+    List<Cert> certList = q.getResultList();
+    return certList.stream()
+        .collect(Collectors.toList());
+  }
+
   @PostMapping("/add-repairs")
   public Repair addRepair(@RequestBody Repair repair) {
     System.out.println(repair.toString());

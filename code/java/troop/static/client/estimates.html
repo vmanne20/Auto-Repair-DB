@@ -44,6 +44,71 @@
                 transform: translateY(4px);
             }
 
+            .container {
+                display: block;
+                position: relative;
+                padding-left: 35px;
+                margin-bottom: 12px;
+                cursor: pointer;
+                font-size: 22px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                }
+
+                /* Hide the browser's default checkbox */
+                .container input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+                }
+
+                /* Create a custom checkbox */
+                .checkmark {
+                position: absolute;
+                text-align: center;
+                height: 25px;
+                width: 25px;
+                background-color: #eee;
+                }
+
+                /* On mouse-over, add a grey background color */
+                .container:hover input ~ .checkmark {
+                background-color: #ccc;
+                }
+
+                /* When the checkbox is checked, add a blue background */
+                .container input:checked ~ .checkmark {
+                background-color: #2196F3;
+                }
+
+                /* Create the checkmark/indicator (hidden when not checked) */
+                .checkmark:after {
+                content: "";
+                position: absolute;
+                display: none;
+                }
+
+                /* Show the checkmark when checked */
+                .container input:checked ~ .checkmark:after {
+                display: block;
+                }
+
+                /* Style the checkmark/indicator */
+                .container .checkmark:after {
+                left: 9px;
+                top: 5px;
+                width: 5px;
+                height: 10px;
+                border: solid white;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+                }
     </style>
   </head>
 
@@ -66,10 +131,30 @@
     
     <div style="margin-left: 200px; margin-right: 200px; 
     margin-top: 50px; margin-bottom: 50px;
-    position: relative; color:white; border: 1px dotted gray;" id="estimate_container">
+    position: relative; background-color:rgba(255, 255, 255, 0.954); border: 10px black;
+    height: 300px; border-radius: 30px;" id="estimate_container">
 
-        
-
+        <h1 style="text-align: center; line-height: 75px;"> Get Repair Estimates</h1>
+        <p style="text-align: center; font-size: 23px;"> Select repairs from the dropdown to generate an estimate of the total cost.</p>
+        <form style="text-align: center;" action="/get-estimates" method="post">
+            <label class="container">One
+                <input style="position: relative; right: 5%;" type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Two
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Three
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Four
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <input type="submit" value="Submit">
+        </form>
     </div>
 
     <!-- <div style="margin: 30px; position: relative" id="PhoneTableContainer"></div> -->
