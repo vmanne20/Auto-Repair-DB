@@ -25,12 +25,16 @@ import javax.persistence.*;
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
 public class Repair {
-  @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long r_id;
+    @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long r_id;
 
-  private String r_name;
-  private String r_descript;
-  private Double parts_cost;
-  private Double r_time;
-}
+    private String r_name;
+    private String r_descript;
+    private Double parts_cost;
+    private Double r_time;
+
+    public String getName() {
+        return r_name;
+    }
+ }
