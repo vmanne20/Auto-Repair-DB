@@ -13,6 +13,9 @@ $(document).ready(function () {
                     formInput.setAttribute("type", "checkbox");
                     formInput.setAttribute("name", "repair" + i);
                     formInput.setAttribute("value", repairNames[i]);
+                    let inputText = document.createTextNode(repairNames[i]); 
+                    // add the text node to the newly created div
+                    formInput.appendChild(inputText);  
                     document.getElementById("estimate_form").appendChild(formInput);
                 }
 
