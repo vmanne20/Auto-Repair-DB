@@ -7,7 +7,10 @@ $(document).ready(function () {
           success: function (data) {
             repairNames = data;
             console.log("All Repair Names: ");
-            console.log(repairNames);
+            // console.log(repairNames);
+            for (let i = 0; i < repairNames.length; i++) {
+                console.log(repairNames[i]);
+            }
             $dfd.resolve({ "Result": "OK", "Records": data, "TotalRecordCount": data.length });
           },
           error: function () {
