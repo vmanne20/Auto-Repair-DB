@@ -11,12 +11,15 @@ $(document).ready(function () {
                     console.log(repairNames[i]);
                     let formInput = document.createElement("INPUT");
                     formInput.setAttribute("type", "checkbox");
-                    formInput.setAttribute("name", "repair" + i);
-                    formInput.setAttribute("value", repairNames[i]);
-                    let inputText = document.createTextNode(repairNames[i]); 
-                    // add the text node to the newly created div
-                    formInput.appendChild(inputText);  
+                    formInput.setAttribute("name", "repair" + (i+1));
+                    formInput.setAttribute("value", (i+1));
+
                     document.getElementById("estimate_form").appendChild(formInput);
+
+                    let inputText = document.createTextNode(repairNames[i]);
+                    document.getElementById("estimate_form").appendChild(inputText);
+                    let br = document.createElement("br");
+                    document.getElementById("estimate_form").appendChild(br);
                 }
 
                 let submitButton = document.createElement("INPUT");
@@ -32,3 +35,12 @@ $(document).ready(function () {
         });
     });
 });
+
+
+// let label = document.createElement("LABEL");
+// label.setAttribute("class", "container");
+
+// let input = document.createElement("INPUT");
+// input.setAttribute("type", "checkbox");
+// input.setAttribute("name", "repair" + (i+1));
+// input.setAttribute("value", (i+1));
