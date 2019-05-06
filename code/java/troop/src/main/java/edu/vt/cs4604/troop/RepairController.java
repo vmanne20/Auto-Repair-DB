@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.*;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.util.MultiValueMap;
 
 import java.util.Collection;
 import java.util.stream.Collectors;
@@ -67,11 +68,12 @@ class RepairController {
 @RequestMapping(value = "/get-estimates", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
   @ResponseBody
 // @RequestBody List<String> repairIdList
-  public Collection<Double> getEstimates(@RequestBody List<String> repairIdList) {
+  public Collection<Double> getEstimates(@RequestBody MultiValueMap<String, String> body) {
 
     // find qualified mechanics for each repair
     List<List<Long>> qualified = new ArrayList<>();
-    for (String id : repairIdList) {
+    Set<String> keySet = body.keySet();
+    for (String id : keySet) {
         long r_id = Long.parseLong(id);
         List<Long> currRepairMechs = new ArrayList<>();
         for (Mechanic m : mr.findAll()) {
@@ -109,7 +111,7 @@ class RepairController {
     double totalLaborCost = 0.0;
     double totalPartsCost = 0.0;
     int i = 0;
-    for (String id : repairIdList) {
+    for (String id : keySet) {
         long r_id = Long.parseLong(id);
         double repairTime = ((Number) em.createNativeQuery("select r.r_time from repair r where r.r_id = :repairId")
                                         .setParameter("repairId", r_id)
