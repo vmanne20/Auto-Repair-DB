@@ -69,7 +69,7 @@ class RepairController {
 @PostMapping(value = "/get-estimates", produces = MediaType.APPLICATION_JSON_VALUE)  
 @ResponseBody
 // @RequestBody List<String> repairIdList
-  public Collection<Double> getEstimates(@RequestBody(required=false) MultiValueMap<String, String> body) {
+  public Collection<String> getEstimates(@RequestBody(required=false) MultiValueMap<String, String> body) {
 
     // find qualified mechanics for each repair
     List<List<Long>> qualified = new ArrayList<>();
@@ -126,9 +126,12 @@ class RepairController {
         i++;
     }
 
+    String pcString = " Total Parts Cost: $" + String.format("%.2f", totalPartsCost) + " ";
+    String lcString = " Total Labor Cost: $" + String.format("%.2f", totalLaborCost) + " ";
+    String totalString = " Total Repair Cost: $" + String.format("%.2f", (totalPartsCost + totalLaborCost)) + " ";
     // return labor cost, parts cost, and total cost in list
-    List<Double> costs = new ArrayList<Double>();
-    costs.add(totalPartsCost); costs.add(totalLaborCost);
+    List<String> costs = new ArrayList<>();
+    costs.add(pcString); costs.add(lcString); costs.add(totalString);
     return costs.stream()
         .collect(Collectors.toList());
   }
