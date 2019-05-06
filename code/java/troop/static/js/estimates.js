@@ -61,6 +61,7 @@ $(document).ready(function () {
 });
 
 $('#estimate_form').submit(function(event) {
+    alert( "Handler for .submit() called." );
     event.preventDefault(); //prevent default action 
 	var get_url = $(this).attr("action"); //get form action url
     
