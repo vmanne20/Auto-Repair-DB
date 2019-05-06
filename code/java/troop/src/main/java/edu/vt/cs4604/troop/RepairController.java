@@ -17,11 +17,15 @@ class RepairController {
   @Autowired
   private RepairRepository repository;
 
+  @Autowired
+  private MechanicRepository mr;
+
   @PersistenceContext
   private EntityManager em;
 
-  public RepairController(RepairRepository repository) {
+  public RepairController(RepairRepository repository, MechanicRepository mr) {
     this.repository = repository;
+    this.mr = mr;
   }
 
   @GetMapping("/get-repairs")
@@ -59,13 +63,13 @@ class RepairController {
   }
 
   @GetMapping("/get-estimates")
-  public Collection<Repair> getEstimates(@RequestParam Map<String,String> requestParams) {
+  public Collection<Mechanic> getEstimates(@RequestParam Map<String,String> requestParams) {
     
     // for (String id : requestParams.keySet()) {
         
     // }
-    List<Repair> certList = new ArrayList<>();
-    return certList.stream()
+    // List<Repair> certList = new ArrayList<>();
+    return mr.findAll().stream()
         .collect(Collectors.toList());
   }
 
