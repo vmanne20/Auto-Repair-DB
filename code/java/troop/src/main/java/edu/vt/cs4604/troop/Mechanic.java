@@ -32,4 +32,8 @@ public class Mechanic {
   private String m_name;
   private Long years_exp;
   private Double hourly_rate;
-}
+
+  public Long getId() {
+      return m_id;
+  }
+ }

@@ -63,13 +63,62 @@ class RepairController {
   }
 
   @GetMapping("/get-estimates")
-  public Collection<Mechanic> getEstimates(@RequestParam Map<String,String> requestParams) {
+  public Collection<Double> getEstimates(@RequestParam Map<String,String> requestParams) {
     
-    // for (String id : requestParams.keySet()) {
-        
-    // }
-    // List<Repair> certList = new ArrayList<>();
-    return mr.findAll().stream()
+    // find qualified mechanics for each repair
+    List<List<Long>> qualified = new ArrayList<>();
+    for (String id : requestParams.keySet()) {
+        Long r_id = Long.parseLong(id);
+        List<Long> currRepairMechs = new ArrayList<>();
+        for (Mechanic m : mr.findAll()) {
+            Long m_id = m.getId();
+            int mismatchCount = (Integer) em.createNativeQuery("select count(*) from (select rc.cert_id from repair_certification rc where rc.r_id = 2" + 
+                                    "and rc.cert_id not in ((select rc.cert_id from repair_certification rc where rc.r_id = 2)" +
+                                    "intersect (select mc.cert_id from mechanic_certification mc where mc.m_id = 4))) as T1;")
+                                    .getSingleResult();
+            if (mismatchCount == 0) {
+                currRepairMechs.add(m_id);
+            }
+        }
+        qualified.add(currRepairMechs);
+    }
+
+    // calculate average hourly rate for each repair
+    List<Double> avgRateList = new ArrayList<>();
+    for (List<Long> currRepairMechs : qualified) {
+        Double total = 0.0;
+        for (Long m_id : currRepairMechs) {
+            Double rate = (Double) em.createNativeQuery("select m.hourly_rate from mechanic m where m.m_id = :mechId")
+                                        .setParameter("mechId", m_id)
+                                        .getSingleResult();
+            total += rate;
+        }
+        Double avgRate = total / currRepairMechs.size();
+        avgRateList.add(avgRate);
+    }
+
+    // calculate total labor cost and total parts cost for each repair
+    Double totalLaborCost = 0.0;
+    Double totalPartsCost = 0.0;
+    int i = 0;
+    for (String id : requestParams.keySet()) {
+        Long r_id = Long.parseLong(id);
+        Double repairTime = (Double) em.createNativeQuery("select r.r_time from repair r where r.r_id = :repairId")
+                                        .setParameter("repairId", r_id)
+                                        .getSingleResult();
+        totalLaborCost += (avgRateList.get(i) * repairTime * 1.5);
+
+        Double partsCost = (Double) em.createNativeQuery("select r.parts_cost from repair r where r.r_id = :repairId")
+                                        .setParameter("repairId", r_id)
+                                        .getSingleResult();
+        totalPartsCost += partsCost;
+        i++;
+    }
+
+    // return labor cost, parts cost, and total cost in list
+    List<Double> costs = new ArrayList<Double>();
+    costs.add(totalPartsCost); costs.add(totalLaborCost);
+    return costs.stream()
         .collect(Collectors.toList());
   }
 
