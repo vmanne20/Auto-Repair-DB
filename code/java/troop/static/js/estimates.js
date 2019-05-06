@@ -13,37 +13,37 @@ $(document).ready(function () {
                     let repairId = repairNames[i].substring(0, splitIndex);
                     let repairName = repairNames[i].substring(splitIndex + 1);
 
-                    let label = document.createElement("LABEL");
-                    label.setAttribute("class", "container");
-                    label.setAttribute("id", "label" + i);
+                    // let label = document.createElement("LABEL");
+                    // label.setAttribute("class", "container");
+                    // label.setAttribute("id", "label" + i);
                     
-                    let input = document.createElement("INPUT");
-                    input.setAttribute("type", "checkbox");
-                    input.setAttribute("name", repairId);
-                    input.setAttribute("value", repairName);
-                    label.appendChild(input);
+                    // let input = document.createElement("INPUT");
+                    // input.setAttribute("type", "checkbox");
+                    // input.setAttribute("name", repairId);
+                    // input.setAttribute("value", repairName);
+                    // label.appendChild(input);
 
-                    let span = document.createElement("SPAN");
-                    span.setAttribute("class", "checkmark");
-                    label.appendChild(span);
+                    // let span = document.createElement("SPAN");
+                    // span.setAttribute("class", "checkmark");
+                    // label.appendChild(span);
 
-                    let labelText = document.createTextNode(repairName);
-                    label.appendChild(labelText);
+                    // let labelText = document.createTextNode(repairName);
+                    // label.appendChild(labelText);
 
-                    document.getElementById("estimate_form").appendChild(label);
+                    // document.getElementById("estimate_form").appendChild(label);
 
-                    // // ----------REGULAR CHECKBOXES-------------------
-                    // let formInput = document.createElement("INPUT");
-                    // formInput.setAttribute("type", "checkbox");
-                    // formInput.setAttribute("name", "repair" + (i+1));
-                    // formInput.setAttribute("value", (i+1));
+                    // ----------REGULAR CHECKBOXES-------------------
+                    let formInput = document.createElement("INPUT");
+                    formInput.setAttribute("type", "checkbox");
+                    formInput.setAttribute("name", repairId);
+                    formInput.setAttribute("value", repairName);
 
-                    // document.getElementById("estimate_form").appendChild(formInput);
+                    document.getElementById("estimate_form").appendChild(formInput);
 
-                    // let inputText = document.createTextNode(repairNames[i]);
-                    // document.getElementById("estimate_form").appendChild(inputText);
-                    // let br = document.createElement("br");
-                    // document.getElementById("estimate_form").appendChild(br);
+                    let inputText = document.createTextNode(repairName);
+                    document.getElementById("estimate_form").appendChild(inputText);
+                    let br = document.createElement("br");
+                    document.getElementById("estimate_form").appendChild(br);
                 }
 
                 let submitButton = document.createElement("INPUT");
@@ -65,12 +65,17 @@ $('#estimate_form').submit(function(event) {
     event.preventDefault(); //prevent default action 
 	var get_url = $(this).attr("action"); //get form action url
     
+    var idArray = [];
+    $('#estimate_form input:checked').each(function() {
+        idArray.push($(this).attr('name'));
+    });
+
     return $.Deferred(function ($dfd) {
         $.ajax({
             url: get_url,
             type: 'POST',
-            // contentType: "application/json; charset=utf-8",
-            data: $(this).serialize(),
+            contentType: "application/json; charset=utf-8",
+            data: idArray,
             dataType: 'json',
             success: function (data) {
                 console.log("successfully generated estimates!!!");

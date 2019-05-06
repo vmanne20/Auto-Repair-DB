@@ -63,10 +63,10 @@ class RepairController {
   }
 
   @PostMapping("/get-estimates")
-  public Collection<Double> getEstimates(@RequestBody Map<String,String> requestParams) {
+  public Collection<Double> getEstimates(@RequestBody List<String> repairIdList) {
     // find qualified mechanics for each repair
     List<List<Long>> qualified = new ArrayList<>();
-    for (String id : requestParams.keySet()) {
+    for (String id : repairIdList) {
         long r_id = Long.parseLong(id);
         List<Long> currRepairMechs = new ArrayList<>();
         for (Mechanic m : mr.findAll()) {
@@ -104,7 +104,7 @@ class RepairController {
     double totalLaborCost = 0.0;
     double totalPartsCost = 0.0;
     int i = 0;
-    for (String id : requestParams.keySet()) {
+    for (String id : repairIdList) {
         long r_id = Long.parseLong(id);
         double repairTime = ((Number) em.createNativeQuery("select r.r_time from repair r where r.r_id = :repairId")
                                         .setParameter("repairId", r_id)
