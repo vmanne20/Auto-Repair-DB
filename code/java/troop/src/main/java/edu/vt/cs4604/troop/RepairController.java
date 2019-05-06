@@ -3,6 +3,7 @@ package edu.vt.cs4604.troop;
 import org.springframework.web.bind.annotation.*;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 
 import java.util.Collection;
 import java.util.stream.Collectors;
@@ -62,8 +63,12 @@ class RepairController {
         .collect(Collectors.toList());
   }
 
-  @PostMapping("/get-estimates")
-  public Collection<Double> getEstimates(@RequestBody List<String> repairIdList) {
+//   @PostMapping("/get-estimates")
+@RequestMapping(value = "/get-estimates", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+//   @ResponseBody
+// @RequestBody List<String> repairIdList
+  public Collection<Double> getEstimates(@RequestParam("idArr[]") String[] repairIdList) {
+
     // find qualified mechanics for each repair
     List<List<Long>> qualified = new ArrayList<>();
     for (String id : repairIdList) {

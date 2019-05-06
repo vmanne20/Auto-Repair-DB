@@ -75,7 +75,9 @@ $('#estimate_form').submit(function(event) {
             url: get_url,
             type: 'POST',
             contentType: "application/json; charset=utf-8",
-            data: idArray,
+            data: {
+                idArr: idArray
+            },
             dataType: 'json',
             success: function (data) {
                 console.log("successfully generated estimates!!!");
