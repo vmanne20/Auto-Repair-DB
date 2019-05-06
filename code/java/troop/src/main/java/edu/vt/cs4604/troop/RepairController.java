@@ -66,7 +66,7 @@ class RepairController {
 
 //   @PostMapping("/get-estimates")
 // @RequestMapping(value = "/get-estimates", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-@PostMapping(value = "/get-estimates", consumes = MediaType.APPLICATION_JSON_VALUE)  
+@PostMapping(value = "/get-estimates", produces = MediaType.APPLICATION_JSON_VALUE)  
 @ResponseBody
 // @RequestBody List<String> repairIdList
   public Collection<Double> getEstimates(@RequestBody(required=false) MultiValueMap<String, String> body) {
