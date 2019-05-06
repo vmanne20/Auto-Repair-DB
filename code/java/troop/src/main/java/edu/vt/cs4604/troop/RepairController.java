@@ -137,8 +137,8 @@ class RepairController {
 
 
     repairs.append(", Total Parts Cost: $" + String.format("%.2f", totalPartsCost) + ", ");
-    repairs.append(", Total Labor Cost: $" + String.format("%.2f", totalLaborCost) + ", ");
-    repairs.append(", Total Repair Cost: $" + String.format("%.2f", (totalPartsCost + totalLaborCost)) + " ");
+    repairs.append("Total Labor Cost: $" + String.format("%.2f", totalLaborCost) + ", ");
+    repairs.append("Total Repair Cost: $" + String.format("%.2f", (totalPartsCost + totalLaborCost)) + " ");
     // return labor cost, parts cost, and total cost in list
     List<String> costs = new ArrayList<>();
     costs.add(repairs.toString()); 
