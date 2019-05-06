@@ -65,32 +65,32 @@ $('#estimate_form').submit(function(event) {
     event.preventDefault(); //prevent default action 
 	var get_url = $(this).attr("action"); //get form action url
     
-    return $.Deferred(function ($dfd) {
-        $.ajax({
-            url: get_url,
-            type: 'GET',
-            success: function (data) {
-                console.log("successfully generated estimates!!!");
-                let label1 = document.createElement("h2");
-                label1.textContent = "Total Parts Cost: $" + data[0];
-                document.getElementById("estimate_text").appendChild(label1);
+    // return $.Deferred(function ($dfd) {
+    //     $.ajax({
+    //         url: get_url,
+    //         type: 'GET',
+    //         success: function (data) {
+    //             console.log("successfully generated estimates!!!");
+    //             let label1 = document.createElement("h2");
+    //             label1.textContent = "Total Parts Cost: $" + data[0];
+    //             document.getElementById("estimate_text").appendChild(label1);
                 
-                let label2 = document.createElement("h2");
-                label2.textContent = "Total Labor Cost: $" + data[1];
-                document.getElementById("estimate_text").appendChild(label2);
+    //             let label2 = document.createElement("h2");
+    //             label2.textContent = "Total Labor Cost: $" + data[1];
+    //             document.getElementById("estimate_text").appendChild(label2);
 
-                let label3 = document.createElement("h2");
-                label3.textContent = "Total Repair Cost: $" + (data[0] + data[1]);
-                document.getElementById("estimate_text").appendChild(label3);
+    //             let label3 = document.createElement("h2");
+    //             label3.textContent = "Total Repair Cost: $" + (data[0] + data[1]);
+    //             document.getElementById("estimate_text").appendChild(label3);
 
-                $dfd.resolve({ "Result": "OK", "Records": data, "TotalRecordCount": data.length });
-            },
-            error: function () {
-                console.log("could not get estimates");
-                $dfd.reject();
-            }
-        });
-    });
+    //             $dfd.resolve({ "Result": "OK", "Records": data, "TotalRecordCount": data.length });
+    //         },
+    //         error: function () {
+    //             console.log("could not get estimates");
+    //             $dfd.reject();
+    //         }
+    //     });
+    // });
 });
 
 
