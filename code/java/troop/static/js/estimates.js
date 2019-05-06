@@ -62,21 +62,22 @@ $(document).ready(function () {
 
 $('#estimate_form').submit(function(event) {
     alert( "Handler for .submit() called." );
+    console.log("form submitted");
     event.preventDefault(); //prevent default action 
-	var get_url = $(this).attr("action"); //get form action url
+	var post_url = $(this).attr("action"); //get form action url
     
-    var idArray = [];
+    var selected = [];
     $('#estimate_form input:checked').each(function() {
-        idArray.push($(this).attr('name'));
+        selected.push($(this).attr('name'));
     });
 
     return $.Deferred(function ($dfd) {
         $.ajax({
-            url: get_url,
+            url: post_url,
             type: 'POST',
             contentType: "application/json; charset=utf-8",
             data: {
-                idArr: idArray
+                repairIdList: selected
             },
             dataType: 'json',
             success: function (data) {

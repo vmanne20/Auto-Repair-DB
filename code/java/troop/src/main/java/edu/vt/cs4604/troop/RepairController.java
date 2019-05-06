@@ -65,9 +65,9 @@ class RepairController {
 
 //   @PostMapping("/get-estimates")
 @RequestMapping(value = "/get-estimates", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-//   @ResponseBody
+  @ResponseBody
 // @RequestBody List<String> repairIdList
-  public Collection<Double> getEstimates(@RequestParam("idArr[]") String[] repairIdList) {
+  public Collection<Double> getEstimates(@RequestBody List<String> repairIdList) {
 
     // find qualified mechanics for each repair
     List<List<Long>> qualified = new ArrayList<>();
