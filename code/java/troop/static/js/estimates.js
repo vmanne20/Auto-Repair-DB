@@ -47,8 +47,9 @@ $(document).ready(function () {
                 }
 
                 let submitButton = document.createElement("INPUT");
+                submitButton.setAttribute("id", "submit_button");
                 submitButton.setAttribute("type", "submit");
-                submitButton.setAttribute("value", "Submit");
+                submitButton.setAttribute("value", "Submit");           
                 document.getElementById("estimate_form").appendChild(submitButton);
 
                 $dfd.resolve({ "Result": "OK", "Records": data, "TotalRecordCount": data.length });
@@ -60,8 +61,12 @@ $(document).ready(function () {
     });
 });
 
+$('#submit_button').click(function(event) {
+    $('#estimate_form').submit();
+});
+
 $('#estimate_form').submit(function(event) {
-    alert( "Handler for .submit() called." );
+    alert( "Form Submission Handler called." );
     console.log("form submitted");
     event.preventDefault(); //prevent default action 
 	var post_url = $(this).attr("action"); //get form action url
