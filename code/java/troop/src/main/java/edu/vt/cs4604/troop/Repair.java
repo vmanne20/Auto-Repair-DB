@@ -34,6 +34,10 @@ public class Repair {
     private Double parts_cost;
     private Double r_time;
 
+    public Long getId() {
+        return r_id;
+    }
+ 
     public String getName() {
         return r_name;
     }

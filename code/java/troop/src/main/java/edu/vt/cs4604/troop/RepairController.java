@@ -51,20 +51,23 @@ class RepairController {
     List<Repair> allRepairs = repository.findAll();
     List<String> repairNames = new ArrayList<>();
     for (Repair r : allRepairs) {
-        repairNames.add(r.getName());
+        String obj = r.getId() + ":" + r.getName();
+        repairNames.add(obj);
     }
     return repairNames.stream()
         .collect(Collectors.toList());
   }
 
-//   @GetMapping("/get-estimates")
-//   public Collection<Repair> getEstimates(@RequestParam Map<String,String> requestParams) {
-
-//     System.out.println("getting Repair Certs");
-//     List<Repair> certList = new ArrayList<>();
-//     return certList.stream()
-//         .collect(Collectors.toList());
-//   }
+  @GetMapping("/get-estimates")
+  public Collection<Repair> getEstimates(@RequestParam Map<String,String> requestParams) {
+    
+    // for (String id : requestParams.keySet()) {
+        
+    // }
+    List<Repair> certList = new ArrayList<>();
+    return certList.stream()
+        .collect(Collectors.toList());
+  }
 
   @PostMapping("/add-repairs")
   public Repair addRepair(@RequestBody Repair repair) {
