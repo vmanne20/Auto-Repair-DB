@@ -72,9 +72,11 @@ class RepairController {
         List<Long> currRepairMechs = new ArrayList<>();
         for (Mechanic m : mr.findAll()) {
             Long m_id = m.getId();
-            int mismatchCount = (Integer) em.createNativeQuery("select count(*) from (select rc.cert_id from repair_certification rc where rc.r_id = 2" + 
-                                    "and rc.cert_id not in ((select rc.cert_id from repair_certification rc where rc.r_id = 2)" +
-                                    "intersect (select mc.cert_id from mechanic_certification mc where mc.m_id = 4))) as T1;")
+            Integer mismatchCount = (Integer) em.createNativeQuery("select count(*) from (select rc.cert_id from repair_certification rc where rc.r_id = 2" + 
+                                    "and rc.cert_id not in ((select rc.cert_id from repair_certification rc where rc.r_id = :repairId)" +
+                                    "intersect (select mc.cert_id from mechanic_certification mc where mc.m_id = :mechId))) as T1;")
+                                    .setParameter("repairId", r_id)
+                                    .setParameter("mechId", m_id)
                                     .getSingleResult();
             if (mismatchCount == 0) {
                 currRepairMechs.add(m_id);
