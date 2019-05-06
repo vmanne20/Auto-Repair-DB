@@ -68,16 +68,16 @@ class RepairController {
     // find qualified mechanics for each repair
     List<List<Long>> qualified = new ArrayList<>();
     for (String id : requestParams.keySet()) {
-        Long r_id = Long.parseLong(id);
+        long r_id = Long.parseLong(id);
         List<Long> currRepairMechs = new ArrayList<>();
         for (Mechanic m : mr.findAll()) {
-            Long m_id = m.getId();
-            Integer mismatchCount = (Integer) em.createNativeQuery("select count(*) from (select rc.cert_id from repair_certification rc where rc.r_id = 2" + 
+            long m_id = m.getId();
+            int mismatchCount = ((Number) em.createNativeQuery("select count(*) from (select rc.cert_id from repair_certification rc where rc.r_id = 2" + 
                                     "and rc.cert_id not in ((select rc.cert_id from repair_certification rc where rc.r_id = :repairId)" +
                                     "intersect (select mc.cert_id from mechanic_certification mc where mc.m_id = :mechId))) as T1;")
                                     .setParameter("repairId", r_id)
                                     .setParameter("mechId", m_id)
-                                    .getSingleResult();
+                                    .getSingleResult()).intValue();
             if (mismatchCount == 0) {
                 currRepairMechs.add(m_id);
             }
@@ -88,31 +88,31 @@ class RepairController {
     // calculate average hourly rate for each repair
     List<Double> avgRateList = new ArrayList<>();
     for (List<Long> currRepairMechs : qualified) {
-        Double total = 0.0;
+        double total = 0.0;
         for (Long m_id : currRepairMechs) {
-            Double rate = (Double) em.createNativeQuery("select m.hourly_rate from mechanic m where m.m_id = :mechId")
+            double rate = ((Number) em.createNativeQuery("select m.hourly_rate from mechanic m where m.m_id = :mechId")
                                         .setParameter("mechId", m_id)
-                                        .getSingleResult();
+                                        .getSingleResult()).doubleValue();
             total += rate;
         }
-        Double avgRate = total / currRepairMechs.size();
+        double avgRate = total / currRepairMechs.size();
         avgRateList.add(avgRate);
     }
 
     // calculate total labor cost and total parts cost for each repair
-    Double totalLaborCost = 0.0;
-    Double totalPartsCost = 0.0;
+    double totalLaborCost = 0.0;
+    double totalPartsCost = 0.0;
     int i = 0;
     for (String id : requestParams.keySet()) {
-        Long r_id = Long.parseLong(id);
-        Double repairTime = (Double) em.createNativeQuery("select r.r_time from repair r where r.r_id = :repairId")
+        long r_id = Long.parseLong(id);
+        double repairTime = ((Number) em.createNativeQuery("select r.r_time from repair r where r.r_id = :repairId")
                                         .setParameter("repairId", r_id)
-                                        .getSingleResult();
+                                        .getSingleResult()).doubleValue();
         totalLaborCost += (avgRateList.get(i) * repairTime * 1.5);
 
-        Double partsCost = (Double) em.createNativeQuery("select r.parts_cost from repair r where r.r_id = :repairId")
+        double partsCost = ((Number) em.createNativeQuery("select r.parts_cost from repair r where r.r_id = :repairId")
                                         .setParameter("repairId", r_id)
-                                        .getSingleResult();
+                                        .getSingleResult()).doubleValue();
         totalPartsCost += partsCost;
         i++;
     }
