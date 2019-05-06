@@ -69,7 +69,7 @@ $('#estimate_form').submit(function(event) {
         $.ajax({
             url: get_url,
             type: 'POST',
-            contentType: "application/json; charset=utf-8",
+            // contentType: "application/json; charset=utf-8",
             data: $(this).serialize(),
             dataType: 'json',
             success: function (data) {
