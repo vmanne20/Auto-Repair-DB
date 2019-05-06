@@ -131,17 +131,18 @@ class RepairController {
     for (String r_id : keySet) {
         repairs.append(body.get(r_id));
         if (count < keySet.size() - 1) {
-            repairs.append(", ");
+            repairs.append(" ");
         }
     }
 
-    
-    String pcString = " Total Parts Cost: $" + String.format("%.2f", totalPartsCost) + " ";
-    String lcString = " Total Labor Cost: $" + String.format("%.2f", totalLaborCost) + " ";
-    String totalString = " Total Repair Cost: $" + String.format("%.2f", (totalPartsCost + totalLaborCost)) + " ";
+
+    repairs.append(", Total Parts Cost: $" + String.format("%.2f", totalPartsCost) + ", ");
+    repairs.append(", Total Labor Cost: $" + String.format("%.2f", totalLaborCost) + ", ");
+    repairs.append(", Total Repair Cost: $" + String.format("%.2f", (totalPartsCost + totalLaborCost)) + " ");
     // return labor cost, parts cost, and total cost in list
     List<String> costs = new ArrayList<>();
-    costs.add(repairs.toString()); costs.add(pcString); costs.add(lcString); costs.add(totalString);
+    costs.add(repairs.toString()); 
+    // costs.add(pcString); costs.add(lcString); costs.add(totalString);
     return costs.stream()
         .collect(Collectors.toList());
   }
