@@ -76,6 +76,7 @@ $('#estimate_form').submit(function(event) {
             url: post_url,
             type: 'POST',
             contentType: "application/json; charset=utf-8",
+            accepts: "application/json; charset=utf-8",
             data: {
                 repairIdList: selected
             },
