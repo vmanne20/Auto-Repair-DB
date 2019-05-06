@@ -62,8 +62,8 @@ class RepairController {
         .collect(Collectors.toList());
   }
 
-  @GetMapping("/get-estimates")
-  public Collection<Double> getEstimates(@RequestParam Map<String,String> requestParams) {
+  @PostMapping("/get-estimates")
+  public Collection<Double> getEstimates(@RequestBody Map<String,String> requestParams) {
     // find qualified mechanics for each repair
     List<List<Long>> qualified = new ArrayList<>();
     for (String id : requestParams.keySet()) {
