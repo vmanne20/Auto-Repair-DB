@@ -71,7 +71,7 @@ class RepairController {
         List<Long> currRepairMechs = new ArrayList<>();
         for (Mechanic m : mr.findAll()) {
             long m_id = m.getId();
-            int mismatchCount = ((Number) em.createNativeQuery("select count(*) from (select rc.cert_id from repair_certification rc where rc.r_id = 2" + 
+            int mismatchCount = ((Number) em.createNativeQuery("select count(*) from (select rc.cert_id from repair_certification rc where rc.r_id = :repairId" + 
                                     "and rc.cert_id not in ((select rc.cert_id from repair_certification rc where rc.r_id = :repairId)" +
                                     "intersect (select mc.cert_id from mechanic_certification mc where mc.m_id = :mechId))) as T1;")
                                     .setParameter("repairId", r_id)
@@ -97,6 +97,8 @@ class RepairController {
         double avgRate = total / currRepairMechs.size();
         avgRateList.add(avgRate);
     }
+    // if (qualified.size() == 0)
+    //     avgRateList.add(0.0);
 
     // calculate total labor cost and total parts cost for each repair
     double totalLaborCost = 0.0;
