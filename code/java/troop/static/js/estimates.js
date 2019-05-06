@@ -46,6 +46,9 @@ $(document).ready(function () {
                     document.getElementById("estimate_form").appendChild(br);
                 }
 
+                let br = document.createElement("br");
+                document.getElementById("estimate_form").appendChild(br);
+
                 let submitButton = document.createElement("INPUT");
                 submitButton.setAttribute("id", "submit_button");
                 submitButton.setAttribute("type", "submit");
@@ -66,9 +69,10 @@ $('#submit_button').click(function(event) {
 });
 
 $('#estimate_form').submit(function(event) {
+    event.preventDefault(); //prevent default action 
     alert( "Form Submission Handler called." );
     console.log("form submitted");
-    event.preventDefault(); //prevent default action 
+    
 	var post_url = $(this).attr("action"); //get form action url
     
     var selected = [];

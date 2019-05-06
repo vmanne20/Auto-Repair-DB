@@ -21,6 +21,9 @@ We assume that a customer must have at least one phone number in the database.
 We assume that customers’ name is not unique in the database, therefore we created customer_ID as the primary key.  
 A customer may have multiple phone numbers, so we create PhoneNumber as a separate weak entity under Customer, because phone number cannot be identified without customer_ID.  
 
+- "has" ternary relationship between car, repair, and mechanic is represented by the relation "car_repair_mechanic"
+
+
 ![ER Diagram](diagrams/entity-relationship1.png  "ER Diagram")
 
 ## Relational
