@@ -72,8 +72,8 @@ class RepairController {
         for (Mechanic m : mr.findAll()) {
             long m_id = m.getId();
             int mismatchCount = ((Number) em.createNativeQuery("select count(*) from (select rc.cert_id from repair_certification rc where rc.r_id = :repairId" + 
-                                    "and rc.cert_id not in ((select rc.cert_id from repair_certification rc where rc.r_id = :repairId)" +
-                                    "intersect (select mc.cert_id from mechanic_certification mc where mc.m_id = :mechId))) as T1;")
+                                    " and rc.cert_id not in ((select rc.cert_id from repair_certification rc where rc.r_id = :repairId) " +
+                                    "intersect (select mc.cert_id from mechanic_certification mc where mc.m_id = :mechId))) as T1")
                                     .setParameter("repairId", r_id)
                                     .setParameter("mechId", m_id)
                                     .getSingleResult()).intValue();
