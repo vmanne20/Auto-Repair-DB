@@ -63,7 +63,7 @@ class RepairController {
   }
 
   @GetMapping("/get-estimates")
-  public Collection<Double> getEstimates(@RequestParam Map<String,String> requestParams) {
+  public Collection<List<Long>> getEstimates(@RequestParam Map<String,String> requestParams) {
     // find qualified mechanics for each repair
     List<List<Long>> qualified = new ArrayList<>();
     for (String id : requestParams.keySet()) {
@@ -119,7 +119,7 @@ class RepairController {
     // return labor cost, parts cost, and total cost in list
     List<Double> costs = new ArrayList<Double>();
     costs.add(totalPartsCost); costs.add(totalLaborCost);
-    return avgRateList.stream()
+    return qualified.stream()
         .collect(Collectors.toList());
   }
 
